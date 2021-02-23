@@ -1,10 +1,9 @@
 import React from "react";
 import { Input } from 'semantic-ui-react';
 
-function Input() {
+function InputForm() {
     return (
 
-//We got to double check this component import. Nothing breaking. Not showing up yet. 
 <div>
 
 <div class="ui huge icon input">
@@ -18,4 +17,4 @@ function Input() {
 
 }
 
-export default Input; 
+export default InputForm; 

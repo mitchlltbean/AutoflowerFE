@@ -1,10 +1,14 @@
 import React from "react";
-import Input from "../components/Input";
+import InputForm from "../components/InputForm";
+import Buttons from "../components/Buttons";
 
 function Landing() {
     return (
         <div>
-        <Input />
+        <InputForm />
+
+        <Buttons />
+
         </div>
     );
 }
