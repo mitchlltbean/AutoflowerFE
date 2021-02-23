@@ -14,7 +14,7 @@ class Buttons extends React.Component {
     console.log(numeral);
     keycodeCopy += numeral
 
-    // if (keycodeCopy.length < 5 ) { }
+    // if (keycodeCopy.length < 5 ) { } 
 
     this.setState({keycode:keycodeCopy})
 
@@ -28,6 +28,21 @@ class Buttons extends React.Component {
   };
 
 //Method to verify the input is correct
+  checkNum = () => {
+    const keycode = this.state.keycode.length
+    if (keycode < 5) {
+      console.log("Make it longer!")
+      
+    }
+    else if (keycode > 5) {
+      console.log("Make it shorter!")
+    }
+    else {
+      console.log("Thats about right!")
+    }
+
+  };
+
 //Cap the max-length (if/else) 
 
 
@@ -111,7 +126,7 @@ class Buttons extends React.Component {
           >
             9
           </Button>
-          <Button className="numLock">Check</Button>
+          <Button onClick={(e) => this.checkNum(e, "value")}className="numLock">Check</Button>
         </Button.Group>
       </div>
     );
