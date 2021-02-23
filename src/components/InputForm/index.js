@@ -7,7 +7,7 @@ function InputForm() {
 <div>
 
 <div class="ui huge icon input">
-  <input type="text" placeholder="Search huge..."/>
+  <Input type="text" placeholder="Employee #"/>
   <i class="search icon"></i>
 </div>
 
