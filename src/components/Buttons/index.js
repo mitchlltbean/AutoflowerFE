@@ -4,7 +4,7 @@ import { Button } from "semantic-ui-react";
 
 function Buttons() {
   return (
-    <div id="btnHolder">
+    <div id ="btnHolder">
       <Button.Group vertical>
         <Button>1</Button>
         <Button>4</Button>
