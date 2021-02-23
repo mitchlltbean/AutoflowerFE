@@ -3,14 +3,27 @@ import { Button } from "semantic-ui-react";
 // import 'semantic-ui-css/semantic.min.css'
 
 class Buttons extends React.Component {
+  state = {
+    keycode: ""
+  }
+
   feelNum = (e) => {
+    let keycodeCopy = this.state.keycode
     const numeral = e.target.value;
     // ran into an issue of the buttons having no value, then changed it to e.target.value to get proper response
     console.log(numeral);
+    keycodeCopy += numeral
+    this.setState({keycode:keycodeCopy})
+
   };
+
+
+
+
   render() {
     return (
       <div id="btnHolder">
+        {this.state.keycode}
         <Button.Group vertical>
           <Button
             className="num"
