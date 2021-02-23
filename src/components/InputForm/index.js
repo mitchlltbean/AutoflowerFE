@@ -4,9 +4,9 @@ import { Input } from "semantic-ui-react";
 function InputForm() {
   return (
     <div>
-      <div class="ui huge icon input">
+      <div className="ui huge icon input">
         <Input id="numInput" type="text" placeholder="Employee #" />
-        <i class="search icon"></i>
+        <i className="search icon"></i>
       </div>
     </div>
   );
