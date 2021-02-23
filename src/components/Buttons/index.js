@@ -13,11 +13,22 @@ class Buttons extends React.Component {
     // ran into an issue of the buttons having no value, then changed it to e.target.value to get proper response
     console.log(numeral);
     keycodeCopy += numeral
+
+    // if (keycodeCopy.length < 5 ) { }
+
     this.setState({keycode:keycodeCopy})
 
   };
 
+//Method to clear numbers by creating an empty string
 
+  clearNum = () => {
+      this.setState({keycode: ""})
+
+  };
+
+//Method to verify the input is correct
+//Cap the max-length (if/else) 
 
 
   render() {
@@ -46,7 +57,7 @@ class Buttons extends React.Component {
           >
             7
           </Button>
-          <Button className="numLock">Clear</Button>
+          <Button onClick={(e) => this.clearNum (e, "value")} className="numLock">Clear</Button>
         </Button.Group>
         <Button.Group vertical>
           <Button
