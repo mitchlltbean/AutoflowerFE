@@ -4,11 +4,11 @@
   margin-left: 130px;
   margin-top: 50px;
   margin-right: auto;
+  width: 100%;
 }
 
 #input {
   border: 5px solid red;
-
   width: 500px;
   height: 100px !important;
   align-items: center !important;
@@ -25,6 +25,7 @@
   border-radius: 50px !important;
   font-size: 40px !important;
   font-family: "Rajdhani", sans-serif !important;
+  width: 100%;
 }
 /* Number Btn Style============================================================ */
 .num {
@@ -74,3 +75,9 @@
   background-color: teal !important;
   transform: translateY(10px);
 }
+
+
+/* #btnHolder{
+  margin-left: auto;
+  margin-right: auto;
+} */

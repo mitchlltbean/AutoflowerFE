@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "semantic-ui-react";
+import { Button, Container, Grid } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import "./style.css";
 
@@ -38,101 +38,11 @@ class Buttons extends React.Component {
     }
   };
 
-<<<<<<< HEAD
-
-=======
   //Cap the max-length (if/else)
->>>>>>> dev
-
-//Cap the max-length (if/else) 
 
   render() {
     return (
-<<<<<<< HEAD
-      <div id="btnHolder">
-        {this.state.keycode}
-
-        
-        <Button.Group vertical>
-          <Button
-            className="num"
-            onClick={(e) => this.feelNum(e, "value")}
-            value="1"
-          >
-            1
-          </Button>
-          <Button
-            className="num"
-            onClick={(e) => this.feelNum(e, "value")}
-            value="4"
-          >
-            4
-          </Button>
-          <Button
-            className="num"
-            onClick={(e) => this.feelNum(e, "value")}
-            value="7"
-          >
-            7
-          </Button>
-          <Button onClick={(e) => this.clearNum (e, "value")} className="numLock">Clear</Button>
-        </Button.Group>
-        <Button.Group vertical>
-          <Button
-            className="num"
-            onClick={(e) => this.feelNum(e, "value")}
-            value="2"
-          >
-            2
-          </Button>
-          <Button
-            className="num"
-            onClick={(e) => this.feelNum(e, "value")}
-            value="5"
-          >
-            5
-          </Button>
-          <Button
-            className="num"
-            onClick={(e) => this.feelNum(e, "value")}
-            value="8"
-          >
-            8
-          </Button>
-          <Button
-            className="num"
-            onClick={(e) => this.feelNum(e, "value")}
-            value="0"
-          >
-            0
-          </Button>
-        </Button.Group>
-        <Button.Group vertical>
-          <Button
-            className="num"
-            onClick={(e) => this.feelNum(e, "value")}
-            value="3"
-          >
-            3
-          </Button>
-          <Button
-            className="num"
-            onClick={(e) => this.feelNum(e, "value")}
-            value="6"
-          >
-            6
-          </Button>
-          <Button
-            className="num"
-            onClick={(e) => this.feelNum(e, "value")}
-            value="9"
-          >
-            9
-          </Button>
-          <Button onClick={(e) => this.checkNum(e, "value")}className="numLock">Check</Button>
-        </Button.Group>
-=======
-      <div id="landing">
+      <Container id="landing">
         <form>
           <input
             id="input"
@@ -140,8 +50,11 @@ class Buttons extends React.Component {
             onChange={this.checkNum}
           />
         </form>
-        <div id="btnHolder">
+
+        <div id="btnHolder" className="flex-container">
+
           <Button.Group vertical>
+
             <Button
               className="num"
               onClick={(e) => this.feelNum(e, "value")}
@@ -149,6 +62,7 @@ class Buttons extends React.Component {
             >
               1
             </Button>
+
             <Button
               className="num"
               onClick={(e) => this.feelNum(e, "value")}
@@ -156,6 +70,7 @@ class Buttons extends React.Component {
             >
               4
             </Button>
+
             <Button
               className="num"
               onClick={(e) => this.feelNum(e, "value")}
@@ -163,6 +78,7 @@ class Buttons extends React.Component {
             >
               7
             </Button>
+
             <Button
               onClick={(e) => this.clearNum(e, "value")}
               className="numLock"
@@ -171,6 +87,7 @@ class Buttons extends React.Component {
               Clear
             </Button>
           </Button.Group>
+
           <Button.Group vertical>
             <Button
               className="num"
@@ -201,6 +118,8 @@ class Buttons extends React.Component {
               0
             </Button>
           </Button.Group>
+
+
           <Button.Group vertical>
             <Button
               className="num"
@@ -231,9 +150,129 @@ class Buttons extends React.Component {
               Check
             </Button>
           </Button.Group>
-        </div>
->>>>>>> dev
+
+
+
+
+          {/* <Grid id="btnHolder" className="three column grid">
+
+            <Button.Group className="row">
+
+              <Button
+                className="num column"
+                onClick={(e) => this.feelNum(e, "value")}
+                value="1"
+              >
+                1
+            </Button>
+
+              <Button
+                className="num column"
+                onClick={(e) => this.feelNum(e, "value")}
+                value="4"
+              >
+                4
+             </Button>
+
+              <Button
+                className="num column"
+                onClick={(e) => this.feelNum(e, "value")}
+                value="7"
+              >
+                7
+            </Button>
+
+            </Button.Group>
+
+            <Button.Group className="row">
+
+              <Button
+                onClick={(e) => this.clearNum(e, "value")}
+                className="numLock column"
+                id="clear"
+              >
+                Clear
+              </Button>
+
+              <Button
+                className="num column"
+                onClick={(e) => this.feelNum(e, "value")}
+                value="2"
+              >
+                2
+               </Button>
+
+              <Button
+                className="num column"
+                onClick={(e) => this.feelNum(e, "value")}
+                value="5"
+              >
+                5
+               </Button>
+
+            </Button.Group>
+
+            <Button.Group className="row">
+              <Button
+                className="num column"
+                onClick={(e) => this.feelNum(e, "value")}
+                value="8"
+              >
+                8
+              </Button>
+
+              <Button
+                className="num column"
+                onClick={(e) => this.feelNum(e, "value")}
+                value="0"
+              >
+                0
+              </Button>
+
+              <Button
+                className="num column"
+                onClick={(e) => this.feelNum(e, "value")}
+                value="3"
+              >
+                3
+              </Button>
+
+            </Button.Group>
+
+            <Button.Group className="row">
+
+              <Button
+                className="num column"
+                onClick={(e) => this.feelNum(e, "value")}
+                value="6"
+              >
+                6
+              </Button>
+
+
+              <Button
+                className="num column"
+                onClick={(e) => this.feelNum(e, "value")}
+                value="9"
+              >
+                9
+              </Button>
+
+
+              <Button
+                onClick={(e) => this.checkNum(e, "value")}
+                className="numLock column"
+                id="check"
+              >
+                Check
+               </Button>
+
+            </Button.Group>
+
+          </Grid> */}
+
       </div>
+      </Container>
     );
   }
 }

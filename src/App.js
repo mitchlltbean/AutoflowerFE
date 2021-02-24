@@ -7,7 +7,6 @@ function App() {
   return (
     <Router>
       <div>
-        <h1>Test</h1>
         <Route exact path="/" component={Landing} />
       </div>
     </Router>
