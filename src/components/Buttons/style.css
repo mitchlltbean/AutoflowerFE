@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap");
+
+#landing {
+  margin-left: 130px;
+  margin-top: 50px;
+  margin-right: auto;
+}
+
+#input {
+  border: 5px solid red;
+
+  width: 500px;
+  height: 100px !important;
+  align-items: center !important;
+  margin-left: 150px;
+  font-size: 40px;
+  font-family: "Rajdhani", sans-serif !important;
+}
+
+.num,
+.numLock {
+  height: 180px;
+  width: 250px !important;
+  margin: 10px 10px 5px 10px !important;
+  border-radius: 50px !important;
+  font-size: 40px !important;
+  font-family: "Rajdhani", sans-serif !important;
+}
+/* Number Btn Style============================================================ */
+.num {
+  color: darkslategrey !important;
+  background-color: mediumseagreen !important;
+}
+
+.num:hover {
+  color: black !important;
+  background-color: seagreen !important;
+}
+
+.num:active {
+  color: black !important;
+  background-color: seagreen !important;
+  transform: translateY(10px);
+}
+/* Check Btn Style============================================================= */
+#check {
+  color: darkslategrey !important;
+  background-color: crimson !important;
+}
+
+#check:hover {
+  color: black !important;
+  background-color: firebrick !important;
+}
+
+#check:active {
+  color: black !important;
+  background-color: firebrick !important;
+  transform: translateY(10px);
+}
+/* Clear Btn Style=============================================================== */
+#clear {
+  color: darkslategrey !important;
+  background-color: lightseagreen !important;
+}
+
+#clear:hover {
+  color: black !important;
+  background-color: teal !important;
+}
+
+#clear:active {
+  color: black !important;
+  background-color: teal !important;
+  transform: translateY(10px);
+}

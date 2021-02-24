@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "semantic-ui-react";
-// import 'semantic-ui-css/semantic.min.css'
+import "semantic-ui-css/semantic.min.css";
+import "./style.css";
 
 class Buttons extends React.Component {
   state = {
@@ -41,9 +42,13 @@ class Buttons extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="landing">
         <form>
-          <input value={this.state.keycode} onChange={this.checkNum} />
+          <input
+            id="input"
+            value={this.state.keycode}
+            onChange={this.checkNum}
+          />
         </form>
         <div id="btnHolder">
           <Button.Group vertical>
@@ -71,6 +76,7 @@ class Buttons extends React.Component {
             <Button
               onClick={(e) => this.clearNum(e, "value")}
               className="numLock"
+              id="clear"
             >
               Clear
             </Button>
@@ -130,6 +136,7 @@ class Buttons extends React.Component {
             <Button
               onClick={(e) => this.checkNum(e, "value")}
               className="numLock"
+              id="check"
             >
               Check
             </Button>
