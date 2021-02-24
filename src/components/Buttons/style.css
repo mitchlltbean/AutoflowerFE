@@ -16,7 +16,7 @@
   font-size: 40px;
   font-family: "Rajdhani", sans-serif !important;
 }
-
+/* General Btn Styles========================================================== */
 .num,
 .numLock {
   height: 180px;
@@ -27,6 +27,7 @@
   font-family: "Rajdhani", sans-serif !important;
   width: 100%;
 }
+/* ============================================================================ */
 /* Number Btn Style============================================================ */
 .num {
   color: darkslategrey !important;
@@ -43,6 +44,7 @@
   background-color: seagreen !important;
   transform: translateY(10px);
 }
+/* ============================================================================ */
 /* Check Btn Style============================================================= */
 #check {
   color: darkslategrey !important;
@@ -59,7 +61,8 @@
   background-color: firebrick !important;
   transform: translateY(10px);
 }
-/* Clear Btn Style=============================================================== */
+/* ============================================================================ */
+/* Clear Btn Style============================================================= */
 #clear {
   color: darkslategrey !important;
   background-color: lightseagreen !important;
