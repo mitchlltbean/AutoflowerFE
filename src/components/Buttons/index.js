@@ -43,13 +43,16 @@ class Buttons extends React.Component {
 
   };
 
-//Cap the max-length (if/else) 
 
+
+//Cap the max-length (if/else) 
 
   render() {
     return (
       <div id="btnHolder">
         {this.state.keycode}
+
+        
         <Button.Group vertical>
           <Button
             className="num"
