@@ -4,7 +4,7 @@ import "semantic-ui-css/semantic.min.css";
 import { NavLink } from "react-router-dom";
 import "./style.css";
 
-export default class Nav extends Component {
+export default class sideMenu extends Component {
   state = { activePage: "Home" };
 
   handleTabClick = (e, { name }) => this.setState({ activePage: name });
