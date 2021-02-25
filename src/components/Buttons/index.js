@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "semantic-ui-react";
+import { Button, Container } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import "./style.css";
 
@@ -15,8 +15,6 @@ class Buttons extends React.Component {
     console.log(numeral);
     keycodeCopy += numeral;
 
-    // if (keycodeCopy.length < 5 ) { }
-
     this.setState({ keycode: keycodeCopy });
   };
 
@@ -26,32 +24,41 @@ class Buttons extends React.Component {
     this.setState({ keycode: "" });
   };
 
-  //Method to verify the input is correct
+  //Method to verify the input is correct/meets length requirements.
+  //Is it correct? 
   checkNum = () => {
     const keycode = this.state.keycode.length;
     if (keycode < 5) {
-      console.log("Make it longer!");
+      alert("Make it longer!");
+      return false;
     } else if (keycode > 5) {
-      console.log("Make it shorter!");
+      alert("Make it shorter!");
+      return false; 
     } else {
-      console.log("Thats about right!");
+      alert("Welcome to Autoflower!");
+      window.location.href ="/owner";
+      return true;
     }
   };
-
-  //Cap the max-length (if/else)
+  
 
   render() {
     return (
-      <div id="landing">
+      <div>
+
         <form>
           <input
             id="input"
             value={this.state.keycode}
             onChange={this.checkNum}
+            type ="password"
           />
         </form>
-        <div id="btnHolder">
-          <Button.Group vertical>
+
+        <Container id="btnHolder" className="flex-container">
+
+          <Button.Group vertical className ="key-group">
+
             <Button
               className="num"
               onClick={(e) => this.feelNum(e, "value")}
@@ -59,6 +66,7 @@ class Buttons extends React.Component {
             >
               1
             </Button>
+
             <Button
               className="num"
               onClick={(e) => this.feelNum(e, "value")}
@@ -66,6 +74,7 @@ class Buttons extends React.Component {
             >
               4
             </Button>
+
             <Button
               className="num"
               onClick={(e) => this.feelNum(e, "value")}
@@ -73,6 +82,7 @@ class Buttons extends React.Component {
             >
               7
             </Button>
+
             <Button
               onClick={(e) => this.clearNum(e, "value")}
               className="numLock"
@@ -81,7 +91,8 @@ class Buttons extends React.Component {
               Clear
             </Button>
           </Button.Group>
-          <Button.Group vertical>
+
+          <Button.Group vertical className ="key-group">
             <Button
               className="num"
               onClick={(e) => this.feelNum(e, "value")}
@@ -111,7 +122,9 @@ class Buttons extends React.Component {
               0
             </Button>
           </Button.Group>
-          <Button.Group vertical>
+
+
+          <Button.Group vertical className ="key-group">
             <Button
               className="num"
               onClick={(e) => this.feelNum(e, "value")}
@@ -141,7 +154,8 @@ class Buttons extends React.Component {
               Check
             </Button>
           </Button.Group>
-        </div>
+
+      </Container>
       </div>
     );
   }
