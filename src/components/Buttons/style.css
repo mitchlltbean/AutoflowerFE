@@ -3,8 +3,8 @@
 #landing {
   margin-left: 130px;
   margin-top: 50px;
-  margin-right: auto; 
-
+  position: relative;
+  
 }
 
 #input {
@@ -85,7 +85,40 @@
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
-  width: fit-content;
-  /* position: absolute; */
+  width: 100%;
 
 }
+
+/*Add property to hold the Button.Group in their place*/
+/* ui.button.group.key-group {
+  position: fixed;
+} */
+ 
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+  #btnHolder {width: 50%;}
+  .num {width: 50%;}
+  .numLock {width: 50%;}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  #btnHolder {width: 50%;};
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  #btnHolder {width: 75%};
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  #btnHolder {width: 100%};
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  #btnHolder {width: 100%};
+} 

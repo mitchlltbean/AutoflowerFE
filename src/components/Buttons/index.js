@@ -29,24 +29,23 @@ class Buttons extends React.Component {
   checkNum = () => {
     const keycode = this.state.keycode.length;
     if (keycode < 5) {
-      console.log("Make it longer!");
+      alert("Make it longer!");
       return false;
     } else if (keycode > 5) {
-      console.log("Make it shorter!");
+      alert("Make it shorter!");
       return false; 
     } else {
-      console.log("Thats about right!");
+      alert("Welcome to Autoflower!");
       window.location.href ="/owner";
+      return true;
     }
   };
-
-
-  //Let the user know if the password is correct or incorrect. 
   
 
   render() {
     return (
-      <div id="landing">
+      <div>
+
         <form>
           <input
             id="input"
@@ -58,7 +57,7 @@ class Buttons extends React.Component {
 
         <Container id="btnHolder" className="flex-container">
 
-          <Button.Group vertical>
+          <Button.Group vertical className ="key-group">
 
             <Button
               className="num"
@@ -93,7 +92,7 @@ class Buttons extends React.Component {
             </Button>
           </Button.Group>
 
-          <Button.Group vertical>
+          <Button.Group vertical className ="key-group">
             <Button
               className="num"
               onClick={(e) => this.feelNum(e, "value")}
@@ -125,7 +124,7 @@ class Buttons extends React.Component {
           </Button.Group>
 
 
-          <Button.Group vertical>
+          <Button.Group vertical className ="key-group">
             <Button
               className="num"
               onClick={(e) => this.feelNum(e, "value")}
@@ -151,7 +150,6 @@ class Buttons extends React.Component {
               onClick={(e) => this.checkNum(e, "value")}
               className="numLock"
               id="check"
-              // onChange ={handleInputChange}
             >
               Check
             </Button>
