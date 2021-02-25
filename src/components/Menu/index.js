@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import { Grid, Menu, Segment } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import { NavLink } from "react-router-dom";
+import "./style.css";
 
-export default class Nav extends Component {
+export default class sideMenu extends Component {
   state = { activePage: "Home" };
 
   handleTabClick = (e, { name }) => this.setState({ activePage: name });
@@ -11,8 +12,8 @@ export default class Nav extends Component {
   render() {
     const { activePage } = this.state;
     return (
-      <Grid>
-        <Grid.Row width={16}>
+      <div>
+        <Grid.Row stretched>
           <Segment inverted>
             <Menu inverted pointing secondary>
               <Menu.Item
@@ -46,6 +47,9 @@ export default class Nav extends Component {
                 name="Weedvintory"
                 active={activePage === "Weedvintory"}
                 onClick={this.handleTabClick}
+                // TODO have onclick render component for each item
+                // TODO link this to components that will hold the information from the database, perhaps rope it in with the active Page state
+                // TODO create event listoners for each tab so that it renders the right information when selected
               />
               <Menu.Item
                 name="Employees"
@@ -74,12 +78,12 @@ export default class Nav extends Component {
             {/* TODO: probably want to switch between segments to correspond with the menu */}
             {/* TODO: possible dropdown with Help/Contact/FAQ type of deal */}
             <Segment>
-              Here be words... lots a words... so many words there might even be
-              5
+              Here will be appended all the various information from the
+              database
             </Segment>
           </Grid.Column>
         </Grid>
-      </Grid>
+      </div>
     );
   }
 }

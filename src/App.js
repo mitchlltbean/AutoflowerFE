@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Landing from "./pages/Landing";
-import Owner from "./pages/Owner";
+import Home from "./pages/Home";
 import "./App.css";
 
 function App() {
@@ -10,11 +10,11 @@ function App() {
       <div>
         <Switch>
           <Route exact path="/" component={Landing} />
-          <Route exact path="/owner" component={Owner} />
+          <Route exact path="/home" component={Home} render={() => <Home />} />
         </Switch>
       </div>
     </Router>
-  );
+  ); //TODO perhaps something in App to render only when the user is a manager/owner, and to not render when the user is an employee
 }
 
 export default App;

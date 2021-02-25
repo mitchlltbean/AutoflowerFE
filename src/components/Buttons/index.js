@@ -25,7 +25,7 @@ class Buttons extends React.Component {
   };
 
   //Method to verify the input is correct/meets length requirements.
-  //Is it correct? 
+  //Is it correct?
   checkNum = () => {
     const keycode = this.state.keycode.length;
     if (keycode < 5) {
@@ -33,32 +33,28 @@ class Buttons extends React.Component {
       return false;
     } else if (keycode > 5) {
       alert("Make it shorter!");
-      return false; 
+      return false;
     } else {
       alert("Welcome to Autoflower!");
-      window.location.href ="/owner";
+      window.location.href = "/owner";
       return true;
     }
   };
-  
 
   render() {
     return (
       <div>
-
         <form>
           <input
             id="input"
             value={this.state.keycode}
             onChange={this.checkNum}
-            type ="password"
+            type="password"
           />
         </form>
 
         <Container id="btnHolder" className="flex-container">
-
-          <Button.Group vertical className ="key-group">
-
+          <Button.Group vertical className="key-group">
             <Button
               className="num"
               onClick={(e) => this.feelNum(e, "value")}
@@ -92,7 +88,7 @@ class Buttons extends React.Component {
             </Button>
           </Button.Group>
 
-          <Button.Group vertical className ="key-group">
+          <Button.Group vertical className="key-group">
             <Button
               className="num"
               onClick={(e) => this.feelNum(e, "value")}
@@ -123,8 +119,7 @@ class Buttons extends React.Component {
             </Button>
           </Button.Group>
 
-
-          <Button.Group vertical className ="key-group">
+          <Button.Group vertical className="key-group">
             <Button
               className="num"
               onClick={(e) => this.feelNum(e, "value")}
@@ -154,8 +149,7 @@ class Buttons extends React.Component {
               Check
             </Button>
           </Button.Group>
-
-      </Container>
+        </Container>
       </div>
     );
   }
