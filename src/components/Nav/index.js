@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Grid, Menu, Segment } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import { NavLink } from "react-router-dom";
+import "./style.css";
 
 export default class Nav extends Component {
   state = { activePage: "Home" };
@@ -11,8 +12,8 @@ export default class Nav extends Component {
   render() {
     const { activePage } = this.state;
     return (
-      <Grid>
-        <Grid.Row width={16}>
+      <div>
+        <Grid.Row stretched>
           <Segment inverted>
             <Menu inverted pointing secondary>
               <Menu.Item
@@ -79,7 +80,7 @@ export default class Nav extends Component {
             </Segment>
           </Grid.Column>
         </Grid>
-      </Grid>
+      </div>
     );
   }
 }
