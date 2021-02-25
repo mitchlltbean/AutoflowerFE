@@ -14,7 +14,7 @@ function App() {
         </Switch>
       </div>
     </Router>
-  );
+  ); //TODO perhaps something in App to render only when the user is a manager/owner, and to not render when the user is an employee
 }
 
 export default App;
