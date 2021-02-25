@@ -2,6 +2,7 @@
   border: red 3px solid;
   border-radius: 65px;
   margin: auto 300px;
-  height: 1000px;
+  height: 100%;
   width: auto;
+  align-items: center;
 }

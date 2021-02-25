@@ -3,8 +3,8 @@
 #landing {
   margin-left: 130px;
   margin-top: 50px;
-  margin-right: auto;
-  width: 100%;
+  margin-right: auto; 
+
 }
 
 #input {
@@ -26,6 +26,7 @@
   font-size: 40px !important;
   font-family: "Rajdhani", sans-serif !important;
   width: 100%;
+  display: static;
 }
 /* ============================================================================ */
 /* Number Btn Style============================================================ */
@@ -80,7 +81,11 @@
 }
 
 
-/* #btnHolder{
+#btnHolder{
   margin-left: auto;
   margin-right: auto;
-} */
+  justify-content: center;
+  width: fit-content;
+  /* position: absolute; */
+
+}
