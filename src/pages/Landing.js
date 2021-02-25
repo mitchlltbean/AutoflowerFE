@@ -4,9 +4,9 @@ import Buttons from "../components/Buttons";
 
 function Landing() {
   return (
-    <div id="landingPage">
-      <Buttons />
-    </div>
+      <div id="landingPage">
+        <Buttons />
+      </div>
   );
 }
 

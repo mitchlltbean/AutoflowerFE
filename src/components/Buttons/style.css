@@ -3,12 +3,12 @@
 #landing {
   margin-left: 130px;
   margin-top: 50px;
-  margin-right: auto;
+  position: relative;
+  
 }
 
 #input {
   border: 5px solid red;
-
   width: 500px;
   height: 100px !important;
   align-items: center !important;
@@ -25,6 +25,8 @@
   border-radius: 50px !important;
   font-size: 40px !important;
   font-family: "Rajdhani", sans-serif !important;
+  width: 100%;
+  display: static;
 }
 /* ============================================================================ */
 /* Number Btn Style============================================================ */
@@ -77,3 +79,46 @@
   background-color: teal !important;
   transform: translateY(10px);
 }
+
+
+#btnHolder{
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  width: 100%;
+
+}
+
+/*Add property to hold the Button.Group in their place*/
+/* ui.button.group.key-group {
+  position: fixed;
+} */
+ 
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+  #btnHolder {width: 50%;}
+  .num {width: 50%;}
+  .numLock {width: 50%;}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  #btnHolder {width: 50%;};
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  #btnHolder {width: 75%};
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  #btnHolder {width: 100%};
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  #btnHolder {width: 100%};
+} 
