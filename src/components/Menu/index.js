@@ -1,11 +1,11 @@
 import React, { useState, forwardRef } from "react";
-import { List, ListItem, Collapse, Button, Drawer } from "@material-ui/core";
+import { List, ListItem, Button, Drawer } from "@material-ui/core"; // "Collapse," removed due to it only applying to sub-menu's
 import clsx from "clsx";
-import { ExpandLess, ExpandMore } from "@material-ui/icons";
 import { NavLink as RouterLink } from "react-router-dom";
 import menuItems from "./sideMenuItems";
 import useStyles from "./sideBarStyles";
 
+//when user info is gathered one can compare the rolls
 const Menu = (props) => {
   const [menu, setMenu] = useState({});
   const { className, ...rest } = props;
@@ -14,60 +14,74 @@ const Menu = (props) => {
     let newData = { ...menu, [item]: !menu[item] };
     setMenu(newData);
   };
+
   const CustomRouterLink = forwardRef((props, ref) => (
     <div ref={ref} style={{ flexGrow: 1 }}>
       <RouterLink {...props} />
     </div>
   ));
+
   const handleMenu = (children, level = 0) => {
-    return children.map(({ children, name, url, links }) => {
-      if (!children) {
-        return (
-          <List component="div" disablePadding key={name}>
-            <ListItem
-              className={classes.item}
-              disableGutters
-              style={{ padding: "0px" }}
-              key={name}
-            >
-              <Button
-                className={clsx({
-                  [classes.btnRoot]: true,
-                  [classes.button]: true,
-                  [classes.subMenu]: level,
-                })}
-                component={CustomRouterLink}
-                to={url}
-              >
-                {name}
-              </Button>
-            </ListItem>
-          </List>
-        );
-      }
+    // "children," removed as a pass-in as it is not needed atm
+
+    return children.map(({ name, url, links }) => {
       return (
-        <div key={name}>
+        // TODO if(!adminOnly || isManager){} would hide the link to the page, once on the page, before loading test to see if manager or not, if not redirect to sign-in page
+        // TODO either hide the links from the plebes entirely or automatically send them back to login page
+        // =====Code for setting menu items==============================================================
+        <List component="div" disablePadding key={name}>
           <ListItem
             className={classes.item}
             disableGutters
+            style={{ padding: "0px" }}
             key={name}
-            onClick={() => handleClick(name)}
           >
+            {/*=====Code for rendering each menu item==================================================================*/}
+            {/*  */}
             <Button
               className={clsx({
                 [classes.btnRoot]: true,
                 [classes.button]: true,
                 [classes.subMenu]: level,
               })}
+              component={CustomRouterLink}
+              to={url}
             >
-              {name} {menu[name] ? <ExpandLess /> : <ExpandMore />}
+              {name}
             </Button>
+            {/* ======================================================================================== */}
           </ListItem>
-          <Collapse in={menu[name] ? true : false} timeout="auto" unmountOnExit>
-            {handleMenu(children, 1)}
-          </Collapse>
-        </div>
+        </List>
       );
+      //=========================Code for Sub-Menu's=======================================================
+      // if (!children) {} -- goes around the above code
+      //--
+      // import { ExpandLess, ExpandMore } from "@material-ui/icons";
+      //--
+      // return (
+      //   <div key={name}>
+      //     <ListItem
+      //       className={classes.item}
+      //       disableGutters
+      //       key={name}
+      //       onClick={() => handleClick(name)}
+      //     >
+      //       <Button
+      //         className={clsx({
+      //           [classes.btnRoot]: true,
+      //           [classes.button]: true,
+      //           [classes.subMenu]: level,
+      //         })}
+      //       >
+      //         {name} {menu[name] ? <ExpandLess /> : <ExpandMore />}
+      //       </Button>
+      //     </ListItem>
+      //     <Collapse in={menu[name] ? true : false} timeout="auto" unmountOnExit>
+      //       {handleMenu(children, 1)}
+      //     </Collapse>
+      //   </div>
+      // );
+      //===================================================================================================
     });
   };
 

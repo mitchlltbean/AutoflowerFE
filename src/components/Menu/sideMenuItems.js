@@ -1,59 +1,25 @@
+// TODO Methinks that this is where one would call the pages made for each menu item
+// When user makes an account hordcode evryone as a user and figure out how to make these users an admin
+// name, url, adminOnly: true/false
+
 export default {
   data: [
     {
       name: "Employees",
       url: "/employees",
-    },
-    {
-      name: "Weedvintory",
-      url: "/inventory",
+      // adminOnly: true
     },
     {
       name: "Sales",
-      children: [
-        {
-          name: "Stats",
-          url: "/stats",
-        },
-        {
-          name: "Net-Gain",
-          url: "/gains",
-        },
-        {
-          name: "Net-Loss",
-          url: "/losses",
-        },
-      ],
+      url: "/sales",
     },
     {
-      name: "Other",
-      children: [
-        {
-          name: "Thing",
-          url: "/child41",
-        },
-        {
-          name: "Horses",
-          url: "/child42",
-        },
-        {
-          name: "Molases",
-          children: [
-            {
-              name: "Fools",
-              url: "/child431",
-            },
-            {
-              name: "Feinds",
-              url: "/child432,",
-            },
-            {
-              name: "Fido",
-              url: "/child433",
-            },
-          ],
-        },
-      ],
+      name: "Manage Products",
+      url: "/products",
+    },
+    {
+      name: "Statistics",
+      url: "/stats",
     },
   ],
 };
