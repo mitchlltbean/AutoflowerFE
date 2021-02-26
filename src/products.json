@@ -6,7 +6,7 @@
         "description": "Balanced, one of our most creatively inspiring with a euphoric kick. Earthy skunk with hints of citrus",
         "price": "30",
         "instock": "Yes"
-    }
+    },
 
     {
         "id": 2,
@@ -15,7 +15,7 @@
         "description": "Placeholder",
         "price": "30",
         "instock": "No"
-    }
+    },
 
     {
         "id": 3,
@@ -24,7 +24,7 @@
         "description": "A spacey, yet uplifting cross with an intensely sweet tropical candy nose",
         "price": "30",
         "instock": "Yes"
-    }
+    },
 
 
         {
@@ -34,7 +34,7 @@
         "description": "A potent, psychedelic portal to a dimension just beyond our own",
         "price": "30",
         "instock": "No"
-    }
+    },
 
             {
         "id": 5,
@@ -43,7 +43,7 @@
         "description": "Montana with balanced fuel and body high and full herbaceious flavor",
         "price": "30",
         "instock": "Yes"
-    }
+    },
                 {
         "id": 6,
         "item": "White Fire Alien OG",
