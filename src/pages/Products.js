@@ -11,8 +11,6 @@ function Products() {
 
                 <h1>Projects</h1>
 
-              <DataTable />
-
                 {products.map(product => (
                 
                     <ItemCard
@@ -22,6 +20,8 @@ function Products() {
                     instock={product.instock}
                     />
                     ))}   
+                    
+          <DataTable />
 
 
     </div>
