@@ -8,10 +8,6 @@ function Landing() {
   return (
     <div>
       <Buttons />
-
-      <DataTable />
-
-      <Sales />
     </div>
   );
 }
