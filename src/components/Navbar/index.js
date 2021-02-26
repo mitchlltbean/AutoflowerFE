@@ -23,9 +23,9 @@ export default class Navbar extends Component {
               </Menu.Item>
               <Menu.Item
                 as={NavLink}
-                to="/home"
+                to="/dashboard"
                 name="Home"
-                active={activePage === "Home"}
+                active={activePage === "Dashboard"}
                 onClick={this.handleTabClick}
               />
               <Menu.Item
