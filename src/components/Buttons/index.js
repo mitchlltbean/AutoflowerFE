@@ -1,6 +1,5 @@
 import React from "react";
-import { Button} from "semantic-ui-react";
-import "semantic-ui-css/semantic.min.css";
+import { Button, Container } from "semantic-ui-react";
 import "./style.css";
 
 class Buttons extends React.Component {
