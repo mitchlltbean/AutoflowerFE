@@ -1,7 +1,6 @@
 import React from "react";
 import "./style.css";
 import Buttons from "../components/Buttons";
-import DataTable from "../components/DataTable";
 
 function Landing() {
   return (
@@ -9,7 +8,6 @@ function Landing() {
         
         <Buttons />
 
-      <DataTable />
       
       </div>
   );
