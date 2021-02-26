@@ -9,10 +9,12 @@ import "./style.css";
 const useStyles = makeStyles({
     root: {
       minWidth: 275,
-      maxWidth: 375,
+      maxWidth: 300,
+      width: 'calc(100% / 4)',
       margin: '2rem',
       position:'relative',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      backgroundColor: 'blue',
 
 
     },
