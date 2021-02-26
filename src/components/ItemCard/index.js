@@ -9,6 +9,12 @@ import "./style.css";
 const useStyles = makeStyles({
     root: {
       minWidth: 275,
+      maxWidth: 375,
+      margin: '2rem',
+      position:'relative',
+      justifyContent: 'center'
+
+
     },
     bullet: {
       display: 'inline-block',
