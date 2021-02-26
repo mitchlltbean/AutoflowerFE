@@ -9,9 +9,7 @@ function Products() {
     <div id="productsPage">
       <Menu />
       <div id="productsWrapper">
-        <h1>Sales</h1>
-
-        <h1>Projects</h1>
+        <h1>Products</h1>
 
         <DataTable />
 
