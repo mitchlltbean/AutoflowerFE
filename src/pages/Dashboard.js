@@ -1,12 +1,12 @@
 import React from "react";
 import Nav from "../components/Menu";
 
-function Home() {
+function Dashboard() {
   return (
-    <div id="homePage">
+    <div id="dashboardPage">
       <Nav />
     </div>
   );
 }
 
-export default Home;
+export default Dashboard;
