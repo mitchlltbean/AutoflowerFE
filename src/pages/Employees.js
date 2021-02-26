@@ -1,11 +1,13 @@
 import React from "react";
-import Menu from "../Menu";
+import Menu from "../components/Menu";
 
 function Employees() {
   return (
     <div>
       <Menu />
-      <h1>Employees Page</h1>
+      <div id="employeePage">
+        <h1>Employees Page</h1>
+      </div>
     </div>
   );
 }

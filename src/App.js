@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Landing from "./pages/Landing";
 import Dashboard from "./pages/Dashboard";
-import Employees from "./components/Employees/index";
+import Employees from "./pages/Employees";
 import Sales from "./components/Sales/index";
 import Products from "./components/Products/index";
 import Stats from "./components/Stats/index";
