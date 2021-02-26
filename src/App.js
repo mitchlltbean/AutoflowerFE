@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Landing from "./pages/Landing";
 import Dashboard from "./pages/Dashboard";
 import Employees from "./pages/Employees";
-import Sales from "./components/Sales/index";
-import Products from "./components/Products/index";
-import Stats from "./components/Stats/index";
+import Sales from "./pages/Sales";
+import Products from "./pages/Products";
+import Stats from "./pages/Stats";
 import "./App.css";
 import Navbar from "./components/Navbar";
 
