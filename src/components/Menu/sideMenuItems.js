@@ -6,9 +6,9 @@
 export default {
   data: [
     {
+      // Tried imorting the component itself to the page, only made the list vanish
       name: "Employees",
       url: "/employees",
-      // adminOnly: true
     },
     {
       name: "Sales",
