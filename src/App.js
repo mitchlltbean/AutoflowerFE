@@ -3,11 +3,13 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Landing from "./pages/Landing";
 import Dashboard from "./pages/Dashboard";
 import "./App.css";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <Router>
       <div>
+        <Navbar />
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route
