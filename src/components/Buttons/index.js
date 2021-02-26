@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container} from "semantic-ui-react";
+import { Button} from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import "./style.css";
 
@@ -46,14 +46,14 @@ class Buttons extends React.Component {
     return (
       <div>
 
-        <Container className="container">
+        <div className="container">
           <div className="keypad">
 
             <input
               id="input"
               value={this.state.keycode}
               onChange={this.checkNum}
-              type="text"
+              type="password"
               // On error display a message on page (no alerts)
               error={{
                 content: 'Please enter a valid key',
@@ -176,7 +176,7 @@ class Buttons extends React.Component {
         </div>
 
 
-      </Container>
+      </div>
      </div>
     );
   }

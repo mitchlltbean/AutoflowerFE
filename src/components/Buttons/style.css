@@ -23,6 +23,7 @@ body {
   margin: auto;
   font-size: 40px;
   font-family: "Rajdhani", sans-serif !important; 
+
 }
 
 .keypad {
@@ -37,11 +38,13 @@ body {
   width: calc(100% / 3);
   margin: 10px 10px 5px 10px !important;
   border-radius: 3rem !important;
-  font-size: 40px !important;
+  font-size: 2.5em !important;
   font-family: "Rajdhani", sans-serif !important;
   text-align: center;
   min-width: 75px;
   min-height: 75px;
+
+  /* contain content */
 
 }
 
