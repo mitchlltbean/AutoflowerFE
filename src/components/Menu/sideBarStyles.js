@@ -7,7 +7,8 @@ const useStyles = makeStyles((theme) => ({
   },
   drawer: {
     paddingTop: "20px",
-    width: "250px",
+    width: "12%",
+    marginTop: "86px",
   },
   item: {
     display: "flex",

@@ -1,54 +1,54 @@
 export default {
   data: [
     {
-      name: "Item1",
-      url: "/item1",
+      name: "Employees",
+      url: "/employees",
     },
     {
-      name: "Item2",
-      url: "/item2",
+      name: "Weedvintory",
+      url: "/inventory",
     },
     {
-      name: "Item3",
+      name: "Sales",
       children: [
         {
-          name: "Child31",
-          url: "/child31",
+          name: "Stats",
+          url: "/stats",
         },
         {
-          name: "Child32",
-          url: "/child32",
+          name: "Net-Gain",
+          url: "/gains",
         },
         {
-          name: "Child33",
-          url: "/child33",
+          name: "Net-Loss",
+          url: "/losses",
         },
       ],
     },
     {
-      name: "Item4",
+      name: "Other",
       children: [
         {
-          name: "Child41",
+          name: "Thing",
           url: "/child41",
         },
         {
-          name: "Child42",
+          name: "Horses",
           url: "/child42",
         },
         {
-          name: "Child43",
+          name: "Molases",
           children: [
             {
-              name: "Child431",
+              name: "Fools",
               url: "/child431",
             },
             {
-              name: "Child432",
+              name: "Feinds",
               url: "/child432,",
             },
             {
-              name: "Child433",
+              name: "Fido",
               url: "/child433",
             },
           ],
