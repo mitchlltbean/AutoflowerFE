@@ -1,46 +1,7 @@
 import React from 'react'
 import { useTable, usePagination } from 'react-table'
 import makeData from './makeData'
-
-// const Styles = div`
-//   padding: 1rem;
-
-//   table {
-//     border-spacing: 0;
-//     border: 1px solid black;
-
-//     tr {
-//       :last-child {
-//         td {
-//           border-bottom: 0;
-//         }
-//       }
-//     }
-
-//     th,
-//     td {
-//       margin: 0;
-//       padding: 0.5rem;
-//       border-bottom: 1px solid black;
-//       border-right: 1px solid black;
-
-//       :last-child {
-//         border-right: 0;
-//       }
-
-//       input {
-//         font-size: 1rem;
-//         padding: 0;
-//         margin: 0;
-//         border: 0;
-//       }
-//     }
-//   }
-
-//   .pagination {
-//     padding: 0.5rem;
-//   }
-// `
+import "./style.css";
 
 // Create an editable cell renderer
 const EditableCell = ({
@@ -192,12 +153,12 @@ function DataTable() {
         Header: 'Name',
         columns: [
           {
-            Header: 'First Name',
-            accessor: 'firstName',
+            Header: 'Name',
+            accessor: 'name',
           },
           {
-            Header: 'Last Name',
-            accessor: 'lastName',
+            Header: 'Category',
+            accessor: 'category',
           },
         ],
       },
@@ -205,20 +166,20 @@ function DataTable() {
         Header: 'Info',
         columns: [
           {
-            Header: 'Age',
-            accessor: 'age',
+            Header: 'Description',
+            accessor: 'description',
           },
           {
-            Header: 'Visits',
-            accessor: 'visits',
+            Header: 'Image',
+            accessor: 'image',
           },
           {
             Header: 'Status',
             accessor: 'status',
           },
           {
-            Header: 'Profile Progress',
-            accessor: 'progress',
+            Header: 'Stock',
+            accessor: 'stock',
           },
         ],
       },
@@ -236,6 +197,7 @@ function DataTable() {
   // When our cell renderer calls updateMyData, we'll use
   // the rowIndex, columnId and new value to update the
   // original data
+
   const updateMyData = (rowIndex, columnId, value) => {
     // We also turn on the flag to not reset the page
     setSkipPageReset(true)
@@ -252,9 +214,10 @@ function DataTable() {
     )
   }
 
-  // After data chagnes, we turn the flag back off
+  // After data changes, we turn the flag back off
   // so that if data actually changes when we're not
   // editing it, the page is reset
+  
   React.useEffect(() => {
     setSkipPageReset(false)
   }, [data])
