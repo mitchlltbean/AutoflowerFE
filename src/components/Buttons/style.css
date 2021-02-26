@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap");
 
-body {
-  margin: 0
+* {
+  margin: 0;
+  
+  
 }
 
 .container {
@@ -9,9 +11,10 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100vw;
+  /* This width property affects the width of the buttons */
+  width: 65vw;
   margin: 0 auto;
-  margin-top: 20rem;
+  margin-bottom: 3rem;
   background-color: lightgray;
 }
 
@@ -21,6 +24,7 @@ body {
   height: 6.25rem;
   align-items: center !important;
   margin: auto;
+  margin-bottom: 1em;
   font-size: 40px;
   font-family: "Rajdhani", sans-serif !important; 
 
@@ -43,10 +47,8 @@ body {
   text-align: center;
   min-width: 75px;
   min-height: 75px;
-
-  /* contain content */
-
 }
+
 
 .button_row {
   display: flex;
