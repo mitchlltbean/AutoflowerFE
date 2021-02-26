@@ -1,12 +1,55 @@
 [
+    {
+        "id": 1,
+        "item": "Cin X",
+        "img": "Placeholder",
+        "description": "Balanced, one of our most creatively inspiring with a euphoric kick. Earthy skunk with hints of citrus",
+        "price": "30",
+        "instock": "Yes"
+    }
 
     {
-"id": 2,
-"item": "Cin X" ,
-"img": "Placeholder",
-"description": "Balanced, one of our most creatively inspiring with a euphoric kick. Earthy skunk with hints of citrus" ,
-"price": "30", 
-"instock" "Yes",
-}
-  
+        "id": 2,
+        "item": "Durban Poison",
+        "img": "Placeholder",
+        "description": "Placeholder",
+        "price": "30",
+        "instock": "No"
+    }
+
+    {
+        "id": 3,
+        "item": "Dutch Haze",
+        "img": "Placeholder",
+        "description": "A spacey, yet uplifting cross with an intensely sweet tropical candy nose",
+        "price": "30",
+        "instock": "Yes"
+    }
+
+
+        {
+        "id": 4,
+        "item": "High Plains Drifter",
+        "img": "Placeholder",
+        "description": "A potent, psychedelic portal to a dimension just beyond our own",
+        "price": "30",
+        "instock": "No"
+    }
+
+            {
+        "id": 5,
+        "item": "Silver Tip",
+        "img": "Placeholder",
+        "description": "Montana with balanced fuel and body high and full herbaceious flavor",
+        "price": "30",
+        "instock": "Yes"
+    }
+                {
+        "id": 6,
+        "item": "White Fire Alien OG",
+        "img": "Placeholder",
+        "description": "Out-of-this-world stoney mirage with a deep, earthy flavor",
+        "price": "30",
+        "instock": "Yes"
+    }
 ]
