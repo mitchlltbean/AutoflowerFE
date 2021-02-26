@@ -197,6 +197,7 @@ function DataTable() {
   // When our cell renderer calls updateMyData, we'll use
   // the rowIndex, columnId and new value to update the
   // original data
+
   const updateMyData = (rowIndex, columnId, value) => {
     // We also turn on the flag to not reset the page
     setSkipPageReset(true)
@@ -213,9 +214,10 @@ function DataTable() {
     )
   }
 
-  // After data chagnes, we turn the flag back off
+  // After data changes, we turn the flag back off
   // so that if data actually changes when we're not
   // editing it, the page is reset
+  
   React.useEffect(() => {
     setSkipPageReset(false)
   }, [data])
