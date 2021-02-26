@@ -36,7 +36,7 @@ class Buttons extends React.Component {
       return false;
     } else {
       alert("Welcome to Autoflower!");
-      window.location.href = "/home";
+      window.location.href = "/dashboard";
       return true;
     }
   };
