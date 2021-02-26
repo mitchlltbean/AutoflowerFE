@@ -5,6 +5,7 @@ import { NavLink as RouterLink } from "react-router-dom";
 import menuItems from "./sideMenuItems";
 import useStyles from "./sideBarStyles";
 
+//when user info is gathered one can compare the rolls
 const Menu = (props) => {
   const [menu, setMenu] = useState({});
   const { className, ...rest } = props;
@@ -13,41 +14,47 @@ const Menu = (props) => {
     let newData = { ...menu, [item]: !menu[item] };
     setMenu(newData);
   };
+
   const CustomRouterLink = forwardRef((props, ref) => (
     <div ref={ref} style={{ flexGrow: 1 }}>
       <RouterLink {...props} />
     </div>
   ));
+
   const handleMenu = (children, level = 0) => {
-    return children.map(({ children, name, url, links }) => {
-      if (!children) {
-        return (
-          // =====Code for setting menu items==============================================================
-          <List component="div" disablePadding key={name}>
-            <ListItem
-              className={classes.item}
-              disableGutters
-              style={{ padding: "0px" }}
-              key={name}
+    // "children," removed as a pass-in as it is not needed atm
+
+    return children.map(({ name, url, links }) => {
+      return (
+        // TODO if(!adminOnly || isManager){} would hide the link to the page, once on the page, before loading test to see if manager or not, if not redirect to sign-in page
+        // TODO either hide the links from the plebes entirely or automatically send them back to login page
+        // =====Code for setting menu items==============================================================
+        <List component="div" disablePadding key={name}>
+          <ListItem
+            className={classes.item}
+            disableGutters
+            style={{ padding: "0px" }}
+            key={name}
+          >
+            {/*=====Code for rendering each menu item==================================================================*/}
+            {/*  */}
+            <Button
+              className={clsx({
+                [classes.btnRoot]: true,
+                [classes.button]: true,
+                [classes.subMenu]: level,
+              })}
+              component={CustomRouterLink}
+              to={url}
             >
-              {/*=====Code for rendering each menu item==================================================================*/}
-              <Button
-                className={clsx({
-                  [classes.btnRoot]: true,
-                  [classes.button]: true,
-                  [classes.subMenu]: level,
-                })}
-                component={CustomRouterLink}
-                to={url}
-              >
-                {name}
-              </Button>
-              {/* ======================================================================================== */}
-            </ListItem>
-          </List>
-        );
-      }
+              {name}
+            </Button>
+            {/* ======================================================================================== */}
+          </ListItem>
+        </List>
+      );
       //=========================Code for Sub-Menu's=======================================================
+      // if (!children) {} -- goes around the above code
       //--
       // import { ExpandLess, ExpandMore } from "@material-ui/icons";
       //--
