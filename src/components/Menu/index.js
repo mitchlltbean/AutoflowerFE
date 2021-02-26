@@ -1,89 +1,104 @@
-import React, { Component } from "react";
-import { Grid, Menu, Segment } from "semantic-ui-react";
-import "semantic-ui-css/semantic.min.css";
-import { NavLink } from "react-router-dom";
-import "./style.css";
+import React, { useState, forwardRef } from "react";
+import { List, ListItem, Collapse, Button, Drawer } from "@material-ui/core";
+import clsx from "clsx";
+import { ExpandLess, ExpandMore } from "@material-ui/icons";
+import { NavLink as RouterLink } from "react-router-dom";
+import menuItems from "./sideMenuItems";
+import useStyles from "./sideBarStyles";
 
-export default class sideMenu extends Component {
-  state = { activePage: "Home" };
+const Menu = (props) => {
+  const [menu, setMenu] = useState({});
+  const { className, ...rest } = props;
+  const classes = useStyles();
+  const handleClick = (item) => {
+    let newData = { ...menu, [item]: !menu[item] };
+    setMenu(newData);
+  };
+  const CustomRouterLink = forwardRef((props, ref) => (
+    <div ref={ref} style={{ flexGrow: 1 }}>
+      <RouterLink {...props} />
+    </div>
+  ));
+  const handleMenu = (children, level = 0) => {
+    return children.map(({ children, name, url, links }) => {
+      if (!children) {
+        return (
+          <List component="div" disablePadding key={name}>
+            <ListItem
+              className={classes.item}
+              disableGutters
+              style={{ padding: "0px" }}
+              key={name}
+            >
+              <Button
+                className={clsx({
+                  [classes.btnRoot]: true,
+                  [classes.button]: true,
+                  [classes.subMenu]: level,
+                })}
+                component={CustomRouterLink}
+                to={url}
+              >
+                {name}
+              </Button>
+            </ListItem>
+          </List>
+        );
+      }
+      return (
+        <div key={name}>
+          <ListItem
+            className={classes.item}
+            disableGutters
+            key={name}
+            onClick={() => handleClick(name)}
+          >
+            <Button
+              className={clsx({
+                [classes.btnRoot]: true,
+                [classes.button]: true,
+                [classes.subMenu]: level,
+              })}
+            >
+              {name} {menu[name] ? <ExpandLess /> : <ExpandMore />}
+            </Button>
+          </ListItem>
+          <Collapse in={menu[name] ? true : false} timeout="auto" unmountOnExit>
+            {handleMenu(children, 1)}
+          </Collapse>
+        </div>
+      );
+    });
+  };
 
-  handleTabClick = (e, { name }) => this.setState({ activePage: name });
+  return (
+    <Drawer
+      anchor="left"
+      classes={{ paper: classes.drawer }}
+      open={true}
+      variant="persistent"
+    >
+      <List {...rest} className={clsx(classes.root, className)}>
+        {handleMenu(menuItems.data)}
+      </List>
+    </Drawer>
+  );
+};
 
-  render() {
-    const { activePage } = this.state;
-    return (
-      <div>
-        <Grid.Row stretched>
-          <Segment inverted>
-            <Menu inverted pointing secondary>
-              <Menu.Item
-                as={NavLink}
-                to="/home"
-                name="Home"
-                active={activePage === "Home"}
-                onClick={this.handleTabClick}
-              />
-              <Menu.Item
-                as={NavLink}
-                to="/order"
-                name="Order"
-                active={activePage === "Order"}
-                onClick={this.handleTabClick}
-              />
-              <Menu.Item
-                as={NavLink}
-                to="/add"
-                name="Add"
-                active={activePage === "Add"}
-                onClick={this.handleTabClick}
-              />
-            </Menu>
-          </Segment>
-        </Grid.Row>
-        <Grid>
-          <Grid.Column width={4}>
-            <Menu fluid vertical tabular>
-              <Menu.Item
-                name="Weedvintory"
-                active={activePage === "Weedvintory"}
-                onClick={this.handleTabClick}
-                // TODO have onclick render component for each item
-                // TODO link this to components that will hold the information from the database, perhaps rope it in with the active Page state
-                // TODO create event listoners for each tab so that it renders the right information when selected
-              />
-              <Menu.Item
-                name="Employees"
-                active={activePage === "Employees"}
-                onClick={this.handleTabClick}
-              />
-              <Menu.Item
-                name="Sales/Stats"
-                active={activePage === "Sales/Stats"}
-                onClick={this.handleTabClick}
-              />
-              <Menu.Item
-                name="Pricing"
-                active={activePage === "Pricing"}
-                onClick={this.handleTabClick}
-              />
-              <Menu.Item
-                name="Orders"
-                active={activePage === "Orders"}
-                onClick={this.handleTabClick}
-              />
-            </Menu>
-          </Grid.Column>
+export default Menu;
 
-          <Grid.Column stretched width={12}>
-            {/* TODO: probably want to switch between segments to correspond with the menu */}
-            {/* TODO: possible dropdown with Help/Contact/FAQ type of deal */}
-            <Segment>
-              Here will be appended all the various information from the
-              database
-            </Segment>
-          </Grid.Column>
-        </Grid>
-      </div>
-    );
-  }
+{
+  /* // TODO have onclick render component for each item  */
+}
+{
+  /* // TODO link this to components that will hold the information from the database, perhaps rope it in with the active Page state  */
+}
+{
+  /* // TODO create event listoners for each tab so that it renders the right information when selected */
+}
+{
+  /* // TODO probably want to switch between segments to correspond with the menu */
+}
+{
+  /* // TODO possible dropdown with Help/Contact/FAQ type of deal */
 }
