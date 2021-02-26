@@ -1,7 +1,6 @@
 import React, { useState, forwardRef } from "react";
-import { List, ListItem, Collapse, Button, Drawer } from "@material-ui/core";
+import { List, ListItem, Button, Drawer } from "@material-ui/core"; // "Collapse," removed due to it only applying to sub-menu's
 import clsx from "clsx";
-import { ExpandLess, ExpandMore } from "@material-ui/icons";
 import { NavLink as RouterLink } from "react-router-dom";
 import menuItems from "./sideMenuItems";
 import useStyles from "./sideBarStyles";
@@ -23,6 +22,7 @@ const Menu = (props) => {
     return children.map(({ children, name, url, links }) => {
       if (!children) {
         return (
+          // =====Code for setting menu items==============================================================
           <List component="div" disablePadding key={name}>
             <ListItem
               className={classes.item}
@@ -30,6 +30,7 @@ const Menu = (props) => {
               style={{ padding: "0px" }}
               key={name}
             >
+              {/*=====Code for rendering each menu item==================================================================*/}
               <Button
                 className={clsx({
                   [classes.btnRoot]: true,
@@ -41,33 +42,39 @@ const Menu = (props) => {
               >
                 {name}
               </Button>
+              {/* ======================================================================================== */}
             </ListItem>
           </List>
         );
       }
-      return (
-        <div key={name}>
-          <ListItem
-            className={classes.item}
-            disableGutters
-            key={name}
-            onClick={() => handleClick(name)}
-          >
-            <Button
-              className={clsx({
-                [classes.btnRoot]: true,
-                [classes.button]: true,
-                [classes.subMenu]: level,
-              })}
-            >
-              {name} {menu[name] ? <ExpandLess /> : <ExpandMore />}
-            </Button>
-          </ListItem>
-          <Collapse in={menu[name] ? true : false} timeout="auto" unmountOnExit>
-            {handleMenu(children, 1)}
-          </Collapse>
-        </div>
-      );
+      //=========================Code for Sub-Menu's=======================================================
+      //--
+      // import { ExpandLess, ExpandMore } from "@material-ui/icons";
+      //--
+      // return (
+      //   <div key={name}>
+      //     <ListItem
+      //       className={classes.item}
+      //       disableGutters
+      //       key={name}
+      //       onClick={() => handleClick(name)}
+      //     >
+      //       <Button
+      //         className={clsx({
+      //           [classes.btnRoot]: true,
+      //           [classes.button]: true,
+      //           [classes.subMenu]: level,
+      //         })}
+      //       >
+      //         {name} {menu[name] ? <ExpandLess /> : <ExpandMore />}
+      //       </Button>
+      //     </ListItem>
+      //     <Collapse in={menu[name] ? true : false} timeout="auto" unmountOnExit>
+      //       {handleMenu(children, 1)}
+      //     </Collapse>
+      //   </div>
+      // );
+      //===================================================================================================
     });
   };
 
