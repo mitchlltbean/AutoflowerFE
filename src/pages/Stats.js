@@ -1,0 +1,15 @@
+import React from "react";
+import Menu from "../components/Menu";
+
+function Stats() {
+  return (
+    <div id="statsPage">
+      <Menu />
+      <div id="statsWrapper">
+        <h1>Stats Page</h1>
+      </div>
+    </div>
+  );
+}
+
+export default Stats;

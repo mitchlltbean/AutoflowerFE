@@ -3,9 +3,9 @@ import Menu from "../components/Menu";
 
 function Employees() {
   return (
-    <div>
+    <div id="employeePage">
       <Menu />
-      <div id="employeePage">
+      <div id="empWrapper">
         <h1>Employees Page</h1>
       </div>
     </div>

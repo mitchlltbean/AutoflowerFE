@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+import Menu from "../components/Menu";
 import DataTable from "../components/DataTable";
 import ItemCard from "../components/ItemCard";
 import Wrapper from "../components/Wrapper";
@@ -28,6 +28,15 @@ function Products() {
 
       </Wrapper>
 
+        {products.map((product) => (
+          <ItemCard
+            item={product.item}
+            description={product.description}
+            price={product.price}
+            instock={product.instock}
+          />
+        ))}
+      </div>
     </div>
   );
 }

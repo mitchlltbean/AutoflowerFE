@@ -1,6 +1,12 @@
 import React from "react";
-import { Card, CardContent, Typography, CardActions, Button } from "@material-ui/core";
-import { makeStyles } from '@material-ui/core/styles';
+import {
+  Card,
+  CardContent,
+  Typography,
+  CardActions,
+  Button,
+} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 // import useStyles from "./sideBarStyles";
 import "./style.css";
 

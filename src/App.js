@@ -5,7 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import Employees from "./pages/Employees";
 import Sales from "./pages/Sales";
 import Products from "./pages/Products";
-import Stats from "./components/Stats/index";
+import Stats from "./pages/Stats";
 import "./App.css";
 import Navbar from "./components/Navbar";
 
