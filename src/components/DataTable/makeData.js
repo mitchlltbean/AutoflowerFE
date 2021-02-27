@@ -1,5 +1,5 @@
 //We'll have to import our data here to run through our DataTable index.js file 
-
+// import products from "../products.json";
 
 const range = len => {
   const arr = []
@@ -12,6 +12,20 @@ const range = len => {
 const newProduct = () => {
   const statusChance = Math.random()
   return {
+    name: "High Plains Drifter",
+    category: "Blue Dream x Chem Dawg x Fire OG",
+    description: "A potent, psychedelic portal to a dimension just beyond our own.",
+    image: "Soon",
+    stock: Math.floor(Math.random() * 100),
+    status:
+      statusChance > 0.66
+        ? 'relationship'
+        : statusChance > 0.33
+        ? 'complicated'
+        : 'single',
+  },
+
+  {
     name: "High Plains Drifter",
     category: "Blue Dream x Chem Dawg x Fire OG",
     description: "A potent, psychedelic portal to a dimension just beyond our own.",

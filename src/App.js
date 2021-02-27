@@ -8,6 +8,7 @@ import Products from "./pages/Products";
 import Stats from "./pages/Stats";
 import "./App.css";
 import Navbar from "./components/Navbar";
+import Orders from "./pages/Orders";
 
 function App() {
   return (
@@ -39,6 +40,12 @@ function App() {
             path="/products"
             component={Products}
             render={() => <Products />}
+          />
+          <Route
+            exact
+            path="/orders"
+            component={Orders}
+            render={() => <Orders />}
           />
           <Route
             exact
