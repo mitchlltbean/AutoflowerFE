@@ -1,6 +1,6 @@
 import React from "react";
 import Menu from "../components/Menu";
-import ItemCard from "../components/ItemCard";
+import TransactionCard from "../components/TransactionCard";
 import sales from "../sales.json";
 // Sale is Status boolean
 // need name of product, date purchased, order id as int, product id as int, quantity as int, unit price as int
@@ -12,7 +12,7 @@ function Sales() {
         <h1>Sales</h1>
 
         {sales.map((sale) => (
-          <ItemCard
+          <TransactionCard
             name={sale.name}
             product_id={sale.product_id}
             quantity={sale.quantity}
