@@ -2,9 +2,8 @@ import React from "react";
 // import Menu from "../components/Menu";
 import DataTable from "../components/DataTable";
 import ItemCard from "../components/ItemCard";
-import Wrapper from "../components/Wrapper";
 import Grid from "@material-ui/core/Grid";
-import Menu from "@material-ui/core/Menu";
+// import Menu from "@material-ui/core/Menu";
 import products from "../products.json";
 
 
@@ -12,14 +11,9 @@ function Products() {
   return (
     <div>
 
-      <Wrapper>
-  
-  
-      <Menu />
+    <h1>Products</h1>
 
-        <h1>Products</h1>
-
-{/* Creates a grid with 3 columns  */}
+    {/* Creates a grid with 3 columns  */}
       <Grid container spacing={1}>
         {products.map((product) => (
           <Grid item xs={4}>
@@ -31,12 +25,11 @@ function Products() {
             />
           </Grid>
           ))}
-    </Grid>
+
+        </Grid>
 
   
-    <DataTable />
-
-    </Wrapper>
+      <DataTable />
     
     </div>
   );
