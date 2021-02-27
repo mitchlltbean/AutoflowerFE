@@ -1,0 +1,32 @@
+[
+  {
+    "emp_id": "01",
+    "is_manager": "Yes",
+    "name": "Belvadir Jahosaphat",
+    "login": "10405"
+  },
+  {
+    "emp_id": "02",
+    "is_manager": "No",
+    "name": "Katherine Whompus",
+    "login": "34291"
+  },
+  {
+    "emp_id": "03",
+    "is_manager": "No",
+    "name": "Hugh Ray",
+    "login": "60432"
+  },
+  {
+    "emp_id": "04",
+    "is_manager": "No",
+    "name": "Bennie Factor",
+    "login": "84907"
+  },
+  {
+    "emp_id": "05",
+    "is_manager": "No",
+    "name": "Don Keigh",
+    "login": "05823"
+  }
+]
