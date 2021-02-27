@@ -1,0 +1,15 @@
+/* @media screen and (min-width: 0px) {
+    .root {
+        padding: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .root{
+        padding: 1em;
+        max-width: auto;
+        height: 100%
+    }
+}
+ */
