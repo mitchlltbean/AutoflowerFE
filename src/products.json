@@ -2,6 +2,7 @@
     {
         "id": 1,
         "item": "Cin X",
+        "category": "flower",
         "img": "Placeholder",
         "description": "Balanced, one of our most creatively inspiring with a euphoric kick. Earthy skunk with hints of citrus",
         "price": "30",
@@ -11,6 +12,7 @@
     {
         "id": 2,
         "item": "Durban Poison",
+        "category": "flower",
         "img": "Placeholder",
         "description": "Placeholder",
         "price": "30",
@@ -20,6 +22,7 @@
     {
         "id": 3,
         "item": "Dutch Haze",
+        "category": "flower",
         "img": "Placeholder",
         "description": "A spacey, yet uplifting cross with an intensely sweet tropical candy nose",
         "price": "30",
@@ -30,6 +33,7 @@
         {
         "id": 4,
         "item": "High Plains Drifter",
+        "category": "flower",
         "img": "Placeholder",
         "description": "A potent, psychedelic portal to a dimension just beyond our own",
         "price": "30",
@@ -39,6 +43,7 @@
             {
         "id": 5,
         "item": "Silver Tip",
+        "category": "flower",
         "img": "Placeholder",
         "description": "Montana with balanced fuel and body high and full herbaceious flavor",
         "price": "30",
@@ -47,6 +52,7 @@
                 {
         "id": 6,
         "item": "White Fire Alien OG",
+        "category": "flower",
         "img": "Placeholder",
         "description": "Out-of-this-world stoney mirage with a deep, earthy flavor",
         "price": "30",

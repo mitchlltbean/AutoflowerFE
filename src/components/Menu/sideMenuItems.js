@@ -22,5 +22,10 @@ export default {
       name: "Statistics",
       url: "/stats",
     },
+
+    {
+      name: "Orders",
+      url: "/orders",
+    },
   ],
 };

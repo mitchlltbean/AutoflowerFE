@@ -1,7 +1,10 @@
+import { styled } from '@material-ui/core';
 import React from 'react'
 import { useTable, usePagination } from 'react-table'
 import makeData from './makeData'
 import "./style.css";
+
+// This table needs to be styled. Import/edit to material ui component?
 
 // Create an editable cell renderer
 const EditableCell = ({
@@ -145,6 +148,7 @@ function Table({ columns, data, updateMyData, skipPageReset }) {
     </>
   )
 }
+
 
 function DataTable() {
   const columns = React.useMemo(
