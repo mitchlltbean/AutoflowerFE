@@ -1,8 +1,9 @@
 import React from "react";
-import Menu from "../components/Menu";
+// import Menu from "../components/Menu";
 import DataTable from "../components/DataTable";
 import ItemCard from "../components/ItemCard";
 import Wrapper from "../components/Wrapper";
+import Grid from "@material-ui/core/Grid";
 import products from "../products.json";
 
 
@@ -14,29 +15,25 @@ function Products() {
 
         <h1>Products</h1>
 
-        {products.map(product => (
-
-          <ItemCard 
-            item={product.item}
-            description={product.description}
-            price={product.price}
-            instock={product.instock}
-          />
-        ))}
-
-        <DataTable />
-
-      </Wrapper>
-
+{/* Creates a grid with 3 columns  */}
+      <Grid container spacing={1}>
         {products.map((product) => (
-          <ItemCard
-            item={product.item}
-            description={product.description}
-            price={product.price}
-            instock={product.instock}
-          />
-        ))}
-      </div>
+          <Grid item xs={4}>
+            <ItemCard
+              item={product.item}
+              description={product.description}
+              price={product.price}
+              instock={product.instock}
+            />
+          </Grid>
+          ))}
+    </Grid>
+
+  
+    <DataTable />
+
+</Wrapper>
+
     </div>
   );
 }

@@ -9,6 +9,7 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 // import useStyles from "./sideBarStyles";
 import "./style.css";
+import { Autorenew } from "@material-ui/icons";
 
 //perhaps card or Buttons interface ?
 
@@ -17,13 +18,15 @@ const useStyles = makeStyles({
       minWidth: 275,
       maxWidth: 300,
       width: 'calc(100% / 4)',
-      margin: '2rem',
+      margin: '1rem',
       position:'relative',
       justifyContent: 'center',
-      backgroundColor: 'blue',
-
-
+      backgroundColor: '#90BE6D',
+      flexGrow: 1,
+      textAlign: 'center',
+    
     },
+
     bullet: {
       display: 'inline-block',
       margin: '0 2px',

@@ -1,13 +1,17 @@
 import React from "react";
 import "./style.css";
 import Buttons from "../components/Buttons";
-import DataTable from "../components/DataTable";
-import Sales from "./Sales";
+import Wrapper from "../components/Wrapper";
+
 
 function Landing() {
   return (
     <div>
-      <Buttons />
+      {/* <Wrapper> */}
+
+        <Buttons />
+
+      {/* </Wrapper> */}
     </div>
   );
 }
