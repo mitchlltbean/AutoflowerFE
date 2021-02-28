@@ -11,7 +11,6 @@ import {
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 // import useStyles from "./sideBarStyles";
-import Products4Sale from "../Products4Sale";
 import "./style.css";
 // import products from "../products.json";
 
@@ -106,7 +105,6 @@ export default function InventoryPanel() {
           </CardActions>
         </Card>
       </div>
-      <Products4Sale />
     </div>
   );
 }
