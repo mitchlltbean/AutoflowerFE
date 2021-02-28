@@ -8,8 +8,10 @@ function Sales() {
   return (
     <div id="salesPage">
       <Menu />
+
+      <h1>Sales</h1>
+      
       <div id="salesWrapper">
-        <h1>Sales</h1>
 
         {sales.map((sale) => (
           <TransactionCard

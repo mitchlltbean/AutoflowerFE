@@ -17,7 +17,7 @@ const useStyles = makeStyles({
       margin: '1rem',
       position:'relative',
       justifyContent: 'center',
-      backgroundColor: '#90BE6D',
+      backgroundColor: '#9FC680',
       flexGrow: 1,
       textAlign: 'center',
       display: 'flex',
@@ -99,7 +99,7 @@ export default function TransactionCard(props) {
       </CardContent>
 
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button size="small">Button</Button>
       </CardActions>
     </Card>
   );

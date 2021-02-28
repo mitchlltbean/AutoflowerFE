@@ -52,5 +52,23 @@
     "product_id": "prewductid",
     "quantity": 7,
     "unit_price": "$18.00"
+  },
+  {
+    "order_id": 7,
+    "status": "Sold",
+    "name": "Sativa Chocolate Turtle",
+    "category": "Edible",
+    "product_id": "prewductid",
+    "quantity": 7,
+    "unit_price": "$18.00"
+  },
+  {
+    "order_id": 8,
+    "status": "Sold",
+    "name": "Spacewalk Shatter",
+    "category": "Concentrate",
+    "product_id": "prewductid",
+    "quantity": 7,
+    "unit_price": "$18.00"
   }
 ]
