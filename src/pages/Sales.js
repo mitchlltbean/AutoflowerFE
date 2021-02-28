@@ -8,12 +8,15 @@ function Sales() {
   return (
     <div id="salesPage">
       <Menu />
+
+      <h1>Sales</h1>
+      
       <div id="salesWrapper">
-        <h1>Sales</h1>
 
         {sales.map((sale) => (
           <TransactionCard
             name={sale.name}
+            category={sale.category}
             product_id={sale.product_id}
             quantity={sale.quantity}
             unit_price={sale.unit_price}

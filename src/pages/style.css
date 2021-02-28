@@ -22,6 +22,8 @@
 #productsWrapper,
 #statsWrapper {
   border: solid blue 2px;
+  display: flex; 
+  flex-flow: row wrap;
 }
 
 
