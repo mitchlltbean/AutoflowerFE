@@ -1,4 +1,5 @@
 import React from "react";
+import Grid from "@material-ui/core/Grid";
 import InventoryPanel from "../components/InventoryPanel";
 import Products4Sale from "../components/Products4Sale";
 
@@ -10,12 +11,15 @@ export default function Orders() {
     <div>
       {/* Side Bar Menu commented out for this page */}
       {/* <Menu /> */}
-
-      <h1>Orders</h1>
-
-      <InventoryPanel />
-
-      <Products4Sale />
+      <Grid container direction="row">
+        <div>
+          <h1>Orders</h1>
+          <InventoryPanel />
+        </div>
+        <div>
+          <Products4Sale />
+        </div>
+      </Grid>
     </div>
   );
 }
