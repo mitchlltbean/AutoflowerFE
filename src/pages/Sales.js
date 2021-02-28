@@ -14,6 +14,7 @@ function Sales() {
         {sales.map((sale) => (
           <TransactionCard
             name={sale.name}
+            category={sale.category}
             product_id={sale.product_id}
             quantity={sale.quantity}
             unit_price={sale.unit_price}

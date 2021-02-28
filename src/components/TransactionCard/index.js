@@ -12,6 +12,20 @@ import "./style.css";
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
+    maxWidth: 300,
+      width: 'calc(100% / 4)',
+      margin: '1rem',
+      position:'relative',
+      justifyContent: 'center',
+      backgroundColor: '#90BE6D',
+      flexGrow: 1,
+      textAlign: 'center',
+      display: 'flex',
+      flexFlow: 'column',
+      // columnGap: '20px',
+      // display: 'grid',
+      // gridTemplateColumns: 'repeat(3, 1fr)',
+      // gridTemplateRows: '100px',
   },
   bullet: {
     display: "inline-block",
@@ -39,6 +53,13 @@ export default function TransactionCard(props) {
           gutterBottom
         >
           {props.name}
+        </Typography>
+        <Typography
+          className={classes.title}
+          color="textSecondary"
+          gutterBottom
+        >
+          {props.category}
         </Typography>
         <Typography
           className={classes.title}

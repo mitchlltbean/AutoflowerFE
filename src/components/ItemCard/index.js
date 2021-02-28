@@ -11,7 +11,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import "./style.css";
 import { Autorenew } from "@material-ui/icons";
 
-//perhaps card or Buttons interface ?
+//Card styling below 
 
 const useStyles = makeStyles({
     root: {
