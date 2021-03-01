@@ -5,16 +5,8 @@ import {
   CardContent,
   Typography,
   Divider,
-  Container,
   CardActions,
   Button,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
   TextField,
   Grid,
 } from "@material-ui/core";
@@ -26,19 +18,6 @@ import "./style.css";
 //perhaps card or Buttons interface ?
 
 const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-    maxWidth: 300,
-    width: "calc(100% / 4)",
-    height: "4em",
-    margin: "1rem",
-    position: "relative",
-    justifyContent: "center",
-    backgroundColor: "#90BE6D",
-    flexGrow: 1,
-    textAlign: "center",
-  },
-
   bullet: {
     display: "inline-block",
     margin: "0 2px",
@@ -55,58 +34,21 @@ const useStyles = makeStyles({
     minWidth: 650,
   },
 
-  buttonrow: {
-    display: "flex",
-    float: "right",
-    width: "33%",
-  },
-
-  buttoncontainer: {
-    backgroundColor: "lightgray",
-    width: "40%",
-    height: "100%",
-  },
-
   summarypanel: {
     minWidth: 275,
-    maxWidth: 500,
-    width: "60rem",
+    maxWidth: "25%",
+    width: "25%",
     height: "80em",
-    margin: "1rem",
-    position: "relative",
+    margin: "auto",
+    position: "absolute",
+    left: "1%",
+    top: "11%",
     justifyContent: "center",
     backgroundColor: "#A9BCD0",
     flexGrow: 1,
     textAlign: "center",
   },
 });
-
-// Attempting to render products as cards =========================
-
-// class InventoryPanel extends React.Component {
-
-//     render(){
-//     const classes = useStyles();
-//     return (
-//       <div>
-//      {products.map((products) => {
-//           console.log(products);
-//           return (
-//       <Card className={classes.root} container spacing={1} key={products.id}>
-
-//         <CardContent>
-//           <Typography variant="h2" className={classes.title} color="textSecondary" gutterBottom>
-//             {products.category}
-//           </Typography>
-
-//         </CardContent>
-
-//       </Card>
-//     )})}
-//     </div>
-//     );
-//   }
-// }
 
 // The meat and potatos
 export default function InventoryPanel() {

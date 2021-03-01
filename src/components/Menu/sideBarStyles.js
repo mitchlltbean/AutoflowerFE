@@ -4,11 +4,15 @@ import { colors } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     justifyContent: "left",
+  
   },
   drawer: {
     paddingTop: "20px",
-    width: "12%",
+    width: "14%",
     marginTop: "86px",
+    paddingBottom:"100px",
+   
+    
   },
   item: {
     display: "flex",
@@ -20,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "10px 8px",
     justifyContent: "flex-start",
     textTransform: "none",
-    fontSize: "200%",
+    fontSize: "2em",
     letterSpacing: 0,
     width: "100%",
   },

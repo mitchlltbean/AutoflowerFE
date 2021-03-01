@@ -47,6 +47,8 @@ export default function EmpCard(props) {
   const classes = useStyles(); //the line stops here...
   const [expanded, setExpanded] = React.useState(false);
 
+// API calls here 
+
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
