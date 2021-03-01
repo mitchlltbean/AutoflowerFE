@@ -4,7 +4,12 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   title: {
-    fontSize: 12,
+    fontSize: 14,
+  },
+  controlled: {
+    maxWidth: "45%",
+    alignItems: "flex-start",
+    justify: "space-evenly",
   },
 });
 
@@ -13,7 +18,7 @@ export default function Products4Sale(props) {
 
   return (
     // <div>
-    <Card className={classes.root}>
+    <Card item className={classes.controlled}>
       {/* //TODO Add Dropdown Menu Here!!!*/}
       {/* /* Category Buttons. They need to render appropriate products. */}
 
