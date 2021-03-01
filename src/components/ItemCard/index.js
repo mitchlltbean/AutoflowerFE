@@ -43,13 +43,15 @@ const useStyles = makeStyles({
   export default function SimpleCard(props) {
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
+
+    //Api (get)
   
     return (
       <Card className={classes.root}>
         <CardContent>
 
           <Typography className={classes.title} color="textSecondary" gutterBottom>
-            {props.item}
+           {props.item}
           </Typography>
 
           <Typography className={classes.title} color="textSecondary" gutterBottom>
@@ -57,18 +59,18 @@ const useStyles = makeStyles({
           </Typography>
 
           <Typography variant="h5" component="h2">
-            {props.price}
+            Price: {props.price}
           </Typography>
 
           <Typography className={classes.pos} color="textSecondary">
-            {props.instock}
+            In Stock: {props.instock}
           </Typography>
 
         </CardContent>
 
         <CardActions>
 
-          <Button size="small">Learn More</Button>
+          <Button size="small">Button</Button>
 
         </CardActions>
       </Card>

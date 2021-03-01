@@ -1,10 +1,30 @@
-import { styled } from '@material-ui/core';
+
 import React from 'react'
 import { useTable, usePagination } from 'react-table'
 import makeData from './makeData'
 import "./style.css";
+import { Button, TableBody, TableRow } from 'semantic-ui-react';
+import { TableCell, TextField, TableHead, Select } from '@material-ui/core';
+import MaUTable from '@material-ui/core/Table';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
 
-// This table needs to be styled. Import/edit to material ui component?
+// import { makeStyles } from '@material-ui/core/styles';
+// import InputLabel from '@material-ui/core/InputLabel';
+// import FormHelperText from '@material-ui/core/FormHelperText';
+// import FormControl from '@material-ui/core/FormControl';
+// import Select from '@material-ui/core/Select';
+
+// const useStyles = makeStyles((theme) => ({
+//   formControl: {
+//     margin: theme.spacing(1),
+//     minWidth: 120,
+//   },
+//   selectEmpty: {
+//     marginTop: theme.spacing(2),
+//   },
+// }));
+
 
 // Create an editable cell renderer
 const EditableCell = ({
@@ -30,7 +50,7 @@ const EditableCell = ({
     setValue(initialValue)
   }, [initialValue])
 
-  return <input value={value} onChange={onChange} onBlur={onBlur} />
+  return <TextField value={value} onChange={onChange} onBlur={onBlur} />
 }
 
 // Set our editable cell renderer as the default Cell renderer
@@ -75,45 +95,52 @@ function Table({ columns, data, updateMyData, skipPageReset }) {
     usePagination
   )
 
+  //Category Dropdown Selection 
+  // const classes = useStyles();
+  // const [age, setAge] = React.useState('');
+  // const handleChange = (event) => {
+  //   setAge(event.target.value);
+  // };
+
   // Render the UI for your table
   return (
     <>
-      <table {...getTableProps()}>
-        <thead>
+      <MaUTable {...getTableProps()}>
+        <TableHead>
           {headerGroups.map(headerGroup => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
+            <TableRow {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map(column => (
-                <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                <TableCell {...column.getHeaderProps()}>{column.render('Header')}</TableCell>
               ))}
-            </tr>
+            </TableRow>
           ))}
-        </thead>
-        <tbody {...getTableBodyProps()}>
+        </TableHead>
+        <TableBody {...getTableBodyProps()}>
           {page.map((row, i) => {
             prepareRow(row)
             return (
-              <tr {...row.getRowProps()}>
+              <TableRow {...row.getRowProps()}>
                 {row.cells.map(cell => {
-                  return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                  return <TableCell {...cell.getCellProps()}>{cell.render('Cell')}</TableCell>
                 })}
-              </tr>
+              </TableRow>
             )
           })}
-        </tbody>
-      </table>
+        </TableBody>
+      </MaUTable>
       <div className="pagination">
-        <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+        <Button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
           {'<<'}
-        </button>{' '}
-        <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+        </Button>{' '}
+        <Button onClick={() => previousPage()} disabled={!canPreviousPage}>
           {'<'}
-        </button>{' '}
-        <button onClick={() => nextPage()} disabled={!canNextPage}>
+        </Button>{' '}
+        <Button onClick={() => nextPage()} disabled={!canNextPage}>
           {'>'}
-        </button>{' '}
-        <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
+        </Button>{' '}
+        <Button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
           {'>>'}
-        </button>{' '}
+        </Button>{' '}
         <span>
           Page{' '}
           <strong>
@@ -122,7 +149,7 @@ function Table({ columns, data, updateMyData, skipPageReset }) {
         </span>
         <span>
           | Go to page:{' '}
-          <input
+          <TextField
             type="number"
             defaultValue={pageIndex + 1}
             onChange={e => {
@@ -132,7 +159,7 @@ function Table({ columns, data, updateMyData, skipPageReset }) {
             style={{ width: '100px' }}
           />
         </span>{' '}
-        <select
+        <Select
           value={pageSize}
           onChange={e => {
             setPageSize(Number(e.target.value))
@@ -143,7 +170,7 @@ function Table({ columns, data, updateMyData, skipPageReset }) {
               Show {pageSize}
             </option>
           ))}
-        </select>
+        </Select>
       </div>
     </>
   )
@@ -232,7 +259,7 @@ function DataTable() {
 
   return (
     <div>
-      <button onClick={resetData}>Reset Data</button>
+      <Button onClick={resetData}>Reset Data</Button>
       <Table
         columns={columns}
         data={data}
