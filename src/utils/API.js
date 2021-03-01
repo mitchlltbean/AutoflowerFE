@@ -33,16 +33,16 @@ const API = {
     });
   },
 
-  getSingleCategoryWithProducts: (group, token) => {
-    return axios.get(`${URL_PREFIX}/api/category/${group}/products`, {
+  getSingleCategoryWithProducts: (id, token) => {
+    return axios.get(`${URL_PREFIX}/api/product/productsbycategory?id=${id}`, {
       headers: {
         authorization: `Bearer: ${token}`,
       },
     });
   },
 
-  getSingleCategoryWithProducts: (group, token) => {
-    return axios.get(`${URL_PREFIX}/api/category/${group}/products`, {
+  getAllcategories: (token) => {
+    return axios.get(`${URL_PREFIX}/api/category/allcategories`, {
       headers: {
         authorization: `Bearer: ${token}`,
       },
