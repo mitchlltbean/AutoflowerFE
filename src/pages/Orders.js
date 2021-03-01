@@ -25,7 +25,7 @@ const useStyles = makeStyles({
     // flexWrap: "wrap",
   },
 
-  cardgrid:{
+  cardgrid: {
     margin: "auto",
     flexWrap: "wrap",
     flexFlow: "column",
@@ -35,7 +35,7 @@ const useStyles = makeStyles({
     margin: "auto",
     flexWrap: "wrap",
     flexFlow: "column",
-  }
+  },
 });
 
 export default function Orders() {
@@ -43,21 +43,18 @@ export default function Orders() {
 
   return (
     <div>
-      {/* Side Bar Menu commented out for this page */}
-      {/* <Menu /> */}
       <Grid className={classes.maingrid}>
         {/* <div> */}
-          <h1>Orders</h1>
-          <InventoryPanel />
+        <h1>Orders</h1>
+        <InventoryPanel />
         {/* </div> */}
         <Grid
           container
           direction="row"
           justify="space-evenly"
-          xs={2}
-          spacing={2}
+          xs={4}
+          spacing={3}
           className={classes.cardgrid}
-          // className={classes.root}
         >
           {products.map((product) => (
             <Products4Sale
