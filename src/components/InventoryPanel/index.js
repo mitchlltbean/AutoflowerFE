@@ -33,10 +33,10 @@ const useStyles = makeStyles({
 
   summarypanel: {
     minWidth: 275,
-    maxWidth: 500,
-    width: "60rem",
+    maxWidth: "25%",
+    width: "25%",
     height: "80em",
-    margin: "1rem",
+    margin: "auto",
     position: "relative",
     justifyContent: "center",
     backgroundColor: "#A9BCD0",
@@ -49,11 +49,10 @@ const useStyles = makeStyles({
 export default function InventoryPanel() {
   const classes = useStyles();
 
-  return (
-    <div>
-      {/* All components here into a grid for layout  */}
+   {/* All components here into a grid for layout  */}
 
-      <div>
+  return (
+
         <Card className={classes.summarypanel}>
           <CardContent>
             <Typography
@@ -104,7 +103,6 @@ export default function InventoryPanel() {
             <Button size="large">Clear</Button>
           </CardActions>
         </Card>
-      </div>
-    </div>
+  
   );
 }

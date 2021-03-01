@@ -12,12 +12,12 @@ export default function Products4Sale(props) {
   const classes = useStyles();
 
   return (
-    <div>
-      {/* //TODO Add Dropdown Menu Here!!!*/}
-      {/* /* Category Buttons. They need to render appropriate products. */}
-
-      {/* The Order Panel with the products buttons. These need formatting, autopopulate, on click events*/}
-      <Card>
+    // <div>
+    <Card className={classes.root}>
+        {/* //TODO Add Dropdown Menu Here!!!*/}
+        {/* /* Category Buttons. They need to render appropriate products. */}
+  
+        {/* The Order Panel with the products buttons. These need formatting, autopopulate, on click events*/}
         <CardContent>
           <img src={props.img} alt={props.img} />
           <Typography gutterBottom className={classes.title} varient="body1">
@@ -34,7 +34,7 @@ export default function Products4Sale(props) {
           </Typography>
         </CardContent>
       </Card>
-    </div>
+    // </div>
     // class InventoryPanel extends React.Component
   );
 }
