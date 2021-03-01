@@ -8,11 +8,9 @@ import API from "../utils/API";
 function Employees(props) {
   const [employees, setEmployees] = useState([]);
   // const [newTank,setNewTank]= useState("");
-
+  const token = localStorage.getItem("token");
   useEffect(() => {
-    API.getAllemployees(props.token);
-    console
-      .log(props.token, "PropsTOKEN")
+    API.getAllemployees(token)
       .then(({ data }) => {
         console.log(data);
         setEmployees(data);
@@ -45,7 +43,7 @@ function Employees(props) {
           ))}
         </Grid>
       </div>
-      <pre>{JSON.stringify(props, null, 4)}</pre>
+      {/* <pre>{JSON.stringify(props, null, 4)}</pre> */}
     </div>
   );
 }

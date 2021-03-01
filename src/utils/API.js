@@ -1,6 +1,6 @@
 const axios = require("axios");
 const URL_PREFIX = "http://localhost:8080";
-// const URL_PREFIX= "https://enigmatic-waters-59072.herokuapp.com"
+// const URL_PREFIX= ""
 
 const API = {
   login: (employeeData) => {
@@ -24,8 +24,8 @@ const API = {
     });
   },
 
-  getSingleCategoryWithProducts: (id, token) => {
-    return axios.get(`${URL_PREFIX}/api/category/${id}/products`, {
+  getSingleCategoryWithProducts: (group, token) => {
+    return axios.get(`${URL_PREFIX}/api/category/${group}/products`, {
       headers: {
         authorization: `Bearer: ${token}`,
       },
