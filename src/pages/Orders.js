@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import InventoryPanel from "../components/InventoryPanel";
-import Products4Sale from "../components/Products4Sale";
+import Products4Sale from "../components/Products4Sale/Product4Sale";
 import products from "../products.json";
 import { makeStyles } from "@material-ui/core/styles";
 import "./style.css";
@@ -17,25 +17,22 @@ const useStyles = makeStyles({
     height: "8em",
     margin: "1rem",
     position: "relative",
-    justifyContent: "space-evenly",
-    backgroundColor: "gold",
-    flexGrow: 1,
-    display: "flex",
-    flexFlow: "row",
-    // flexWrap: "wrap",
   },
 
-  cardgrid:{
-    margin: "auto",
+  cardgrid: {
+    marginLeft: "auto",
+    marginRight: "auto",
     flexWrap: "wrap",
     flexFlow: "column",
+    display: "flex",
+    flexFlow: "row",
   },
 
   maingrid: {
     margin: "auto",
     flexWrap: "wrap",
     flexFlow: "column",
-  }
+  },
 });
 
 export default function Orders() {
@@ -43,22 +40,17 @@ export default function Orders() {
 
   return (
     <div>
-      {/* Side Bar Menu commented out for this page */}
-      {/* <Menu /> */}
-      <Grid className={classes.maingrid}>
+      <Grid
+        container
+        className={classes.maingrid}
+        justify="space-evenly"
+        direction="row"
+      >
         {/* <div> */}
-          <h1>Orders</h1>
-          <InventoryPanel />
+        <h1>Orders</h1>
+        <InventoryPanel />
         {/* </div> */}
-        <Grid
-          container
-          direction="row"
-          justify="space-evenly"
-          xs={2}
-          spacing={2}
-          className={classes.cardgrid}
-          // className={classes.root}
-        >
+        <Grid item xs={4} className={classes.cardgrid}>
           {products.map((product) => (
             <Products4Sale
               img={product.img}
