@@ -34,21 +34,21 @@ const EditableCell = ({
   updateMyData, // This is a custom function that we supplied to our table instance
 }) => {
   // We need to keep and update the state of the cell normally
-  const [value, setValue] = React.useState(initialValue)
+  const [value, setValue] = React.useState(initialValue);
 
-  const onChange = e => {
-    setValue(e.target.value)
-  }
+  const onChange = (e) => {
+    setValue(e.target.value);
+  };
 
   // We'll only update the external data when the input is blurred
   const onBlur = () => {
-    updateMyData(index, id, value)
-  }
+    updateMyData(index, id, value);
+  };
 
   // If the initialValue is changed external, sync it up with our state
   React.useEffect(() => {
-    setValue(initialValue)
-  }, [initialValue])
+    setValue(initialValue);
+  }, [initialValue]);
 
   return <TextField value={value} onChange={onChange} onBlur={onBlur} />
 }
@@ -56,7 +56,7 @@ const EditableCell = ({
 // Set our editable cell renderer as the default Cell renderer
 const defaultColumn = {
   Cell: EditableCell,
-}
+};
 
 // Be sure to pass our updateMyData and the skipPageReset option
 function Table({ columns, data, updateMyData, skipPageReset }) {
@@ -93,7 +93,7 @@ function Table({ columns, data, updateMyData, skipPageReset }) {
       updateMyData,
     },
     usePagination
-  )
+  );
 
   //Category Dropdown Selection 
   // const classes = useStyles();
@@ -117,7 +117,7 @@ function Table({ columns, data, updateMyData, skipPageReset }) {
         </TableHead>
         <TableBody {...getTableBodyProps()}>
           {page.map((row, i) => {
-            prepareRow(row)
+            prepareRow(row);
             return (
               <TableRow {...row.getRowProps()}>
                 {row.cells.map(cell => {
@@ -142,30 +142,30 @@ function Table({ columns, data, updateMyData, skipPageReset }) {
           {'>>'}
         </Button>{' '}
         <span>
-          Page{' '}
+          Page{" "}
           <strong>
             {pageIndex + 1} of {pageOptions.length}
-          </strong>{' '}
+          </strong>{" "}
         </span>
         <span>
           | Go to page:{' '}
           <TextField
             type="number"
             defaultValue={pageIndex + 1}
-            onChange={e => {
-              const page = e.target.value ? Number(e.target.value) - 1 : 0
-              gotoPage(page)
+            onChange={(e) => {
+              const page = e.target.value ? Number(e.target.value) - 1 : 0;
+              gotoPage(page);
             }}
-            style={{ width: '100px' }}
+            style={{ width: "100px" }}
           />
         </span>{' '}
         <Select
           value={pageSize}
-          onChange={e => {
-            setPageSize(Number(e.target.value))
+          onChange={(e) => {
+            setPageSize(Number(e.target.value));
           }}
         >
-          {[10, 20, 30, 40, 50].map(pageSize => (
+          {[10, 20, 30, 40, 50].map((pageSize) => (
             <option key={pageSize} value={pageSize}>
               Show {pageSize}
             </option>
@@ -173,54 +173,53 @@ function Table({ columns, data, updateMyData, skipPageReset }) {
         </Select>
       </div>
     </>
-  )
+  );
 }
-
 
 function DataTable() {
   const columns = React.useMemo(
     () => [
       {
-        Header: 'Name',
+        Header: "Name",
         columns: [
           {
-            Header: 'Name',
-            accessor: 'name',
+            Header: "Name",
+            accessor: "name",
           },
           {
-            Header: 'Category',
-            accessor: 'category',
+            Header: "Category",
+            accessor: "category",
           },
         ],
       },
       {
-        Header: 'Info',
+        Header: "Info",
         columns: [
           {
-            Header: 'Description',
-            accessor: 'description',
+            Header: "Description",
+            accessor: "description",
           },
           {
-            Header: 'Image',
-            accessor: 'image',
+            Header: "Image",
+            accessor: "image",
           },
           {
-            Header: 'Status',
-            accessor: 'status',
+            Header: "Status",
+            accessor: "status",
           },
           {
-            Header: 'Stock',
-            accessor: 'stock',
+            Header: "Stock",
+            accessor: "stock",
           },
         ],
       },
     ],
     []
-  )
+  );
 
-  const [data, setData] = React.useState(() => makeData(20))
-  const [originalData] = React.useState(data)
-  const [skipPageReset, setSkipPageReset] = React.useState(false)
+  const [data, setData] = React.useState(() => makeData(20));
+  const [originalData] = React.useState(data);
+  const [skipPageReset, setSkipPageReset] = React.useState(false);
 
   // We need to keep the table from resetting the pageIndex when we
   // Update data. So we can keep track of that flag with a ref.
@@ -231,31 +230,31 @@ function DataTable() {
 
   const updateMyData = (rowIndex, columnId, value) => {
     // We also turn on the flag to not reset the page
-    setSkipPageReset(true)
-    setData(old =>
+    setSkipPageReset(true);
+    setData((old) =>
       old.map((row, index) => {
         if (index === rowIndex) {
           return {
             ...old[rowIndex],
             [columnId]: value,
-          }
+          };
         }
-        return row
+        return row;
       })
-    )
-  }
+    );
+  };
 
   // After data changes, we turn the flag back off
   // so that if data actually changes when we're not
   // editing it, the page is reset
-  
+
   React.useEffect(() => {
-    setSkipPageReset(false)
-  }, [data])
+    setSkipPageReset(false);
+  }, [data]);
 
   // Let's add a data resetter/randomizer to help
   // illustrate that flow...
-  const resetData = () => setData(originalData)
+  const resetData = () => setData(originalData);
 
   return (
     <div>
@@ -267,7 +266,7 @@ function DataTable() {
         skipPageReset={skipPageReset}
       />
     </div>
-  )
+  );
 }
 
 export default DataTable;
