@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import InventoryPanel from "../components/InventoryPanel";
-import Products4Sale from "../components/Products4Sale";
+import Products4Sale from "../components/Products4Sale/Product4Sale";
 import products from "../products.json";
 import { makeStyles } from "@material-ui/core/styles";
 import "./style.css";
