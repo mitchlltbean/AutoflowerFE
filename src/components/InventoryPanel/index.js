@@ -118,7 +118,7 @@ export default function InventoryPanel() {
     const token = localStorage.getItem("token");
     API.getAllcategories(token)
       .then(({ data }) => {
-        console.log(data);
+        console.log(data, "ALL CATEGORY DATA");
         setcategories(data);
       })
       .catch((err) => {
@@ -131,7 +131,7 @@ export default function InventoryPanel() {
     const token = localStorage.getItem("token");
     API.getSingleCategoryWithProducts(id, token)
       .then(({ data }) => {
-        console.log(data, "!!!!!!");
+        console.log(data, "SET single catogry to products");
         setallCategoryProducts(data);
       })
       .catch((err) => {
@@ -168,17 +168,19 @@ export default function InventoryPanel() {
       <div>
         <div className={classes.buttoncontainer}>
           <div className={classes.buttonrow}>
-            {allCategoryProducts.products.map((product) => {
-              return (
-                <Button
-                  className={classes.root}
-                  // onClick={}
-                >
-                  {product.item}
-                </Button>
-              );
-            })}
-            <pre>{JSON.stringify(allCategoryProducts, null, 4)}</pre>
+            {allCategoryProducts.products &&
+              allCategoryProducts.products.map((product) => {
+                return (
+                  <Button
+                    className={classes.root}
+                    // onClick={}
+                  >
+                    {product.item}
+                  </Button>
+                );
+              })}
+
+            {/* <pre>{JSON.stringify(allCategoryProducts, null, 4)}</pre> */}
           </div>
         </div>
 
