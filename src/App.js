@@ -32,6 +32,7 @@ function App() {
       .then((res) => {
         console.log(res.data, "!!!!!!!!!");
         console.log("success!");
+        localStorage.setItem("token", res.data.token);
         setemployeeState({
           id: res.data.employee.id,
           manager: res.data.employee.manager,
@@ -81,12 +82,9 @@ function App() {
             component={Dashboard}
             render={() => <Dashboard />}
           />
-          <Route
-            exact
-            path="/employees"
-            component={Employees}
-            render={() => <Employees />}
-          />
+          <Route exact path="/employees">
+            <Employees token={employeeState.token}></Employees>
+          </Route>
           <Route
             exact
             path="/sales"

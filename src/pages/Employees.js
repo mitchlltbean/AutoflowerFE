@@ -1,10 +1,27 @@
-import React from "react";
+import { React, useEffect, useState } from "react";
 import Menu from "../components/Menu";
 import EmpCard from "../components/EmpCard";
-import employees from "../employees.json";
+// import employees from "../employees.json";
 import Grid from "@material-ui/core/Grid";
+import API from "../utils/API";
 
-function Employees() {
+function Employees(props) {
+  const [employees, setEmployees] = useState([]);
+  // const [newTank,setNewTank]= useState("");
+
+  useEffect(() => {
+    API.getAllemployees(props.token);
+    console
+      .log(props.token, "PropsTOKEN")
+      .then(({ data }) => {
+        console.log(data);
+        setEmployees(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <div id="employeePage">
       <Menu />
@@ -28,6 +45,7 @@ function Employees() {
           ))}
         </Grid>
       </div>
+      <pre>{JSON.stringify(props, null, 4)}</pre>
     </div>
   );
 }

@@ -15,7 +15,8 @@ const API = {
     });
   },
 
-  getAllemployees: (id, token) => {
+  getAllemployees: (token) => {
+    console.log(token, "TOKEN");
     return axios.get(`${URL_PREFIX}/api/employee/employees`, {
       headers: {
         authorization: `Bearer: ${token}`,
