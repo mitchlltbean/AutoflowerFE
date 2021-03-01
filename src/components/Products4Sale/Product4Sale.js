@@ -10,6 +10,14 @@ const useStyles = makeStyles({
     maxWidth: "45%",
     alignItems: "flex-start",
     justify: "space-evenly",
+    display: "flex",
+    flex: "right",
+  },
+  img: {
+    margin: "auto",
+    display: "block",
+    maxWidth: "100%",
+    maxHeight: "100%",
   },
 });
 
@@ -24,7 +32,7 @@ export default function Products4Sale(props) {
 
       {/* The Order Panel with the products buttons. These need formatting, autopopulate, on click events*/}
       <CardContent>
-        <img src={props.img} alt={props.img} />
+        <img src={props.img} alt={props.img} className="img" />
         <Typography gutterBottom className={classes.title} varient="body1">
           Item: {props.item}
         </Typography>

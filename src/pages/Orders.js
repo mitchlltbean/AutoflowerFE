@@ -17,18 +17,15 @@ const useStyles = makeStyles({
     height: "8em",
     margin: "1rem",
     position: "relative",
-    justifyContent: "space-evenly",
-    backgroundColor: "gold",
-    flexGrow: 1,
-    display: "flex",
-    flexFlow: "row",
-    // flexWrap: "wrap",
   },
 
   cardgrid: {
-    margin: "auto",
+    marginLeft: "auto",
+    marginRight: "auto",
     flexWrap: "wrap",
     flexFlow: "column",
+    display: "flex",
+    flexFlow: "row",
   },
 
   maingrid: {
@@ -43,19 +40,17 @@ export default function Orders() {
 
   return (
     <div>
-      <Grid className={classes.maingrid}>
+      <Grid
+        container
+        className={classes.maingrid}
+        justify="space-evenly"
+        direction="row"
+      >
         {/* <div> */}
         <h1>Orders</h1>
         <InventoryPanel />
         {/* </div> */}
-        <Grid
-          container
-          direction="row"
-          justify="space-evenly"
-          xs={4}
-          spacing={3}
-          className={classes.cardgrid}
-        >
+        <Grid item xs={4} className={classes.cardgrid}>
           {products.map((product) => (
             <Products4Sale
               img={product.img}
