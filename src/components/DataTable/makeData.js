@@ -10,7 +10,6 @@ const range = (len) => {
 };
 
 const newProduct = () => {
-<<<<<<< HEAD
   const statusChance = Math.random()
   return {
     name: "High Plains Drifter",
@@ -40,40 +39,6 @@ const newProduct = () => {
   //       : 'single',
   // }
 }
-=======
-  const statusChance = Math.random();
-  return (
-    {
-      name: "High Plains Drifter",
-      category: "Blue Dream x Chem Dawg x Fire OG",
-      description:
-        "A potent, psychedelic portal to a dimension just beyond our own.",
-      image: "Soon",
-      stock: Math.floor(Math.random() * 100),
-      status:
-        statusChance > 0.66
-          ? "relationship"
-          : statusChance > 0.33
-          ? "complicated"
-          : "single",
-    },
-    {
-      name: "High Plains Drifter",
-      category: "Blue Dream x Chem Dawg x Fire OG",
-      description:
-        "A potent, psychedelic portal to a dimension just beyond our own.",
-      image: "Soon",
-      stock: Math.floor(Math.random() * 100),
-      status:
-        statusChance > 0.66
-          ? "relationship"
-          : statusChance > 0.33
-          ? "complicated"
-          : "single",
-    }
-  );
-};
->>>>>>> dev
 
 export default function makeData(...lens) {
   const makeDataLevel = (depth = 0) => {
