@@ -1,4 +1,5 @@
-import React from "react";
+import { React, useEffect, useState } from "react";
+import API from "../../utils/API";
 import {
   Card,
   CardContent,
@@ -22,7 +23,9 @@ const useStyles = makeStyles({
     margin: "0 2px",
     transform: "scale(0.8)",
   },
-
+  title: {
+    fontSize: 14,
+  },
   pos: {
     marginBottom: 12,
   },
@@ -49,62 +52,131 @@ const useStyles = makeStyles({
 
 // The meat and potatos
 export default function InventoryPanel() {
+  const [allCategoryProducts, setallCategoryProducts] = useState([]);
+  const [categories, setcategories] = useState([]);
   const classes = useStyles();
 
-  {
-    /* All components here into a grid for layout  */
-  }
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    API.getAllcategories(token)
+      .then(({ data }) => {
+        console.log(data, "ALL CATEGORY DATA");
+        setcategories(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  const handleSelectcategory = (id) => {
+    console.log("HANDLE SELECT CAT FIRES", id);
+    const token = localStorage.getItem("token");
+    API.getSingleCategoryWithProducts(id, token)
+      .then(({ data }) => {
+        console.log(data, "SET single catogry to products");
+        setallCategoryProducts(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
-    <Card className={classes.summarypanel}>
-      <CardContent>
-        <Typography
-          className={classes.title}
-          color="textSecondary"
-          gutterBottom
-        >
-          Orders
-        </Typography>
+    <div>
+      {/* All components here into a grid for layout  */}
+      {/* Category Buttons. They need to render appropriate products. */}
 
-        <Typography variant="h5" component="h2">
-          quick access menu with buttons reflecting current sale and user is
-          engaged with. Options to manage the sale as its happening. CRUD
-          FUNTIONALITY
-        </Typography>
+      {categories.map((category) => {
+        return (
+          <Button
+            onClick={() => handleSelectcategory(category.id)}
+            className={classes.root}
+            container
+            spacing={1}
+          >
+            <Typography
+              variant="h2"
+              className={classes.title}
+              color="textSecondary"
+              gutterBottom
+            >
+              {category.group}
+            </Typography>
+          </Button>
+        );
+      })}
 
-        <Typography className={classes.pos} color="textSecondary">
-          Item name
-        </Typography>
+      {/* The Order Panel with the products buttons. These need formatting, autopopulate, on click events*/}
+      <div>
+        <div className={classes.buttoncontainer}>
+          <div className={classes.buttonrow}>
+            {allCategoryProducts.products &&
+              allCategoryProducts.products.map((product) => {
+                return (
+                  <Button
+                    className={classes.root}
+                    // onClick={}
+                  >
+                    {product.item}
+                  </Button>
+                );
+              })}
 
-        <Typography variant="body2" component="p">
-          Price
-        </Typography>
+            {/* <pre>{JSON.stringify(allCategoryProducts, null, 4)}</pre> */}
+          </div>
+        </div>
 
-        <Divider variant="middle" />
+        <Card className={classes.summarypanel}>
+          <CardContent>
+            <Typography
+              className={classes.title}
+              color="textSecondary"
+              gutterBottom
+            >
+              Orders
+            </Typography>
 
-        {/* Data Table */}
+            <Typography variant="h5" component="h2">
+              quick access menu with buttons reflecting current sale and user is
+              engaged with. Options to manage the sale as its happening. CRUD
+              FUNTIONALITY
+            </Typography>
 
-        <Grid container spacing={2}>
-          <Grid container item xs={6} direction="column">
-            <Typography>Subtotal</Typography>
-            <Typography>Tax</Typography>
-            <Typography>State</Typography>
-            <Typography>Total</Typography>
-          </Grid>
+            <Typography className={classes.pos} color="textSecondary">
+              Item name
+            </Typography>
 
-          <Grid container item xs={6} direction="column">
-            <TextField />
-            <TextField />
-            <TextField />
-            <TextField />
-          </Grid>
-        </Grid>
-      </CardContent>
+            <Typography variant="body2" component="p">
+              Price
+            </Typography>
 
-      <CardActions>
-        <Button size="large">Send</Button>
-        <Button size="large">Clear</Button>
-      </CardActions>
-    </Card>
+            <Divider variant="middle" />
+
+            {/* Data Table */}
+
+            <Grid container spacing={2}>
+              <Grid container item xs={6} direction="column">
+                <Typography>Subtotal</Typography>
+                <Typography>Tax</Typography>
+                <Typography>State</Typography>
+                <Typography>Total</Typography>
+              </Grid>
+
+              <Grid container item xs={6} direction="column">
+                <TextField />
+                <TextField />
+                <TextField />
+                <TextField />
+              </Grid>
+            </Grid>
+          </CardContent>
+
+          <CardActions>
+            <Button size="large">Send</Button>
+            <Button size="large">Clear</Button>
+          </CardActions>
+        </Card>
+      </div>
+    </div>
   );
 }

@@ -1,18 +1,20 @@
 import React from "react";
 import { Button, Container } from "semantic-ui-react";
 import "./style.css";
+import { withRouter } from "react-router";
 
 class Buttons extends React.Component {
-  state = {
-    keycode: "",
-    // errormessage: "",
-  };
+  constructor(props) {
+    super(props);
+    console.log(props, " !!!!!!");
+  }
 
   feelNum = (e) => {
+    e.preventDefault();
     let keycodeCopy = this.state.keycode;
     const numeral = e.target.value;
     // ran into an issue of the buttons having no value, then changed it to e.target.value to get proper response
-    console.log(numeral);
+    console.log(numeral, "!!!!!!!!!!!!!!");
     keycodeCopy += numeral;
 
     this.setState({ keycode: keycodeCopy });
@@ -24,39 +26,58 @@ class Buttons extends React.Component {
     this.setState({ keycode: "" });
   };
 
+  reDirect = () => {
+    console.log("REDIRECT");
+    this.props.history.push("/dashboard");
+  };
+
   //Method to verify the input is correct/meets length requirements.
   //Is it correct?
-  checkNum = () => {
-    const keycode = this.state.keycode.length;
-    if (keycode < 5) {
-      alert("Make it longer!");
-      return false;
-    } else if (keycode > 5) {
-      alert("Make it shorter!");
-      return false;
-    } else {
-      alert("Welcome to Autoflower!");
-      window.location.href = "/dashboard";
-      return true;
-    }
-  };
+  // checkNum = (e) => {
+  //   const keycode = this.state.keycode.length;
+  //   this.setState({ [e.target.name]: e.target.value });
+  //   console.log(e.target, "@@@@");
+  //   if (keycode < 4) {
+  //     // alert("Make it longer!");
+  //     return false;
+  //   } else if (keycode > 4) {
+  //     // alert("Make it shorter!");
+  //     return false;
+  //   } else {
+  //     // alert("Welcome to Autoflower!");
+  //     window.location.href = "/dashboard";
+  //     return true;
+  //   }
+  // };
 
   render() {
     return (
       <div>
-
         <div className="container">
           <div className="keypad">
-
             <input
-              id="input"
-              value={this.state.keycode}
-              onChange={this.checkNum}
+              name="id"
+              className="input"
+              value={this.props.loginState.id}
+              onChange={this.props.handleLoginInput}
               type="password"
               // On error display a message on page (no alerts)
               error={{
-                content: 'Please enter a valid key',
-                pointing: 'below',
+                content: "Please enter a valid key",
+                pointing: "below",
+              }}
+            />
+
+            <input
+              name="login"
+              className="input"
+              value={this.props.loginState.login}
+              onChange={this.props.handleLoginInput}
+              type="password"
+              // On error display a message on page (no alerts)
+              error={{
+                content: "Please enter a valid key",
+                pointing: "below",
               }}
             />
 
@@ -85,11 +106,10 @@ class Buttons extends React.Component {
                 >
                   3
                 </Button>
-
               </div>
 
               <div className="button_row">
-              <Button
+                <Button
                   className="num"
                   onClick={(e) => this.feelNum(e, "value")}
                   value="6"
@@ -112,18 +132,16 @@ class Buttons extends React.Component {
                 >
                   6
                 </Button>
-
               </div>
 
               <div className="button_row">
-
                 <Button
                   className="num"
                   onClick={(e) => this.feelNum(e, "value")}
                   value="8"
                 >
                   7
-               </Button>
+                </Button>
 
                 <Button
                   className="num"
@@ -139,12 +157,10 @@ class Buttons extends React.Component {
                   value="3"
                 >
                   9
-              </Button>
+                </Button>
               </div>
 
               <div className="button_row">
-
-
                 <Button
                   onClick={(e) => this.clearNum(e, "value")}
                   className="numLock"
@@ -159,12 +175,10 @@ class Buttons extends React.Component {
                   value="9"
                 >
                   0
-               </Button>
-
-      
+                </Button>
 
                 <Button
-                  onClick={(e) => this.checkNum(e, "value")}
+                  onClick={() => this.props.handleLoginSubmit(this.reDirect)}
                   className="numLock"
                   id="check"
                 >
@@ -172,13 +186,11 @@ class Buttons extends React.Component {
                 </Button>
               </div>
             </div>
+          </div>
         </div>
-
-
       </div>
-     </div>
     );
   }
 }
 
-export default Buttons;
+export default withRouter(Buttons);

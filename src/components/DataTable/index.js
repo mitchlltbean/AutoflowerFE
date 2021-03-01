@@ -1,13 +1,15 @@
-
-import React from 'react'
-import { useTable, usePagination } from 'react-table'
-import makeData from './makeData'
+import { styled } from "@material-ui/core";
+import React from "react";
 import "./style.css";
-import { Button, TableBody, TableRow } from 'semantic-ui-react';
-import { TableCell, TextField, TableHead, Select } from '@material-ui/core';
-import MaUTable from '@material-ui/core/Table';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
+import API from "../../utils/API";
+
+import { useTable, usePagination } from "react-table";
+// import makeData from './makeData'
+import { Button, TableBody, TableRow } from "semantic-ui-react";
+import { TableCell, TextField, TableHead, Select } from "@material-ui/core";
+import MaUTable from "@material-ui/core/Table";
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
 
 // import { makeStyles } from '@material-ui/core/styles';
 // import InputLabel from '@material-ui/core/InputLabel';
@@ -24,7 +26,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 //     marginTop: theme.spacing(2),
 //   },
 // }));
-
 
 // Create an editable cell renderer
 const EditableCell = ({
@@ -50,8 +51,8 @@ const EditableCell = ({
     setValue(initialValue);
   }, [initialValue]);
 
-  return <TextField value={value} onChange={onChange} onBlur={onBlur} />
-}
+  return <TextField value={value} onChange={onChange} onBlur={onBlur} />;
+};
 
 // Set our editable cell renderer as the default Cell renderer
 const defaultColumn = {
@@ -95,7 +96,7 @@ function Table({ columns, data, updateMyData, skipPageReset }) {
     usePagination
   );
 
-  //Category Dropdown Selection 
+  //Category Dropdown Selection
   // const classes = useStyles();
   // const [age, setAge] = React.useState('');
   // const handleChange = (event) => {
@@ -107,10 +108,12 @@ function Table({ columns, data, updateMyData, skipPageReset }) {
     <>
       <MaUTable {...getTableProps()}>
         <TableHead>
-          {headerGroups.map(headerGroup => (
+          {headerGroups.map((headerGroup) => (
             <TableRow {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map(column => (
-                <TableCell {...column.getHeaderProps()}>{column.render('Header')}</TableCell>
+              {headerGroup.headers.map((column) => (
+                <TableCell {...column.getHeaderProps()}>
+                  {column.render("Header")}
+                </TableCell>
               ))}
             </TableRow>
           ))}
@@ -120,27 +123,31 @@ function Table({ columns, data, updateMyData, skipPageReset }) {
             prepareRow(row);
             return (
               <TableRow {...row.getRowProps()}>
-                {row.cells.map(cell => {
-                  return <TableCell {...cell.getCellProps()}>{cell.render('Cell')}</TableCell>
+                {row.cells.map((cell) => {
+                  return (
+                    <TableCell {...cell.getCellProps()}>
+                      {cell.render("Cell")}
+                    </TableCell>
+                  );
                 })}
               </TableRow>
-            )
+            );
           })}
         </TableBody>
       </MaUTable>
       <div className="pagination">
         <Button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
-          {'<<'}
-        </Button>{' '}
+          {"<<"}
+        </Button>{" "}
         <Button onClick={() => previousPage()} disabled={!canPreviousPage}>
-          {'<'}
-        </Button>{' '}
+          {"<"}
+        </Button>{" "}
         <Button onClick={() => nextPage()} disabled={!canNextPage}>
-          {'>'}
-        </Button>{' '}
+          {">"}
+        </Button>{" "}
         <Button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-          {'>>'}
-        </Button>{' '}
+          {">>"}
+        </Button>{" "}
         <span>
           Page{" "}
           <strong>
@@ -148,7 +155,7 @@ function Table({ columns, data, updateMyData, skipPageReset }) {
           </strong>{" "}
         </span>
         <span>
-          | Go to page:{' '}
+          | Go to page:{" "}
           <TextField
             type="number"
             defaultValue={pageIndex + 1}
@@ -158,7 +165,7 @@ function Table({ columns, data, updateMyData, skipPageReset }) {
             }}
             style={{ width: "100px" }}
           />
-        </span>{' '}
+        </span>{" "}
         <Select
           value={pageSize}
           onChange={(e) => {
@@ -217,8 +224,8 @@ function DataTable() {
     []
   );
 
-  const [data, setData] = React.useState(() => makeData(20));
-  const [originalData] = React.useState(data);
+  const [data, setData] = React.useState([]);
+  const [originalData, setOriginaldata] = React.useState([]);
   const [skipPageReset, setSkipPageReset] = React.useState(false);
 
   // We need to keep the table from resetting the pageIndex when we
@@ -249,8 +256,18 @@ function DataTable() {
   // editing it, the page is reset
 
   React.useEffect(() => {
+    const token = localStorage.getItem("token");
+    API.getAllproducts(token)
+      .then(({ data }) => {
+        console.log(data);
+        setData(data);
+        setOriginaldata(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     setSkipPageReset(false);
-  }, [data]);
+  }, []);
 
   // Let's add a data resetter/randomizer to help
   // illustrate that flow...

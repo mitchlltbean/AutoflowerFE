@@ -40,17 +40,17 @@ export default function Orders() {
 
   return (
     <div>
-      <Grid
+      {/* <Grid
         container
         className={classes.maingrid}
         justify="space-evenly"
         direction="row"
-      >
-        {/* <div> */}
+      > */}
+      <div>
         <h1>Orders</h1>
         <InventoryPanel />
-        {/* </div> */}
-        <Grid item xs={4} className={classes.cardgrid}>
+      </div>
+      {/* <Grid item xs={4} className={classes.cardgrid}>
           {products.map((product) => (
             <Products4Sale
               img={product.img}
@@ -62,7 +62,7 @@ export default function Orders() {
             />
           ))}
         </Grid>
-      </Grid>
+      </Grid> */}
     </div>
   );
 }
