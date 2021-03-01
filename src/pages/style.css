@@ -26,4 +26,7 @@
   border: solid blue 2px;
   display: flex;
   flex-flow: row wrap;
+  top: 0;
+  bottom: 0;
+  
 }
