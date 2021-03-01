@@ -24,6 +24,15 @@ const API = {
     });
   },
 
+  getAllproducts: (token) => {
+    console.log(token, "TOKEN");
+    return axios.get(`${URL_PREFIX}/api/product/products`, {
+      headers: {
+        authorization: `Bearer: ${token}`,
+      },
+    });
+  },
+
   getSingleCategoryWithProducts: (group, token) => {
     return axios.get(`${URL_PREFIX}/api/category/${group}/products`, {
       headers: {
