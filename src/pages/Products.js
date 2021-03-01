@@ -27,7 +27,7 @@ function Products() {
         <h1>Products</h1>
 
         {/* Creates a grid with 3 columns  */}
-        <Grid container spacing={1}>
+        {/* <Grid container spacing={1}>
           {products.map((product) => (
             <Grid item xs={4}>
               <ItemCard
@@ -38,7 +38,7 @@ function Products() {
               />
             </Grid>
           ))}
-        </Grid>
+        </Grid> */}
 
         <DataTable />
       </div>

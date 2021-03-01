@@ -190,8 +190,8 @@ function DataTable() {
         Header: "Name",
         columns: [
           {
-            Header: "Name",
-            accessor: "name",
+            Header: "Item",
+            accessor: "item",
           },
           {
             Header: "Category",
@@ -199,6 +199,7 @@ function DataTable() {
           },
         ],
       },
+      // The accessors below determine the data that is rendered
       {
         Header: "Info",
         columns: [
@@ -208,15 +209,15 @@ function DataTable() {
           },
           {
             Header: "Image",
-            accessor: "image",
+            accessor: "img",
           },
           {
-            Header: "Status",
-            accessor: "status",
+            Header: "Price",
+            accessor: "price",
           },
           {
             Header: "Stock",
-            accessor: "stock",
+            accessor: "instock",
           },
         ],
       },
@@ -269,8 +270,6 @@ function DataTable() {
     setSkipPageReset(false);
   }, []);
 
-  // Let's add a data resetter/randomizer to help
-  // illustrate that flow...
   const resetData = () => setData(originalData);
 
   return (
