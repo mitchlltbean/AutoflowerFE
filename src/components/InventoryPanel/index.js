@@ -37,7 +37,9 @@ const useStyles = makeStyles({
     width: "25%",
     height: "80em",
     margin: "auto",
-    position: "relative",
+    position: "absolute",
+    left: "1%",
+    top: "11%",
     justifyContent: "center",
     backgroundColor: "#A9BCD0",
     flexGrow: 1,
@@ -49,60 +51,60 @@ const useStyles = makeStyles({
 export default function InventoryPanel() {
   const classes = useStyles();
 
-   {/* All components here into a grid for layout  */}
+  {
+    /* All components here into a grid for layout  */
+  }
 
   return (
+    <Card className={classes.summarypanel}>
+      <CardContent>
+        <Typography
+          className={classes.title}
+          color="textSecondary"
+          gutterBottom
+        >
+          Orders
+        </Typography>
 
-        <Card className={classes.summarypanel}>
-          <CardContent>
-            <Typography
-              className={classes.title}
-              color="textSecondary"
-              gutterBottom
-            >
-              Orders
-            </Typography>
+        <Typography variant="h5" component="h2">
+          quick access menu with buttons reflecting current sale and user is
+          engaged with. Options to manage the sale as its happening. CRUD
+          FUNTIONALITY
+        </Typography>
 
-            <Typography variant="h5" component="h2">
-              quick access menu with buttons reflecting current sale and user is
-              engaged with. Options to manage the sale as its happening. CRUD
-              FUNTIONALITY
-            </Typography>
+        <Typography className={classes.pos} color="textSecondary">
+          Item name
+        </Typography>
 
-            <Typography className={classes.pos} color="textSecondary">
-              Item name
-            </Typography>
+        <Typography variant="body2" component="p">
+          Price
+        </Typography>
 
-            <Typography variant="body2" component="p">
-              Price
-            </Typography>
+        <Divider variant="middle" />
 
-            <Divider variant="middle" />
+        {/* Data Table */}
 
-            {/* Data Table */}
+        <Grid container spacing={2}>
+          <Grid container item xs={6} direction="column">
+            <Typography>Subtotal</Typography>
+            <Typography>Tax</Typography>
+            <Typography>State</Typography>
+            <Typography>Total</Typography>
+          </Grid>
 
-            <Grid container spacing={2}>
-              <Grid container item xs={6} direction="column">
-                <Typography>Subtotal</Typography>
-                <Typography>Tax</Typography>
-                <Typography>State</Typography>
-                <Typography>Total</Typography>
-              </Grid>
+          <Grid container item xs={6} direction="column">
+            <TextField />
+            <TextField />
+            <TextField />
+            <TextField />
+          </Grid>
+        </Grid>
+      </CardContent>
 
-              <Grid container item xs={6} direction="column">
-                <TextField />
-                <TextField />
-                <TextField />
-                <TextField />
-              </Grid>
-            </Grid>
-          </CardContent>
-
-          <CardActions>
-            <Button size="large">Send</Button>
-            <Button size="large">Clear</Button>
-          </CardActions>
-        </Card>
-  
+      <CardActions>
+        <Button size="large">Send</Button>
+        <Button size="large">Clear</Button>
+      </CardActions>
+    </Card>
   );
 }
