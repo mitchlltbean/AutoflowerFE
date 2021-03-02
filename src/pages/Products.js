@@ -1,8 +1,8 @@
 import { React, useEffect, useState } from "react";
 import DataTable from "../components/DataTable";
-import ItemCard from "../components/ItemCard";
+// import ItemCard from "../components/ItemCard";
 import Menu from "../components/Menu";
-import Grid from "@material-ui/core/Grid";
+// import Grid from "@material-ui/core/Grid";
 import API from "../utils/API";
 
 function Products() {
@@ -27,7 +27,7 @@ function Products() {
         <h1>Products</h1>
 
         {/* Creates a grid with 3 columns  */}
-        <Grid container spacing={1}>
+        {/* <Grid container spacing={1}>
           {products.map((product) => (
             <Grid item xs={4}>
               <ItemCard
@@ -38,7 +38,9 @@ function Products() {
               />
             </Grid>
           ))}
-        </Grid>
+        </Grid> */}
+
+  
 
         <DataTable />
       </div>
