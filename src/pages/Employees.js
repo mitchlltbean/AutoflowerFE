@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from "react";
 import Menu from "../components/Menu";
 import EmpCard from "../components/EmpCard";
+import AddEmployee from "../components/AddEmployee";
 // import employees from "../employees.json";
 import Grid from "@material-ui/core/Grid";
 import API from "../utils/API";
@@ -56,6 +57,9 @@ function Employees(props) {
       <Menu />
       <div id="empWrapper">
         <h1>Employees</h1>
+
+        <AddEmployee />
+
         <Grid
           container
           direction="row"
