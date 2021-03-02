@@ -1,5 +1,6 @@
 import { React, useEffect, useState } from "react";
-import DataTable from "../components/DataTable";
+// import DataTable from "../components/DataTable";
+import Table from "../components/Table";
 // import ItemCard from "../components/ItemCard";
 import Menu from "../components/Menu";
 // import Grid from "@material-ui/core/Grid";
@@ -42,7 +43,7 @@ function Products() {
 
   
 
-        <DataTable />
+        <Table />
       </div>
     </div>
   );

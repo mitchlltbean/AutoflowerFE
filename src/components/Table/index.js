@@ -4,6 +4,7 @@ import makeData from './makeData';
 
 import EditIcon from '@material-ui/icons/Edit';
 import Modal from "@material-ui/core/Modal";
+import API from "../../utils/API";
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -49,6 +50,8 @@ function Table({ columns, data }) {
     data,
   })
 
+
+
   // Render the UI for your table
   return (
     <table {...getTableProps()}>
@@ -78,6 +81,7 @@ function Table({ columns, data }) {
 }
 
 function DataTable() {
+
   const columns = React.useMemo(
     () => [
       {
@@ -119,7 +123,25 @@ function DataTable() {
     []
   )
 
-  const data = React.useMemo(() => makeData(20), [])
+  const [data, setData] = useState([]);
+  // const [originalData, setOriginaldata] = useState([]);
+  const data = response(() => makeData(20), [])
+
+  
+ useEffect(() => {
+    const token = localStorage.getItem("token");
+    API.getAllproducts(token)
+      .then(({ data }) => {
+        console.log(data);
+        setData(data);
+        // setOriginaldata(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    setSkipPageReset(false);
+  }, []);
+
 
   return (
       <Table columns={columns} data={data} />
