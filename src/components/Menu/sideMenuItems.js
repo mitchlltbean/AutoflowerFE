@@ -42,15 +42,21 @@ export const sideMenuItems = [
     icon: <IoIcons.IoMdPeople />,
     className: "nav-text",
   },
-  {
-    name: "Logout",
-    url: "/",
-    icon: <IoIcons.IoMdPeople />,
-    className: "nav-text",
-  },
+  // {
+  //   name: "Logout",
+  //   url: "/",
+  //   icon: <IoIcons.IoMdPeople />,
+  //   className: "nav-text",
+  // },
 ];
 
 // export default {
 //   data: [
 //   ],
 // };
+
+// path: {
+//   () => {
+//     handleLogout;
+//   };
+// }
