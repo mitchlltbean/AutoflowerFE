@@ -12,53 +12,56 @@ import "./style.css";
 
 //Card styling below
 const useStyles = makeStyles({
-    root: {
-      minWidth: 275,
-      maxWidth: 300,
-      width: 'calc(100% / 4)',
-      margin: '1rem',
-      position:'relative',
-      justifyContent: 'center',
-      backgroundColor: '#90BE6D',
-      flexGrow: 1,
-      textAlign: 'center',
-    
-    },
+  root: {
+    minWidth: 275,
+    maxWidth: 300,
+    width: "calc(100% / 4)",
+    margin: "1rem",
+    position: "relative",
+    justifyContent: "center",
+    backgroundColor: "#90BE6D",
+    flexGrow: 1,
+    textAlign: "center",
+  },
 
-    bullet: {
-      display: 'inline-block',
-      margin: '0 2px',
-      transform: 'scale(0.8)',
-    },
-    title: {
-      fontSize: 14,
-    },
-    pos: {
-      marginBottom: 12,
-    },
-  });
-  
-  export default function SimpleCard(props) {
-    const classes = useStyles();
-    const bull = <span className={classes.bullet}>•</span>;
+  bullet: {
+    display: "inline-block",
+    margin: "0 2px",
+    transform: "scale(0.8)",
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+});
 
-    //Api (get)
-  
-    return (
-      <Card className={classes.root}>
-        <CardContent>
+export default function SimpleCard(props) {
+  const classes = useStyles();
+  const bull = <span className={classes.bullet}>•</span>;
 
-          <Typography className={classes.title} color="textSecondary" gutterBottom>
-           {props.item}
-          </Typography>
-          
-          <Typography variant="h5" component="h2">
-            Price: {props.price}
-          </Typography>
+  //Api (get)
 
-          <Typography className={classes.pos} color="textSecondary">
-            In Stock: {props.instock}
-          </Typography>
+  return (
+    <Card className={classes.root}>
+      <Button>Delete</Button>
+      <CardContent>
+        <Typography
+          className={classes.title}
+          color="textSecondary"
+          gutterBottom
+        >
+          {props.item}
+        </Typography>
+
+        <Typography variant="h5" component="h2">
+          Price: {props.price}
+        </Typography>
+
+        <Typography className={classes.pos} color="textSecondary">
+          In Stock: {props.instock}
+        </Typography>
 
         <Typography
           className={classes.title}

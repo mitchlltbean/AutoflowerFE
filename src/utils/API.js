@@ -3,6 +3,7 @@ const URL_PREFIX = "http://localhost:8080";
 // const URL_PREFIX= ""
 
 const API = {
+  //employee
   login: (employeeData) => {
     return axios.post(`${URL_PREFIX}/api/employee/login`, employeeData);
   },
@@ -24,6 +25,16 @@ const API = {
     });
   },
 
+  deleteEmployee: (token, id) => {
+    console.log(token, "TOKEN");
+    return axios.delete(`${URL_PREFIX}/api/employee/deleteemployee/${id}`, {
+      headers: {
+        authorization: `Bearer: ${token}`,
+      },
+    });
+  },
+
+  //product
   getAllproducts: (token) => {
     console.log(token, "TOKEN");
     return axios.get(`${URL_PREFIX}/api/product/products`, {
@@ -33,6 +44,25 @@ const API = {
     });
   },
 
+  updateProducts: (token) => {
+    console.log(token, "TOKEN");
+    return axios.put(`${URL_PREFIX}/api/product/productupdate`, {
+      headers: {
+        authorization: `Bearer: ${token}`,
+      },
+    });
+  },
+
+  deleteProducts: (token) => {
+    console.log(token, "TOKEN");
+    return axios.delete(`${URL_PREFIX}/api/product/deleteinventory/:id`, {
+      headers: {
+        authorization: `Bearer: ${token}`,
+      },
+    });
+  },
+
+  //category
   getSingleCategoryWithProducts: (id, token) => {
     return axios.get(`${URL_PREFIX}/api/product/productsbycategory?id=${id}`, {
       headers: {
