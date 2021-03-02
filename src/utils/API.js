@@ -53,9 +53,9 @@ const API = {
     });
   },
 
-  deleteProducts: (token) => {
+  deleteProducts: (token, id) => {
     console.log(token, "TOKEN");
-    return axios.delete(`${URL_PREFIX}/api/product/deleteinventory/:id`, {
+    return axios.delete(`${URL_PREFIX}/api/product/deleteinventory/${id}`, {
       headers: {
         authorization: `Bearer: ${token}`,
       },

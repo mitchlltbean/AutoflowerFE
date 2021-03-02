@@ -133,33 +133,7 @@ function DataTable() {
     // setSkipPageReset(false);
   }, []);
   // const data = React.useMemo(() => makeData(20), []);
-  return (
-    <div>
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>ITEM</TableCell>
-            <TableCell>DESCRIPTION</TableCell>
-            <TableCell>PRICE</TableCell>
-            <TableCell>INSTOCK</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {/* {data.map((row) => {
-            return (
-              <TableRow>
-                <TableCell>{row.item}</TableCell>
-                <TableCell>{row.description}</TableCell>
-                <TableCell>{row.price}</TableCell>
-                <TableCell>{row.instock}</TableCell>
-              </TableRow>
-            );
-          })} */}
-        </TableBody>
-      </Table>
-      <Table columns={columns} data={data} />
-    </div>
-  );
+  return <Table columns={columns} data={data} />;
 }
 
 const Icons = ({ values }) => {

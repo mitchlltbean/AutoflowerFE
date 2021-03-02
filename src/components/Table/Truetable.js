@@ -70,9 +70,13 @@ export default function Truetable() {
 
   const [open, setOpen] = useState(false);
 
+  function refreshPage() {
+    window.location.reload(false);
+  }
+  //Update inventory
   const handleUpdate = () => {
     const token = localStorage.getItem("token");
-    API.updateProducts(token, {
+    API.updateProducts(token, data, {
       id: data.id,
       item: data.item,
       description: data.description,
@@ -87,8 +91,24 @@ export default function Truetable() {
         instock: "",
       });
     });
+    refreshPage();
   };
+  //delete product
 
+  const handleDeleteproduct = (id) => {
+    console.log("HANDLE DELETE Employee", id);
+    const token = localStorage.getItem("token");
+    console.log(token, "TOKEN FOR DELETE");
+    API.deleteProducts(token, data.id)
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    refreshPage();
+  };
   const HandleInputchange = (e) => {
     const { name, value } = e.target;
     console.log(e.target, "E TARGET");
@@ -133,7 +153,8 @@ export default function Truetable() {
         value={data.instock}
         onChange={HandleInputchange}
       ></input>
-      <button>Save</button>
+      <button onClick={handleUpdate}>Save</button>
+      <button onClick={handleDeleteproduct}>Delete</button>
     </>
   );
   return (
