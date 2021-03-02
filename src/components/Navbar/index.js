@@ -4,6 +4,12 @@ import "semantic-ui-css/semantic.min.css";
 import { NavLink } from "react-router-dom";
 import "./style.css";
 
+// import Modal from '@material-ui/core/Modal';
+import Button from '@material-ui/core/Button';
+
+
+
+
 export default class Navbar extends Component {
   state = { activePage: "Home" };
 
@@ -41,6 +47,16 @@ export default class Navbar extends Component {
                 onClick={this.handleTabClick}
               />
             </Menu>
+
+            <Menu.Item
+            as={NavLink}
+            to="/"
+            name="Log Out"
+            active={activePage === "/"}
+            onClick={this.handleTabClick}>
+
+          </Menu.Item>
+
           </Segment>
         </Grid.Row>
       </div>

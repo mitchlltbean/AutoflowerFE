@@ -1,5 +1,6 @@
 import { React, useEffect, useState } from "react";
-import DataTable from "../components/DataTable";
+// import DataTable from "../components/DataTable";
+import Table from "../components/Table";
 // import ItemCard from "../components/ItemCard";
 // import Grid from "@material-ui/core/Grid";
 import API from "../utils/API";
@@ -34,7 +35,7 @@ function Products() {
 
   return (
     <div id="productsPage">
-      <Menu />
+      {/* <Menu /> */}
 
       <div id="productsWrapper">
         <h1>Products</h1>
@@ -54,12 +55,9 @@ function Products() {
                 className={classes.root}
                 container
                 spacing={1}
-          ></Button> */}
-        {/* </Grid>
-          ))}
-        </Grid>  */}
+              ></Button> */}
 
-        <DataTable />
+        <Table />
       </div>
     </div>
   );
