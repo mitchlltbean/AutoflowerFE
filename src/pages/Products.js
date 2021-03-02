@@ -1,8 +1,8 @@
 import { React, useEffect, useState } from "react";
 import DataTable from "../components/DataTable";
-import ItemCard from "../components/ItemCard";
+// import ItemCard from "../components/ItemCard";
 import Menu from "../components/Menu";
-import Grid from "@material-ui/core/Grid";
+// import Grid from "@material-ui/core/Grid";
 import API from "../utils/API";
 
 function Products() {
@@ -39,6 +39,8 @@ function Products() {
             </Grid>
           ))}
         </Grid> */}
+
+  
 
         <DataTable />
       </div>
