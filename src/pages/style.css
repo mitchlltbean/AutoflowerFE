@@ -14,7 +14,7 @@
 #statsPage,
 #productsPage {
   border: solid red 2px;
-  width: 88%;
+  width: 100%;
   float: right;
 }
 
@@ -28,5 +28,4 @@
   flex-flow: row wrap;
   top: 0;
   bottom: 0;
-  
 }
