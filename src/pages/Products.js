@@ -1,7 +1,6 @@
 import { React, useEffect, useState } from "react";
 import DataTable from "../components/DataTable";
 // import ItemCard from "../components/ItemCard";
-import Menu from "../components/Menu";
 // import Grid from "@material-ui/core/Grid";
 import API from "../utils/API";
 
@@ -50,17 +49,15 @@ function Products() {
                 price={product.price}
                 instock={product.instock}
               />
-              {/* <Button
+               <Button
                 // onClick={() => handleDeleteproduct(product.id)}
                 className={classes.root}
                 container
                 spacing={1}
-              ></Button> */}
-            </Grid>
+          ></Button> */}
+        {/* </Grid>
           ))}
-        </Grid> */}
-
-  
+        </Grid>  */}
 
         <DataTable />
       </div>
