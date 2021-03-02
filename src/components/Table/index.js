@@ -123,25 +123,24 @@ function DataTable() {
     []
   )
 
-  const [data, setData] = useState([]);
-  // const [originalData, setOriginaldata] = useState([]);
-  const data = response(() => makeData(20), [])
+  // const [data, setData] = useState([]);
+  // // const [originalData, setOriginaldata] = useState([]);
+  // const data = response(() => makeData(20), [])
 
-  
- useEffect(() => {
-    const token = localStorage.getItem("token");
-    API.getAllproducts(token)
-      .then(({ data }) => {
-        console.log(data);
-        setData(data);
-        // setOriginaldata(data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    setSkipPageReset(false);
-  }, []);
-
+//  useEffect(() => {
+//     const token = localStorage.getItem("token");
+//     API.getAllproducts(token)
+//       .then(({ data }) => {
+//         console.log(data);
+//         setData(data);
+//         // setOriginaldata(data);
+//       })
+//       .catch((err) => {
+//         console.log(err);
+//       });
+//     setSkipPageReset(false);
+//   }, []);
+const data = React.useMemo(() => makeData(20), [])
 
   return (
       <Table columns={columns} data={data} />
