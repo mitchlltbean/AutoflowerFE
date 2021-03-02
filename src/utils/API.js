@@ -8,8 +8,8 @@ const API = {
     return axios.post(`${URL_PREFIX}/api/employee/login`, employeeData);
   },
 
-  create: (employeeData, token) => {
-    return axios.post(`${URL_PREFIX}/api/employee/signup`, employeeData, {
+  create: (token, employeeData) => {
+    return axios.post(`${URL_PREFIX}/api/employee/create`, employeeData, {
       headers: {
         authorization: `Bearer: ${token}`,
       },

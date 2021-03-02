@@ -14,6 +14,7 @@ import {
   IconButton,
   Typography,
 } from "@material-ui/core";
+import DeleteIcon from "@material-ui/icons/Delete";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import "./style.css";
 
@@ -21,6 +22,16 @@ const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
       maxWidth: 345,
+      minWidth: 275,
+      width: "calc(100% / 4)",
+      margin: "1rem",
+      position: "relative",
+      justifyContent: "center",
+      backgroundColor: "#9FC680",
+      flexGrow: 1,
+      textAlign: "center",
+      display: "flex",
+      flexFlow: "column",
     },
     // ===========Img Stuff====================================
     // media: {
@@ -90,9 +101,9 @@ export default function EmpCard(props) {
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
-          <Button onClick={() => props.handleDeleteEmployee(props.emp_id)}>
-            DELETE
-          </Button>
+          <IconButton onClick={() => props.handleDeleteEmployee(props.emp_id)}>
+            <DeleteIcon />
+          </IconButton>
           <IconButton
             className={clsx(classes.expand, {
               [classes.expandOpen]: expanded,

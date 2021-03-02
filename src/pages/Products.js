@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from "react";
-import DataTable from "../components/Table/Truetable";
+import DataTable from "../components/Table/TrueTable";
 // import ItemCard from "../components/ItemCard";
 import Menu from "../components/Menu";
 // import Grid from "@material-ui/core/Grid";
