@@ -2,7 +2,6 @@ import { React, useEffect, useState } from "react";
 // import DataTable from "../components/DataTable";
 import Table from "../components/Table";
 // import ItemCard from "../components/ItemCard";
-import Menu from "../components/Menu";
 // import Grid from "@material-ui/core/Grid";
 import API from "../utils/API";
 
@@ -36,7 +35,7 @@ function Products() {
 
   return (
     <div id="productsPage">
-      <Menu />
+      {/* <Menu /> */}
 
       <div id="productsWrapper">
         <h1>Products</h1>
@@ -51,15 +50,12 @@ function Products() {
                 price={product.price}
                 instock={product.instock}
               />
-              {/* <Button
+               <Button
                 // onClick={() => handleDeleteproduct(product.id)}
                 className={classes.root}
                 container
                 spacing={1}
               ></Button> */}
-
-
-  
 
         <Table />
       </div>
