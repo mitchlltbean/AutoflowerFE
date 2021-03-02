@@ -65,7 +65,6 @@ function App() {
   return (
     <Router>
       <div>
-        <Navbar />
         <Switch>
           <Route exact path="/">
             <Landing
