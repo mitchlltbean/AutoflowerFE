@@ -26,6 +26,34 @@ import MenuItem from "@material-ui/core/MenuItem";
 //     marginTop: theme.spacing(2),
 //   },
 // }));
+// const [allCategoryProducts, setallCategoryProducts] = useState([]);
+//   const [categories, setcategories] = useState([]);
+//   const classes = useStyles();
+
+//   useEffect(() => {
+//     const token = localStorage.getItem("token");
+//     API.getAllcategories(token)
+//       .then(({ data }) => {
+//         console.log(data, "ALL CATEGORY DATA");
+//         setcategories(data);
+//       })
+//       .catch((err) => {
+//         console.log(err);
+//       });
+//   }, []);
+
+//   const handleSelectcategory = (id) => {
+//     console.log("HANDLE SELECT CAT FIRES", id);
+//     const token = localStorage.getItem("token");
+//     API.getSingleCategoryWithProducts(id, token)
+//       .then(({ data }) => {
+//         console.log(data, "SET single catogry to products");
+//         setallCategoryProducts(data);
+//       })
+//       .catch((err) => {
+//         console.log(err);
+//       });
+//   };
 
 // Create an editable cell renderer
 const EditableCell = ({

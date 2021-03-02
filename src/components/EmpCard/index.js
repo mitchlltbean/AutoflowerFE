@@ -4,6 +4,7 @@ import { red } from "@material-ui/core/colors";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
 import {
   Avatar,
+  Button,
   Card,
   CardActions,
   CardContent,
@@ -47,7 +48,7 @@ export default function EmpCard(props) {
   const classes = useStyles(); //the line stops here...
   const [expanded, setExpanded] = React.useState(false);
 
-// API calls here 
+  // API calls here
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -89,6 +90,9 @@ export default function EmpCard(props) {
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
+          <Button onClick={() => props.handleDeleteEmployee(props.emp_id)}>
+            DELETE
+          </Button>
           <IconButton
             className={clsx(classes.expand, {
               [classes.expandOpen]: expanded,
