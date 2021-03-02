@@ -44,3 +44,21 @@ const handleCreateemployee = (id) => {
       console.log(err);
     });
 };
+
+
+
+function ItemsTable() {
+  const [addModalOpen, setAddModalOpen] = React.useState(false);
+
+  const handleAddClick = () => {
+    setAddModalOpen(true);
+  };
+  const handleClose = ()=>{
+    setAddModalOpen(false)
+  }
+  <Box mt={4} position="fixed" bottom={10} right={10}>
+    <Fab color="secondary" aria-label="Add" onClick={handleAddClick}>
+      <AddIcon />
+    </Fab>
+  </Box>
+  <AddItemModal isOpen={addModalOpen} handleClose={handleClose}/>
