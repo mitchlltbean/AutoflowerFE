@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Grid, Menu, Segment } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import { NavLink } from "react-router-dom";
-import img from "./marrywanna.jpg";
 import "./style.css";
 
 // import Modal from '@material-ui/core/Modal';
@@ -24,8 +23,7 @@ export default class Navbar extends Component {
           <Segment inverted>
             <Menu inverted pointing secondary>
               <Menu.Item>
-                {/*//TODO onClick="" to toggle menu open/closed*/}
-                <img src={img} alt="weed" />
+                <span></span>
               </Menu.Item>
               <Menu.Item
                 as={NavLink}

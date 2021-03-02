@@ -1,7 +1,6 @@
 import { React, useEffect, useState } from "react";
 import DataTable from "../components/Table/Truetable";
 // import ItemCard from "../components/ItemCard";
-import Menu from "../components/Menu";
 // import Grid from "@material-ui/core/Grid";
 import API from "../utils/API";
 
@@ -21,7 +20,7 @@ function Products() {
   }, []);
   return (
     <div id="productsPage">
-      <Menu />
+      {/* <Menu /> */}
 
       <div id="productsWrapper">
         <h1>Products</h1>
