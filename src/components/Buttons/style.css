@@ -2,6 +2,7 @@
 
 * {
   margin: 0;
+  background-color: lightgray;
 }
 
 .container {
@@ -12,25 +13,29 @@
   /* This width property affects the width of the buttons */
   width: 100%;
   margin: 0 auto;
-  margin-bottom: 3rem;
-  background-color: lightgray;
+  /* margin-bottom: 3rem; */
+  /* background-color: lightgray; */
+  align-items: stretch;
 }
 
 .input {
   border: 4px solid red;
-  width: 35rem;
-  height: 6.25rem;
+  width: 60%;
+  height: auto;
   align-items: center !important;
-  margin: auto;
+  /* margin: auto; */
   margin-bottom: 1em;
   font-size: 40px;
   font-family: "Rajdhani", sans-serif !important;
+  background-color: white;
 }
 
 .keypad {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 60%;
+  align-items: center;
+  margin-top: 5em;
 }
 
 /* General Btn Styles========================================================== */
@@ -42,8 +47,8 @@
   font-size: 2em;
   font-family: "Rajdhani", sans-serif !important;
   text-align: center;
-  min-width: 75px;
-  min-height: 75px;
+  min-width: 95px;
+  min-height: 95px;
 }
 
 .button_row {
