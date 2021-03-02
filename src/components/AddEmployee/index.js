@@ -4,6 +4,7 @@ import Modal from '@material-ui/core/Modal';
 import AddCircle from '@material-ui/icons/AddCircle';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import MenuItem from '@material-ui/core/MenuItem';
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -54,17 +55,39 @@ export default function SimpleModal() {
     setOpen(false);
   };
 
+
+  //The Add Employee form 
   const body = (
     <div style={modalStyle} className={classes.paper}>
       <h2 id="simple-modal-title">Add Employee</h2>
       <p id="simple-modal-description">
-        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+        Welcome, admin!
+      </p>
+      <p id="simple-modal-description">
+        Create and save a new employee or manager to your database
       </p>
 
       <form noValidate autoComplete="off">
       <TextField id="outlined-basic" label="Name" variant="outlined" />
       <TextField id="outlined-basic" label="ID" variant="outlined" />
-      <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+      <TextField
+          id="standard-select-currency"
+          select
+          label="Select"
+        //   value={}
+        //   onChange={handleChange}
+          helperText="Please select employee or manager"
+        >
+          
+            <MenuItem>
+              Employee
+            </MenuItem>
+
+            <MenuItem>
+              Manager
+            </MenuItem>
+
+        </TextField>
     </form>
 
 
