@@ -44,9 +44,9 @@ const API = {
     });
   },
 
-  updateProducts: (token) => {
+  updateProducts: (token, data) => {
     console.log(token, "TOKEN");
-    return axios.put(`${URL_PREFIX}/api/product/productupdate`, {
+    return axios.put(`${URL_PREFIX}/api/product/productupdate`, data, {
       headers: {
         authorization: `Bearer: ${token}`,
       },

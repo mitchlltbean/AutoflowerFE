@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from "react";
-import DataTable from "../components/DataTable";
+import DataTable from "../components/Table/Truetable";
 // import ItemCard from "../components/ItemCard";
 import Menu from "../components/Menu";
 // import Grid from "@material-ui/core/Grid";
@@ -19,20 +19,6 @@ function Products() {
         console.log(err);
       });
   }, []);
-
-  // const handleDeleteproduct = (id) => {
-  //   console.log("HANDLE DELETE FIRES", id);
-  //   const token = localStorage.getItem("token");
-  //   API.deleteProducts(id, token)
-  //     .then(({ data }) => {
-  //       console.log(data, "SET new ALL PRODUCTS AFTER DELETE");
-  //       setProductsState(data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-
   return (
     <div id="productsPage">
       <Menu />
@@ -50,17 +36,9 @@ function Products() {
                 price={product.price}
                 instock={product.instock}
               />
-              {/* <Button
-                // onClick={() => handleDeleteproduct(product.id)}
-                className={classes.root}
-                container
-                spacing={1}
-              ></Button> */}
             </Grid>
           ))}
         </Grid> */}
-
-  
 
         <DataTable />
       </div>
