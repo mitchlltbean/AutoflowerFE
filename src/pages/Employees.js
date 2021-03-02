@@ -7,7 +7,7 @@ import API from "../utils/API";
 
 function Employees(props) {
   const [employees, setEmployees] = useState([]);
-  // const [newTank,setNewTank]= useState("");
+
   const token = localStorage.getItem("token");
   useEffect(() => {
     API.getAllemployees(token)
@@ -19,6 +19,37 @@ function Employees(props) {
         console.log(err);
       });
   }, []);
+  //handle delete employee
+  const handleDeleteEmployee = (id) => {
+    console.log("HANDLE DELETE Employee", id);
+    const token = localStorage.getItem("token");
+    console.log(token, "TOKEN FOR DELETE");
+    API.deleteEmployee(token, id).then(({ data }) => {
+      console.log(data, "SET new All employees state after delete");
+      API.getAllemployees(token)
+        .then(({ data }) => {
+          console.log(data);
+          setEmployees(data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    });
+  };
+  //handle create employee
+  const handleCreateemployee = (id) => {
+    console.log("HANDLE DELETE Employee", id);
+    const token = localStorage.getItem("token");
+    API.create(id, token)
+      .then(({ data }) => {
+        console.log(data, "SET new All employees state after new employee");
+        //push new employee? to state
+        setEmployees(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div id="employeePage">
@@ -36,9 +67,10 @@ function Employees(props) {
           {employees.map((employee) => (
             <EmpCard
               name={employee.name}
-              emp_id={employee.emp_id}
+              emp_id={employee.id}
               login={employee.login}
               is_manager={employee.is_manager}
+              handleDeleteEmployee={handleDeleteEmployee}
             />
           ))}
         </Grid>
