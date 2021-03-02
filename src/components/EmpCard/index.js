@@ -21,6 +21,16 @@ const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
       maxWidth: 345,
+      minWidth: 275,
+      width: 'calc(100% / 4)',
+      margin: '1rem',
+      position:'relative',
+      justifyContent: 'center',
+      backgroundColor: '#9FC680',
+      flexGrow: 1,
+      textAlign: 'center',
+      display: 'flex',
+      flexFlow: 'column',
     },
     // ===========Img Stuff====================================
     // media: {
