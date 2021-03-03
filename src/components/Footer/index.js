@@ -27,10 +27,9 @@ export default function Footer() {
   return (
     <footer className={classes.root}>
       <Typography variant="h4" className={classes.title}>
-        Footer Placeholder
+        Autoflower
       </Typography>
       <Typography variant="h6" className={classes.title}>
-        Content Placeholder
       </Typography>
     </footer>
   );

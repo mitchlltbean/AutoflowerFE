@@ -16,6 +16,7 @@
 #ordersPage {
   /* border: solid red 2px; */
   width: auto; 
+  background-color: teal;
   
 }
 
@@ -33,13 +34,18 @@
   bottom: 0;
 }
 
-/* .subheader {
+#ordersWrapper {
   display: flex;
-  justify-content: flex-end;
-  position: relative;
-  margin-top: 1em;
+  flex-flow: row wrap;
+  top: 0;
+  bottom: 0;
+}
+
+.subheader {
+  width: 100%;
+  justify-content: center;
 }
 
 .pagetitle {
-  margin-right: 20em;
-} */
+  margin-right: auto;
+}

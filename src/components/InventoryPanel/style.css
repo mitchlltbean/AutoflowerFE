@@ -1,13 +1,15 @@
 .two {
   background-color: forestgreen;
   border-radius: 3%;
-  max-width: 30em;
+  /* max-width: 30em; */
   margin: auto;
+  
 }
 .one {
+  background-color: whitesmoke;
   width: "15em";
   float: right;
-  margin-right: 8em;
+  /* margin-right: 8em; */
   margin-top: 1.25em;
 }
 
