@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
-import AddCircle from "@material-ui/icons/AddCircle";
+// import AddCircle from "@material-ui/icons/AddCircle";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 import API from "../../utils/API";
 import { Tooltip } from "@material-ui/core";
+import { PersonAdd } from "@material-ui/icons";
 
 
 function rand() {
@@ -41,7 +42,9 @@ const useStyles = makeStyles((theme) => ({
 
   addbutton: {
     fontWeight: "bold",
-    
+    float: "right",
+    fontSize:"60px",
+    color: "black",
   }
 
 }));
@@ -151,7 +154,7 @@ export default function SimpleModal() {
   return (
     <div>
       <Tooltip title="Add Employee">
-      <AddCircle
+      <PersonAdd
         variant ="contained"
         type="button"
         onClick={handleOpen}
