@@ -12,6 +12,7 @@ import {
   TableHead,
   TableRow,
   TextField,
+  Tooltip,
 } from "@material-ui/core";
 import { Save } from "@material-ui/icons";
 import { DeleteForever } from "@material-ui/icons";
@@ -45,6 +46,9 @@ export default function Truetable() {
     descriptioninput: {
       width: 600, 
     },
+    tableheader:{
+      fontSize: "1.25rem",
+    }
 
   }));
 
@@ -173,6 +177,7 @@ export default function Truetable() {
         onChange={HandleInputchange}
       ></TextField>
 
+    <Tooltip title="Save Product">
       <Button 
       variant="contained" 
       startIcon={<Save/>}
@@ -180,7 +185,9 @@ export default function Truetable() {
       onClick={handleUpdate}>
         Save
       </Button>
+      </Tooltip>
 
+    <Tooltip title="Delete Product">
       <Button 
       variant="contained" 
       startIcon ={<DeleteForever />}
@@ -188,8 +195,8 @@ export default function Truetable() {
       onClick={handleDeleteproduct}>
         Delete
       </Button>
+    </Tooltip>
       
-
     </div>
   );
   return (
@@ -197,10 +204,10 @@ export default function Truetable() {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>ITEM</TableCell>
-            <TableCell>DESCRIPTION</TableCell>
-            <TableCell>PRICE</TableCell>
-            <TableCell>INSTOCK</TableCell>
+            <TableCell className={classes.tableheader}>ITEM</TableCell>
+            <TableCell className={classes.tableheader}>DESCRIPTION</TableCell>
+            <TableCell className={classes.tableheader}>PRICE</TableCell>
+            <TableCell className={classes.tableheader}>STOCK</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -214,6 +221,8 @@ export default function Truetable() {
                 <TableCell>
                   <div>
                     {" "}
+
+                  <Tooltip title="Edit Product">
                     <EditIcon
                       type="button"
                       onClick={() =>
@@ -226,6 +235,8 @@ export default function Truetable() {
                         })
                       }
                     />
+                  </Tooltip>
+
                   </div>
                 </TableCell>
               </TableRow>

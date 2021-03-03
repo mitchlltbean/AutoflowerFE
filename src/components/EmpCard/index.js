@@ -12,6 +12,7 @@ import {
   //   CardMedia, meant for img's
   Collapse,
   IconButton,
+  Tooltip,
   Typography,
 } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -106,9 +107,14 @@ export default function EmpCard(props) {
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
+
+        <Tooltip title="Delete Employee">
           <IconButton onClick={() => props.handleDeleteEmployee(props.emp_id)}>
             <DeleteIcon />
           </IconButton>
+        </Tooltip>
+
+        <Tooltip title="Expand">
           <IconButton
             className={clsx(classes.expand, {
               [classes.expandOpen]: expanded,
@@ -119,6 +125,8 @@ export default function EmpCard(props) {
           >
             <ExpandMore />
           </IconButton>
+          </Tooltip>
+
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>

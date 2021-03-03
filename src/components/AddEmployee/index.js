@@ -6,6 +6,7 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 import API from "../../utils/API";
+import { Tooltip } from "@material-ui/core";
 
 
 function rand() {
@@ -149,6 +150,7 @@ export default function SimpleModal() {
 
   return (
     <div>
+      <Tooltip title="Add Employee">
       <AddCircle
         variant ="contained"
         type="button"
@@ -158,6 +160,7 @@ export default function SimpleModal() {
         className ={classes.addbutton}
         // startIcon={<AddCircleOutline />}
       />
+      </Tooltip>
 
       {/* <button type="button" onClick={handleOpen}>
         Open Modal
