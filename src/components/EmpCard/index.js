@@ -22,12 +22,12 @@ const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
       maxWidth: 345,
-      minWidth: 275,
-      width: "calc(100% / 4)",
-      margin: "1rem",
-      position: "relative",
-      justifyContent: "center",
-      backgroundColor: "#9FC680",
+      minWidth: 250,
+      width: 'calc(100% / 4)',
+      margin: '.75rem',
+      position:'relative',
+      justifyContent: 'center',
+      backgroundColor: '#9FC680',
       flexGrow: 1,
       textAlign: "center",
       display: "flex",
@@ -52,6 +52,11 @@ const useStyles = makeStyles((theme) =>
     avatar: {
       backgroundColor: red[500],
     },
+
+    title: {
+      fontWeight: 'bold',
+    }
+
   })
 );
 
@@ -92,12 +97,12 @@ export default function EmpCard(props) {
             variant="body1"
             className={classes.title}
             color="textSecondary"
-            component="h4"
+            component="h2"
             title={props.is_manager}
           >
-            Manager: {props.is_manager}
+            Manager {props.is_manager}
             <br />
-            Other employee details to come?
+            {/* Other employee details to come? */}
           </Typography>
         </CardContent>
         <CardActions disableSpacing>

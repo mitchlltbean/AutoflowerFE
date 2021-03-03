@@ -56,6 +56,7 @@ class Buttons extends React.Component {
         <div className="container">
           <div className="keypad">
             <input
+              placeholder="Employee ID #"
               name="id"
               className="input"
               value={this.props.loginState.id}
@@ -71,6 +72,7 @@ class Buttons extends React.Component {
             <input
               name="login"
               className="input"
+              placeholder="Employee Key"
               value={this.props.loginState.login}
               onChange={this.props.handleLoginInput}
               type="password"
