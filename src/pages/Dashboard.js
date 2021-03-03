@@ -69,6 +69,7 @@ function Dashboard() {
           <br />
           (ALL CHANGES HERE ARE SUBJECT TO CHANGE)
         </p>
+
         <div className={classes.leftdiv}>
           <h1 className={classes.headersecundus}>
             A DESCRIPTION OF THE APP IN ITS FULL ONCE FINISHED
@@ -86,6 +87,7 @@ function Dashboard() {
             A DESCRIPTION OF OUR IMMEDIATE STEPS MOVING FORWARD
           </h1>
           <p className={classes.textsecundus}>AFOREMENTIONED DESCRIPTION</p>
+          {/* //TODO add image to each div and play around with the positioning and maybe you can fenagle it into position */}
         </div>
       </div>
       <Footer />
