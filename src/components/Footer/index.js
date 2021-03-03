@@ -26,7 +26,7 @@ export default function Footer() {
   return (
     <footer className={classes.root}>
       <Typography variant="h4" className={classes.title}>
-        Autoflower
+        AutoFlower
       </Typography>
       <Typography variant="h6" className={classes.title}></Typography>
     </footer>
