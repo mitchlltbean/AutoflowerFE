@@ -9,7 +9,7 @@ const useStyles = makeStyles({
     width: "100%",
     height: "8%",
     marginTop: "5em",
-    borderTop: "10px solid #2d6a4f",
+    borderTop: "8px solid #2d6a4f",
     bottom: 0,
     position: "fixed",
     backgroundColor: "#49977b",
