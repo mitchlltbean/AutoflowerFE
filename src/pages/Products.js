@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import Menu from "../components/Menu";
-import DataTable from "../components/Table/Truetable";
+import Truetable from "../components/Table/Truetable";
 // import ItemCard from "../components/ItemCard";
 // import Grid from "@material-ui/core/Grid";
 import API from "../utils/API";
@@ -41,7 +41,7 @@ function Products() {
           ))}
         </Grid> */}
 
-        <DataTable />
+        <Truetable />
       </div>
       <Footer />
     </div>

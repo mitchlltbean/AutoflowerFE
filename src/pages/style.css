@@ -14,8 +14,8 @@
 #statsPage,
 #productsPage {
   border: solid red 2px;
-  width: 100%;
-  float: right;
+  width: auto; 
+  
 }
 
 #empWrapper,
@@ -25,7 +25,9 @@
 #productsWrapper {
   border: solid blue 2px;
   display: flex;
+  margin-left: 18em;
   flex-flow: row wrap;
   top: 0;
   bottom: 0;
+  
 }
