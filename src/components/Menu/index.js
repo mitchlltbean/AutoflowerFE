@@ -27,7 +27,7 @@ function Menu() {
         <ul className="nav-menu-itmes" onClick={showSidebar}>
           <li className="navbar-toggle">
             <Link to="#" className="menu-bars">
-              <AiIcons.AiOutlineClose />
+              <AiIcons.AiFillCloseSquare />
             </Link>
           </li>
           {sideMenuItems.map((ting, index) => {
@@ -42,7 +42,7 @@ function Menu() {
           })}
           <li onClick={handleLogout} className="nav-text-login">
             <Link>
-              <IoIcons.IoMdPeople />
+              <FaIcons.FaSadTear />
               <span>Logout</span>
             </Link>
           </li>

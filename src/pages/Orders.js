@@ -5,9 +5,9 @@ import Products4Sale from "../components/Products4Sale/Product4Sale";
 import products from "../products.json";
 import { makeStyles } from "@material-ui/core/styles";
 import "./style.css";
-
-// import Menu from "../components/Menu";
+import Footer from "../components/Footer";
 import "./style.css";
+import Menu from "../components/Menu";
 
 const useStyles = makeStyles({
   root: {
@@ -40,6 +40,7 @@ export default function Orders() {
 
   return (
     <div>
+      <Menu />
       {/* <Grid
         container
         className={classes.maingrid}
@@ -63,6 +64,7 @@ export default function Orders() {
           ))}
         </Grid>
       </Grid> */}
+      <Footer />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import AddEmployee from "../components/AddEmployee";
 // import employees from "../employees.json";
 import Grid from "@material-ui/core/Grid";
 import API from "../utils/API";
+import Footer from "../components/Footer";
 
 function Employees(props) {
   const [employees, setEmployees] = useState([]);
@@ -66,6 +67,7 @@ function Employees(props) {
         </Grid>
       </div>
       {/* <pre>{JSON.stringify(props, null, 4)}</pre> */}
+      <Footer />
     </div>
   );
 }
