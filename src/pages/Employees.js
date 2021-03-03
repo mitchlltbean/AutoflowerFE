@@ -43,15 +43,11 @@ function Employees(props) {
     <div id="employeePage">
       <Menu />
       <div id="empWrapper">
+        <subheader class="subheader">
+          <h1 class="pagetitle">Employees</h1>
 
-      <subheader class="subheader">  
-
-        <h1 class="pagetitle">Employees</h1>
-
-        <AddEmployee/>
-
-      </subheader>
-
+          <AddEmployee />
+        </subheader>
 
         <Grid
           container
@@ -75,7 +71,6 @@ function Employees(props) {
 
       {/* <pre>{JSON.stringify(props, null, 4)}</pre> */}
       <Footer />
-
     </div>
   );
 }

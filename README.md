@@ -40,7 +40,7 @@ medium.com
 
 # Developement
 
-none
+This app is currently under devlopement. Future work includes...................
 
 # License
 

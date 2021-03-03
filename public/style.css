@@ -1,4 +1,7 @@
 #root {
-  background-color: salmon;
+  background-color: #abc4ba;
+}
+#root html {
+  background-color: #0d6645;
   height: 100%;
 }

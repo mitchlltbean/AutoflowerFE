@@ -18,17 +18,19 @@ import {
 import DeleteIcon from "@material-ui/icons/Delete";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import "./style.css";
+import { BorderLeft } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
       maxWidth: 345,
       minWidth: 250,
-      width: 'calc(100% / 4)',
-      margin: '.75rem',
-      position:'relative',
-      justifyContent: 'center',
-      backgroundColor: '#9FC680',
+      width: "calc(100% / 4)",
+      margin: ".75rem",
+      position: "relative",
+      justifyContent: "center",
+      backgroundColor: "#9FC680",
+
       flexGrow: 1,
       textAlign: "center",
       display: "flex",
@@ -55,9 +57,9 @@ const useStyles = makeStyles((theme) =>
     },
 
     title: {
-      fontWeight: 'bold',
-    }
-
+      fontWeight: "bold",
+      fontSize: "24px",
+    },
   })
 );
 
@@ -106,31 +108,31 @@ export default function EmpCard(props) {
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
-
-        <Tooltip title="Delete Employee">
-          <IconButton onClick={() => props.handleDeleteEmployee(props.emp_id)}>
-            <DeleteIcon/>
-          </IconButton>
-        </Tooltip>
-
-        <Tooltip title="Expand">
-          <IconButton
-            className={clsx(classes.expand, {
-              [classes.expandOpen]: expanded,
-            })}
-            onClick={handleExpandClick}
-            aria-expanded={expanded}
-            aria-label="show more"
-          >
-            <ExpandMore />
-          </IconButton>
+          <Tooltip title="Delete Employee">
+            <IconButton
+              onClick={() => props.handleDeleteEmployee(props.emp_id)}
+            >
+              <DeleteIcon />
+            </IconButton>
           </Tooltip>
 
+          <Tooltip title="Expand">
+            <IconButton
+              className={clsx(classes.expand, {
+                [classes.expandOpen]: expanded,
+              })}
+              onClick={handleExpandClick}
+              aria-expanded={expanded}
+              aria-label="show more"
+            >
+              <ExpandMore />
+            </IconButton>
+          </Tooltip>
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Typography paragraph className={classes.title} title={props.login}>
-              This is where the employee details will go, like their login code;{" "}
+            <Typography paragraph className={classes.title}>
+              This is where the employee details will go
               {props.login}
             </Typography>
           </CardContent>
