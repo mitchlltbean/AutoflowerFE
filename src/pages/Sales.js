@@ -10,9 +10,10 @@ function Sales() {
     <div id="salesPage">
       <Menu />
 
-      <h1>Sales</h1>
+      <h1 class="pagetitle">Sales</h1>
 
       <div id="salesWrapper">
+        
         {sales.map((sale) => (
           <TransactionCard
             name={sale.name}
