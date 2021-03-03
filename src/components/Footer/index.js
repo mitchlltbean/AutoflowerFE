@@ -8,11 +8,10 @@ const useStyles = makeStyles({
   root: {
     width: "100%",
     height: "8%",
-    marginTop: "5em",
-    borderTop: "8px solid #2d6a4f",
+    borderTop: "8px solid #c3d5ab",
     bottom: 0,
     position: "fixed",
-    backgroundColor: "#49977b",
+    backgroundColor: "#dee6c9",
     //   display: 'flex',
     textAlign: "center",
   },
@@ -27,11 +26,9 @@ export default function Footer() {
   return (
     <footer className={classes.root}>
       <Typography variant="h4" className={classes.title}>
-        Footer Placeholder
+        Autoflower
       </Typography>
-      <Typography variant="h6" className={classes.title}>
-        Content Placeholder
-      </Typography>
+      <Typography variant="h6" className={classes.title}></Typography>
     </footer>
   );
 }

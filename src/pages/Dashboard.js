@@ -7,21 +7,43 @@ const useStyles = makeStyles({
   page: {
     maxHeight: "100%",
     height: "100%",
-    marginTop: "1%",
+    backgroundColor: "#71b068",
   },
   headerprimus: {
-    fontSize: "70px",
+    position: "relative",
+    left: "20%",
+    width: "60%",
+    fontSize: "60px",
     textAlign: "center",
   },
   headersecundus: {
+    marginLeft: 0,
+    position: "relative",
+    left: 0,
     textAlign: "left",
+    width: "100%",
   },
   headertertius: {
+    marginRight: 0,
+    position: "relative",
+    right: 0,
     textAlign: "right",
+    width: "100%",
   },
-  text: {
+  textprimus: {
     marginBottom: "5%",
     fontSize: "18px",
+    textAlign: "center",
+  },
+  textsecundus: {
+    marginBottom: "5%",
+    fontSize: "18px",
+    textAlign: "left",
+  },
+  texttertius: {
+    marginBottom: "5%",
+    fontSize: "18px",
+    textAlign: "right",
   },
 });
 
@@ -31,10 +53,8 @@ function Dashboard() {
     <div id="dashboardPage">
       <Menu />
       <div className={classes.page}>
-        <h1 className={classes.headerprimus}>
-          Automating weed because we know you are too high to do it yourself!
-        </h1>
-        <p className={classes.text}>
+        <h1 className={classes.headerprimus}></h1>
+        <p className={classes.textprimus}>
           Lorem Ipsum is simply dummy text on the Internet and is therefore not
           safe for mass assignment Lorem Ipsum to any person. Lorem Ipsum has
           been around for a long time and it has never been
@@ -43,7 +63,7 @@ function Dashboard() {
           We keep track of your weed so you do not have to! You can trust us!
           Who wouldn't trust a pothead with weed?
         </h1>
-        <p className={classes.text}>
+        <p className={classes.textsecundus}>
           Sorry, Data. You did exactly what you had to do. You considered all
           your options, you tried every alternative and then you made the hard
           choice. Mr. Crusher, ready a collision course with the Borg ship. In
@@ -57,7 +77,7 @@ function Dashboard() {
           Here it is simple and easy to organise and run your dispensary without
           the hassle and all the features!
         </h1>
-        <p className={classes.text}>
+        <p className={classes.texttertius}>
           Sorry, Data. You did exactly what you had to do. You considered all
           your options, you tried every alternative and then you made the hard
           choice. Mr. Crusher, ready a collision course with the Borg ship. In

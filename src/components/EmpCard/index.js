@@ -29,8 +29,8 @@ const useStyles = makeStyles((theme) =>
       margin: ".75rem",
       position: "relative",
       justifyContent: "center",
-      backgroundColor: "#9FC680",
-
+      // EMPLOYEE CARD COLOR
+      backgroundColor: "whitesmoke",
       flexGrow: 1,
       textAlign: "center",
       display: "flex",
@@ -76,6 +76,7 @@ export default function EmpCard(props) {
   return (
     <div>
       <Card className={classes.root}>
+        {/* <p>Name and ID</p> */}
         <CardHeader
           avatar={
             <Avatar
@@ -89,7 +90,6 @@ export default function EmpCard(props) {
           title={props.name}
           subheader={props.emp_id}
         />
-
         {/* <CardMedia
         className={classes.media}
         image=""
