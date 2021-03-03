@@ -9,6 +9,7 @@ import Stats from "./pages/Stats";
 import "./App.css";
 import Orders from "./pages/Orders";
 import API from "./utils/API";
+import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 
 function App() {
   const [employeeState, setemployeeState] = useState({
@@ -60,53 +61,75 @@ function App() {
       [name]: value,
     });
   };
+  const theme = createMuiTheme({
+    overrides: {
+      MuiTableCell: {
+        root: {
+          fontSize: "18px !important",
+          color: "black",
+        },
+      },
+      MuiTypography: {
+        body2: {
+          fontSize: "24px !important",
+          color: "black",
+        },
+        body1: {
+          fontSize: "24px !important",
+          color: "black",
+        },
+      },
+    },
+  });
 
   return (
     <Router>
       <div>
         <Switch>
-          <Route exact path="/">
-            <Landing
-              handleLoginInput={handleLoginInput}
-              handleLoginSubmit={handleLoginSubmit}
-              setLoginState={setLoginState}
-              loginState={loginState}
-            />
-          </Route>
+          <MuiThemeProvider theme={theme}>
+            <Route exact path="/">
+              <Landing
+                handleLoginInput={handleLoginInput}
+                handleLoginSubmit={handleLoginSubmit}
+                setLoginState={setLoginState}
+                loginState={loginState}
+              />
+            </Route>
 
-          <Route
-            exact
-            path="/dashboard"
-            component={Dashboard}
-            render={() => <Dashboard />}
-          />
-          <Route exact path="/employees">
-            <Employees token={employeeState.token}></Employees>
-          </Route>
-          <Route
-            exact
-            path="/sales"
-            component={Sales}
-            render={() => <Sales />}
-          />
-          <Route
-            exact
-            path="/products"
-            component={Products}
-            render={() => <Products />}
-          />
-          <Route
-            exact
-            path="/orders"
-            component={Orders}
-            render={() => <Orders />}
-          />
-          <Route
-            exact
-            path="/stats"
-            component={Stats}
-            render={() => <Stats />}
-          />
+            <Route
+              exact
+              path="/dashboard"
+              component={Dashboard}
+              render={() => <Dashboard />}
+            />
+            <Route exact path="/employees">
+              <Employees token={employeeState.token}></Employees>
+            </Route>
+            <Route
+              exact
+              path="/sales"
+              component={Sales}
+              render={() => <Sales />}
+            />
+            <Route
+              exact
+              path="/products"
+              component={Products}
+              render={() => <Products />}
+            />
+            <Route
+              exact
+              path="/orders"
+              component={Orders}
+              render={() => <Orders />}
+            />
+            <Route
+              exact
+              path="/stats"
+              component={Stats}
+              render={() => <Stats />}
+            />
+          </MuiThemeProvider>
         </Switch>
       </div>
     </Router>
