@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) =>
       position:'relative',
       justifyContent: 'center',
       // EMPLOYEE CARD COLOR 
-      backgroundColor: 'whitesmoke',
+      backgroundColor: '#93B08D',
       flexGrow: 1,
       textAlign: "center",
       display: "flex",
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) =>
       transform: "rotate(180deg)",
     },
     avatar: {
-      backgroundColor: red[500],
+      backgroundColor: "#766581",
     },
 
     title: {

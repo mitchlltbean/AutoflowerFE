@@ -1,5 +1,7 @@
 #root {
   /* set the login page background color  */
-  background-color: #71b068;
+  /* background-color: #b5d3be; */
+  background: linear-gradient(to right, #FCB045, #6FC268);
+  background: -webkit-linear-gradient(to right, #fcb045, #6FC268);
   height: 100%;
 }
