@@ -44,9 +44,14 @@ function Employees(props) {
       <Menu />
       <div id="empWrapper">
 
-        <h1>Employees</h1>
+      <subheader class="subheader">  
+
+        <h1 class="pagetitle">Employees</h1>
 
         <AddEmployee/>
+
+      </subheader>
+
 
         <Grid
           container

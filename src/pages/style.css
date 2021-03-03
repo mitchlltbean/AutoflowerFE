@@ -12,8 +12,9 @@
 #salesPage,
 #productsPage,
 #statsPage,
-#productsPage {
-  border: solid red 2px;
+#productsPage,
+#ordersPage {
+  /* border: solid red 2px; */
   width: auto; 
   
 }
@@ -22,12 +23,23 @@
 #salesWrapper,
 #productsWrapper,
 #statsWrapper,
-#productsWrapper {
-  border: solid blue 2px;
+#productsWrapper,
+#ordersWrapper {
+  /* border: solid blue 2px; */
   display: flex;
   margin-left: 18em;
   flex-flow: row wrap;
   top: 0;
   bottom: 0;
-  
 }
+
+/* .subheader {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  margin-top: 1em;
+}
+
+.pagetitle {
+  margin-right: 20em;
+} */
