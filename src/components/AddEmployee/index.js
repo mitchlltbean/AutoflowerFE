@@ -7,6 +7,7 @@ import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 import API from "../../utils/API";
 
+
 function rand() {
   return Math.round(Math.random() * 20) - 10;
 }
@@ -37,9 +38,11 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
   },
 
-  //   addform:{
+  addbutton: {
+    fontWeight: "bold",
+    
+  }
 
-  //   }
 }));
 
 export default function SimpleModal() {
@@ -123,10 +126,10 @@ export default function SimpleModal() {
           id="standard-select-currency"
           name="manager"
           // select
-          label="Manager true or false"
+          label="Manager? (true or false)"
           value={employeeData.manager}
           onChange={HandleInputchange}
-          helperText="Please select employee or manager"
+          // helperText="Please select employee or manager"
         >
           <MenuItem>true</MenuItem>
 
@@ -147,10 +150,13 @@ export default function SimpleModal() {
   return (
     <div>
       <AddCircle
+        variant ="contained"
         type="button"
         onClick={handleOpen}
         aria-label="add"
         fontSize="large"
+        className ={classes.addbutton}
+        // startIcon={<AddCircleOutline />}
       />
 
       {/* <button type="button" onClick={handleOpen}>

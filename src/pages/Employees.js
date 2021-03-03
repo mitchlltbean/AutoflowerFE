@@ -42,9 +42,10 @@ function Employees(props) {
     <div id="employeePage">
       <Menu />
       <div id="empWrapper">
+
         <h1>Employees</h1>
 
-        <AddEmployee />
+        <AddEmployee/>
 
         <Grid
           container

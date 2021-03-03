@@ -22,20 +22,12 @@ const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
       maxWidth: 345,
-      minWidth: 275,
-<<<<<<< HEAD
+      minWidth: 250,
       width: 'calc(100% / 4)',
       margin: '.75rem',
       position:'relative',
       justifyContent: 'center',
       backgroundColor: '#9FC680',
-=======
-      width: "calc(100% / 4)",
-      margin: "1rem",
-      position: "relative",
-      justifyContent: "center",
-      backgroundColor: "#9FC680",
->>>>>>> dev
       flexGrow: 1,
       textAlign: "center",
       display: "flex",
@@ -60,14 +52,11 @@ const useStyles = makeStyles((theme) =>
     avatar: {
       backgroundColor: red[500],
     },
-<<<<<<< HEAD
 
     title: {
       fontWeight: 'bold',
     }
 
-=======
->>>>>>> dev
   })
 );
 
