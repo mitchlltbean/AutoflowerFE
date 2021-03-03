@@ -48,7 +48,8 @@ export default function Truetable() {
     },
     tableheader:{
       fontSize: "1.25rem",
-    }
+    },
+    // tableroot:{},
 
   }));
 
@@ -201,7 +202,7 @@ export default function Truetable() {
   );
   return (
     <div>
-      <Table>
+      <Table className={classes.tableroot}>
         <TableHead>
           <TableRow>
             <TableCell className={classes.tableheader}>ITEM</TableCell>

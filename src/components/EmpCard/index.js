@@ -95,10 +95,9 @@ export default function EmpCard(props) {
       /> */}
         <CardContent>
           <Typography
-            variant="body1"
+            variant="h5"
             className={classes.title}
             color="textSecondary"
-            component="h2"
             title={props.is_manager}
           >
             Manager {props.is_manager}
@@ -110,7 +109,7 @@ export default function EmpCard(props) {
 
         <Tooltip title="Delete Employee">
           <IconButton onClick={() => props.handleDeleteEmployee(props.emp_id)}>
-            <DeleteIcon />
+            <DeleteIcon/>
           </IconButton>
         </Tooltip>
 
