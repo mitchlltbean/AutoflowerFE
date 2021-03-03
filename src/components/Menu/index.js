@@ -27,7 +27,7 @@ function Menu() {
         <ul className="nav-menu-itmes" onClick={showSidebar}>
           <li className="navbar-toggle">
             <Link to="#" className="menu-bars">
-              <AiIcons.AiOutlineClose />
+              <AiIcons.AiFillCloseSquare />
             </Link>
           </li>
           {sideMenuItems.map((ting, index) => {
