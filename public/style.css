@@ -1,10 +1,11 @@
 #root {
 
-  background-color: #abc4ba;
+  /* background-color: #abc4ba; */
+  background: linear-gradient(to right, #FCB045, #6FC268);
+  background: -webkit-linear-gradient(to right, #fcb045, #6FC268);
+  height: 100%;
 }
 #root html {
-  background-color: #0d6645;
-
   /* set the login page background color  */
   /* background-color: #b5d3be; */
   background: linear-gradient(to right, #FCB045, #6FC268);
