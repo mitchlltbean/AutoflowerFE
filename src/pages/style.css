@@ -12,7 +12,8 @@
 #salesPage,
 #productsPage,
 #statsPage,
-#productsPage {
+#productsPage,
+#ordersPage {
   /* border: solid red 2px; */
   width: auto; 
   
@@ -22,7 +23,8 @@
 #salesWrapper,
 #productsWrapper,
 #statsWrapper,
-#productsWrapper {
+#productsWrapper,
+#ordersWrapper {
   /* border: solid blue 2px; */
   display: flex;
   margin-left: 18em;
