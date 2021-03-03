@@ -1,0 +1,17 @@
+.two {
+  background-color: forestgreen;
+  border-radius: 3%;
+
+  max-width: 30em;
+}
+.one {
+  width: 600px;
+  margin-top: 42px;
+  float: right;
+  margin-right: 20px;
+}
+h1 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 8em;
+}
