@@ -8,10 +8,10 @@ const useStyles = makeStyles({
   root: {
     width: "100%",
     height: "10%",
-    // borderTop: "8px solid #c3d5ab",
+    borderTop: "8px solid #c3d5ab",
     bottom: 0,
     position: "fixed",
-    backgroundColor: "black",
+    backgroundColor: "#070d0d",
     //   display: 'flex',
     textAlign: "center",
   },
