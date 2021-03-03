@@ -1,13 +1,14 @@
 import React from "react";
 import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
+import * as FiIcons from "react-icons/fi";
+import * as GiIcons from "react-icons/gi";
 import * as IoIcons from "react-icons/io";
 
 export const sideMenuItems = [
   {
     name: "Home",
     url: "/dashboard",
-    icon: <IoIcons.IoMdPeople />,
+    icon: <GiIcons.GiWoodCabin />,
     className: "nav-text",
   },
   {
@@ -20,26 +21,26 @@ export const sideMenuItems = [
   {
     name: "Sales",
     url: "/sales",
-    icon: <IoIcons.IoMdPeople />,
+    icon: <GiIcons.GiWallet />,
     className: "nav-text",
   },
   {
     name: "Manage Products",
     url: "/products",
-    icon: <IoIcons.IoMdPeople />,
+    icon: <FaIcons.FaSitemap />,
     className: "nav-text",
   },
   {
     name: "Statistics(Later)",
     url: "/stats",
-    icon: <IoIcons.IoMdPeople />,
+    icon: <FaIcons.FaPercent />,
     className: "nav-text",
   },
 
   {
     name: "Orders",
     url: "/orders",
-    icon: <IoIcons.IoMdPeople />,
+    icon: <FiIcons.FiPackage />,
     className: "nav-text",
   },
   // {

@@ -13,6 +13,7 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 // import useStyles from "./sideBarStyles";
 import "./style.css";
+import { Autorenew } from "@material-ui/icons";
 // import products from "../products.json";
 
 //perhaps card or Buttons interface ?
@@ -36,19 +37,29 @@ const useStyles = makeStyles({
 
   summarypanel: {
     minWidth: 275,
-    maxWidth: "25%",
-
-    width: "25%",
+    maxWidth: "35%",
+    width: "40%",
     height: "50em",
     margin: "auto",
-    position: "absolute",
-    left: "11%",
+    left: "20%",
     top: "15%",
     justifyContent: "center",
     backgroundColor: "#A9BCD0",
     flexGrow: 1,
     textAlign: "center",
   },
+
+  root: {
+    margin: ".5em",
+    backgroundColor: "red",
+    fontWeight: 'bold',
+    fontSize: "1.05rem",
+  },
+
+  buttoncontainer: {
+    margin: "10px",
+  }
+
 });
 
 // The meat and potatos
@@ -104,7 +115,7 @@ export default function InventoryPanel() {
           {" "}
           {categories.map((category) => {
             return (
-              <Button
+              <Button variant="contained" 
                 onClick={() => handleSelectcategory(category.id)}
                 className={classes.root}
                 container
@@ -198,10 +209,12 @@ export default function InventoryPanel() {
           </CardContent>
 
           <CardActions>
+            
             <Button size="large">Send</Button>
             <Button size="large">Clear</Button>
+          
           </CardActions>
-          <div style={{ width: "280px", overflow: "auto", height: "400px" }}>
+          <div style={{ width: "532px", overflow: "auto", height: "500px", fontSize: "20px" }}>
             <pre>{JSON.stringify(tax.response, null, 4)}</pre>
           </div>
         </Card>

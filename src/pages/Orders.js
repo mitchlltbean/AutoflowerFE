@@ -5,10 +5,13 @@ import Products4Sale from "../components/Products4Sale/Product4Sale";
 import products from "../products.json";
 import { makeStyles } from "@material-ui/core/styles";
 import "./style.css";
-import Navbar from "../components/Navbar/index";
 
 // import Menu from "../components/Menu";
+
+import Footer from "../components/Footer";
+
 import "./style.css";
+import Menu from "../components/Menu";
 
 const useStyles = makeStyles({
   root: {
@@ -40,15 +43,16 @@ export default function Orders() {
   const classes = useStyles();
 
   return (
-    <div>
+    <div id="ordersPage">
+      <Menu />
       {/* <Grid
         container
         className={classes.maingrid}
         justify="space-evenly"
         direction="row"
       > */}
-      <Navbar></Navbar>
-      <div>
+      
+      <div id="ordersWrapper">
         <h1>Orders</h1>
         <InventoryPanel />
       </div>
@@ -65,6 +69,7 @@ export default function Orders() {
           ))}
         </Grid>
       </Grid> */}
+      <Footer />
     </div>
   );
 }

@@ -1,16 +1,21 @@
 import { useState, useEffect, React, useStyles } from "react";
-import { useTable, T } from "react-table";
+import { useTable } from "react-table";
 import EditIcon from "@material-ui/icons/Edit";
 import Modal from "@material-ui/core/Modal";
 import API from "../../utils/API";
 import { makeStyles } from "@material-ui/core/styles";
 import {
+  Button,
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableRow,
+  TextField,
+  Tooltip,
 } from "@material-ui/core";
+import { Save } from "@material-ui/icons";
+import { DeleteForever } from "@material-ui/icons";
 
 export default function Truetable() {
   function rand() {
@@ -31,12 +36,21 @@ export default function Truetable() {
   const useStyles = makeStyles((theme) => ({
     paper: {
       position: "absolute",
-      width: 400,
+      width: "50em",
+      height: "20em",
       backgroundColor: theme.palette.background.paper,
       border: "2px solid #000",
       boxShadow: theme.shadows[5],
       padding: theme.spacing(2, 4, 3),
     },
+    descriptioninput: {
+      width: 600, 
+    },
+    tableheader:{
+      fontSize: "1.25rem",
+    },
+    // tableroot:{},
+
   }));
 
   const classes = useStyles();
@@ -132,40 +146,69 @@ export default function Truetable() {
   };
 
   const body = (
-    <>
+    <div style={modalStyle} className={classes.paper}>
       <h2>Edit Products Below</h2>
       <p></p>
       <input type="hidden" name="id" value={data.id}></input>
-      <input name="item" value={data.item} onChange={HandleInputchange}></input>
 
-      <input
+      <TextField 
+      name="item" 
+      helperText = "Item"
+      value={data.item} 
+      onChange={HandleInputchange}></TextField>
+
+      <TextField
         name="description"
+        className={classes.descriptioninput}
+        multiline rowsMax={4}
+        helperText = "Description"
         value={data.description}
         onChange={HandleInputchange}
-      ></input>
-      <input
+      ></TextField>
+      <TextField
         name="price"
+        helperText = "Price"
         value={data.price}
         onChange={HandleInputchange}
-      ></input>
-      <input
+      ></TextField>
+      <TextField
         name="instock"
+        helperText = "Stock"
         value={data.instock}
         onChange={HandleInputchange}
-      ></input>
-      <button onClick={handleUpdate}>Save</button>
-      <button onClick={handleDeleteproduct}>Delete</button>
-    </>
+      ></TextField>
+
+    <Tooltip title="Save Product">
+      <Button 
+      variant="contained" 
+      startIcon={<Save/>}
+      className={classes.savebutton} 
+      onClick={handleUpdate}>
+        Save
+      </Button>
+      </Tooltip>
+
+    <Tooltip title="Delete Product">
+      <Button 
+      variant="contained" 
+      startIcon ={<DeleteForever />}
+      className={classes.deletebutton} 
+      onClick={handleDeleteproduct}>
+        Delete
+      </Button>
+    </Tooltip>
+      
+    </div>
   );
   return (
     <div>
-      <Table>
+      <Table className={classes.tableroot}>
         <TableHead>
           <TableRow>
-            <TableCell>ITEM</TableCell>
-            <TableCell>DESCRIPTION</TableCell>
-            <TableCell>PRICE</TableCell>
-            <TableCell>INSTOCK</TableCell>
+            <TableCell className={classes.tableheader}>ITEM</TableCell>
+            <TableCell className={classes.tableheader}>DESCRIPTION</TableCell>
+            <TableCell className={classes.tableheader}>PRICE</TableCell>
+            <TableCell className={classes.tableheader}>STOCK</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -179,6 +222,8 @@ export default function Truetable() {
                 <TableCell>
                   <div>
                     {" "}
+
+                  <Tooltip title="Edit Product">
                     <EditIcon
                       type="button"
                       onClick={() =>
@@ -191,6 +236,8 @@ export default function Truetable() {
                         })
                       }
                     />
+                  </Tooltip>
+
                   </div>
                 </TableCell>
               </TableRow>

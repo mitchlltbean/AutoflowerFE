@@ -12,6 +12,7 @@ import {
   //   CardMedia, meant for img's
   Collapse,
   IconButton,
+  Tooltip,
   Typography,
 } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -22,12 +23,12 @@ const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
       maxWidth: 345,
-      minWidth: 275,
-      width: "calc(100% / 4)",
-      margin: "1rem",
-      position: "relative",
-      justifyContent: "center",
-      backgroundColor: "#9FC680",
+      minWidth: 250,
+      width: 'calc(100% / 4)',
+      margin: '.75rem',
+      position:'relative',
+      justifyContent: 'center',
+      backgroundColor: '#9FC680',
       flexGrow: 1,
       textAlign: "center",
       display: "flex",
@@ -52,6 +53,11 @@ const useStyles = makeStyles((theme) =>
     avatar: {
       backgroundColor: red[500],
     },
+
+    title: {
+      fontWeight: 'bold',
+    }
+
   })
 );
 
@@ -89,21 +95,25 @@ export default function EmpCard(props) {
       /> */}
         <CardContent>
           <Typography
-            variant="body1"
+            variant="h5"
             className={classes.title}
             color="textSecondary"
-            component="h4"
             title={props.is_manager}
           >
-            Manager: {props.is_manager}
+            Manager {props.is_manager}
             <br />
-            Other employee details to come?
+            {/* Other employee details to come? */}
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
+
+        <Tooltip title="Delete Employee">
           <IconButton onClick={() => props.handleDeleteEmployee(props.emp_id)}>
-            <DeleteIcon />
+            <DeleteIcon/>
           </IconButton>
+        </Tooltip>
+
+        <Tooltip title="Expand">
           <IconButton
             className={clsx(classes.expand, {
               [classes.expandOpen]: expanded,
@@ -114,6 +124,8 @@ export default function EmpCard(props) {
           >
             <ExpandMore />
           </IconButton>
+          </Tooltip>
+
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
