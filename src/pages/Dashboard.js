@@ -10,7 +10,9 @@ const useStyles = makeStyles({
     marginTop: "1%",
   },
   headerprimus: {
-    fontSize: "70px",
+    position: "relative",
+    width: "60%",
+    fontSize: "60px",
     textAlign: "center",
   },
   headersecundus: {
