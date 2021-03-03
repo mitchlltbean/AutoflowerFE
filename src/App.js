@@ -7,7 +7,6 @@ import Sales from "./pages/Sales";
 import Products from "./pages/Products";
 import Stats from "./pages/Stats";
 import "./App.css";
-import Navbar from "./components/Navbar";
 import Orders from "./pages/Orders";
 import API from "./utils/API";
 
