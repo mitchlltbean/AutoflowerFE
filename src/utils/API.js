@@ -8,8 +8,8 @@ const API = {
     return axios.post(`${URL_PREFIX}/api/employee/login`, employeeData);
   },
 
-  create: (employeeData, token) => {
-    return axios.post(`${URL_PREFIX}/api/employee/signup`, employeeData, {
+  create: (token, employeeData) => {
+    return axios.post(`${URL_PREFIX}/api/employee/create`, employeeData, {
       headers: {
         authorization: `Bearer: ${token}`,
       },
@@ -44,18 +44,18 @@ const API = {
     });
   },
 
-  updateProducts: (token) => {
+  updateProducts: (token, data) => {
     console.log(token, "TOKEN");
-    return axios.put(`${URL_PREFIX}/api/product/productupdate`, {
+    return axios.put(`${URL_PREFIX}/api/product/productupdate`, data, {
       headers: {
         authorization: `Bearer: ${token}`,
       },
     });
   },
 
-  deleteProducts: (token) => {
+  deleteProducts: (token, id) => {
     console.log(token, "TOKEN");
-    return axios.delete(`${URL_PREFIX}/api/product/deleteinventory/:id`, {
+    return axios.delete(`${URL_PREFIX}/api/product/deleteinventory/${id}`, {
       headers: {
         authorization: `Bearer: ${token}`,
       },

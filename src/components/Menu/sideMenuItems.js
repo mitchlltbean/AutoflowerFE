@@ -43,15 +43,21 @@ export const sideMenuItems = [
     icon: <FiIcons.FiPackage />,
     className: "nav-text",
   },
-  {
-    name: "Logout",
-    url: "/",
-    icon: <GiIcons.GiCrossedBones />,
-    className: "nav-text",
-  },
+  // {
+  //   name: "Logout",
+  //   url: "/",
+  //   icon: <IoIcons.IoMdPeople />,
+  //   className: "nav-text",
+  // },
 ];
 
 // export default {
 //   data: [
 //   ],
 // };
+
+// path: {
+//   () => {
+//     handleLogout;
+//   };
+// }
