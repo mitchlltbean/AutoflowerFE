@@ -15,9 +15,9 @@
 #productsPage,
 #ordersPage {
   /* border: solid red 2px; */
-
-  width: auto;
-  background-color: teal;
+  width: auto; 
+  background: linear-gradient(to right, #FCB045, #6FC268);
+  background: -webkit-linear-gradient(to right, #fcb045, #6FC268);
 }
 
 #empWrapper,

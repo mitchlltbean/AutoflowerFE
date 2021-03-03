@@ -7,7 +7,7 @@ const useStyles = makeStyles({
   page: {
     maxHeight: "100%",
     height: "100%",
-    backgroundColor: "#71b068",
+    // backgroundColor: "#99bd8fc5",
   },
   headerprimus: {
     position: "relative",

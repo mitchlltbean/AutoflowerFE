@@ -7,11 +7,11 @@ import Typography from "@material-ui/core/Typography";
 const useStyles = makeStyles({
   root: {
     width: "100%",
-    height: "8%",
-    borderTop: "8px solid #c3d5ab",
+    height: "10%",
+    // borderTop: "8px solid #c3d5ab",
     bottom: 0,
     position: "fixed",
-    backgroundColor: "#dee6c9",
+    backgroundColor: "black",
     //   display: 'flex',
     textAlign: "center",
   },
