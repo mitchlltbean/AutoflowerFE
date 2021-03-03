@@ -95,7 +95,7 @@ export default function InventoryPanel() {
       .catch((err) => {
         console.log(err);
       });
-  }, [tax]);
+  }, []);
 
   return (
     <div>
