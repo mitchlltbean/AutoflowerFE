@@ -2,8 +2,9 @@
 
 * {
   margin: 0;
-  background-color: lightgray;
 }
+
+
 
 .container {
   display: flex;
@@ -28,6 +29,11 @@
   font-size: 40px;
   font-family: "Rajdhani", sans-serif !important;
   background-color: white;
+}
+
+::-webkit-input-placeholder {
+  font-size: 20px ;
+  opacity: 4;
 }
 
 .keypad {
