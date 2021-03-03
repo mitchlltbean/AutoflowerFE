@@ -51,7 +51,7 @@ export default function Orders() {
         justify="space-evenly"
         direction="row"
       > */}
-      
+
       <div id="ordersWrapper">
         <h1>Orders</h1>
         <InventoryPanel />

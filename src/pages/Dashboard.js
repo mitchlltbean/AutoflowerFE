@@ -53,9 +53,7 @@ function Dashboard() {
     <div id="dashboardPage">
       <Menu />
       <div className={classes.page}>
-        <h1 className={classes.headerprimus}>
-          Automating weed because we know you are too high to do it yourself!
-        </h1>
+        <h1 className={classes.headerprimus}></h1>
         <p className={classes.textprimus}>
           Lorem Ipsum is simply dummy text on the Internet and is therefore not
           safe for mass assignment Lorem Ipsum to any person. Lorem Ipsum has

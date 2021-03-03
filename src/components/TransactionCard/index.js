@@ -12,20 +12,20 @@ import "./style.css";
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
-      minWidth: 275,
-      width: 'calc(100% / 4)',
-      margin: '1rem',
-      position:'relative',
-      justifyContent: 'center',
-      backgroundColor: '#9FC680',
-      flexGrow: 1,
-      textAlign: 'center',
-      display: 'flex',
-      flexFlow: 'column',
-  //   columnGap: '10px',
-  //   display: 'grid',
-  //   gridTemplateColumns: 'repeat(3, 1fr)',
-  //   gridTemplateRows: '100px',
+    minWidth: 275,
+    width: "calc(100% / 4)",
+    margin: "1rem",
+    position: "relative",
+    justifyContent: "center",
+    backgroundColor: "#9FC680",
+    flexGrow: 1,
+    textAlign: "center",
+    display: "flex",
+    flexFlow: "column",
+    //   columnGap: '10px',
+    //   display: 'grid',
+    //   gridTemplateColumns: 'repeat(3, 1fr)',
+    //   gridTemplateRows: '100px',
   },
   bullet: {
     display: "inline-block",
@@ -97,10 +97,6 @@ export default function TransactionCard(props) {
           {props.status}
         </Typography>
       </CardContent>
-
-      <CardActions>
-        <Button size="small">Button</Button>
-      </CardActions>
     </Card>
   );
 }

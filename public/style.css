@@ -1,5 +1,12 @@
 #root {
+<<<<<<< HEAD
+  background-color: #abc4ba;
+}
+#root html {
+  background-color: #0d6645;
+=======
   /* set the login page background color  */
   background-color: #71b068;
+>>>>>>> dev
   height: 100%;
 }
