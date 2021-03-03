@@ -5,6 +5,7 @@ import Products4Sale from "../components/Products4Sale/Product4Sale";
 import products from "../products.json";
 import { makeStyles } from "@material-ui/core/styles";
 import "./style.css";
+import Navbar from "../components/Navbar/index";
 
 // import Menu from "../components/Menu";
 import "./style.css";
@@ -46,6 +47,7 @@ export default function Orders() {
         justify="space-evenly"
         direction="row"
       > */}
+      <Navbar></Navbar>
       <div>
         <h1>Orders</h1>
         <InventoryPanel />

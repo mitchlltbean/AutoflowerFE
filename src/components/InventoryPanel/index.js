@@ -37,12 +37,13 @@ const useStyles = makeStyles({
   summarypanel: {
     minWidth: 275,
     maxWidth: "25%",
+
     width: "25%",
-    height: "80em",
+    height: "50em",
     margin: "auto",
     position: "absolute",
-    left: "1%",
-    top: "11%",
+    left: "11%",
+    top: "15%",
     justifyContent: "center",
     backgroundColor: "#A9BCD0",
     flexGrow: 1,
@@ -81,51 +82,76 @@ export default function InventoryPanel() {
       });
   };
 
+  const [tax, setTax] = useState([]);
+  // const [newTank,setNewTank]= useState("");
+  const token = localStorage.getItem("token");
+  useEffect(() => {
+    console.log(token, "tokentax");
+    API.getTax(token)
+      .then(({ data }) => {
+        console.log(data, "TAXXXXXX");
+        setTax(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [tax]);
+
   return (
     <div>
-      {/* All components here into a grid for layout  */}
-      {/* Category Buttons. They need to render appropriate products. */}
-
-      {categories.map((category) => {
-        return (
-          <Button
-            onClick={() => handleSelectcategory(category.id)}
-            className={classes.root}
-            container
-            spacing={1}
-          >
-            <Typography
-              variant="h2"
-              className={classes.title}
-              color="textSecondary"
-              gutterBottom
-            >
-              {category.group}
-            </Typography>
-          </Button>
-        );
-      })}
-
-      {/* The Order Panel with the products buttons. These need formatting, autopopulate, on click events*/}
-      <div>
-        <div className={classes.buttoncontainer}>
-          <div className={classes.buttonrow}>
-            {allCategoryProducts.products &&
-              allCategoryProducts.products.map((product) => {
-                return (
-                  <Button
-                    className={classes.root}
-                    // onClick={}
-                  >
-                    {product.item}
-                  </Button>
-                );
-              })}
-
-            {/* <pre>{JSON.stringify(allCategoryProducts, null, 4)}</pre> */}
+      <div className="one">
+        <div className="two">
+          {" "}
+          {categories.map((category) => {
+            return (
+              <Button
+                onClick={() => handleSelectcategory(category.id)}
+                className={classes.root}
+                container
+                spacing={1}
+              >
+                <Typography
+                  variant="h2"
+                  className={classes.title}
+                  color="textSecondary"
+                  gutterBottom
+                >
+                  {category.group}
+                </Typography>
+              </Button>
+            );
+          })}
+          {/* The Order Panel with the products buttons. These need formatting, autopopulate, on click events*/}
+          <div>
+            <div className={classes.buttoncontainer}>
+              <div className={classes.buttonrow}>
+                {allCategoryProducts.products &&
+                  allCategoryProducts.products.map((product) => {
+                    return (
+                      <ul>
+                        <li>
+                          <Button
+                            className="button"
+                            className={classes.root}
+                            // onClick={}
+                          >
+                            {product.item}
+                          </Button>
+                        </li>
+                      </ul>
+                    );
+                  })}
+                <div
+                  style={{ width: "400px", overflow: "auto", height: "100px" }}
+                >
+                  <pre>{JSON.stringify(allCategoryProducts, null, 4)}</pre>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
+      </div>
+      <div>
         <Card className={classes.summarypanel}>
           <CardContent>
             <Typography
@@ -175,6 +201,9 @@ export default function InventoryPanel() {
             <Button size="large">Send</Button>
             <Button size="large">Clear</Button>
           </CardActions>
+          <div style={{ width: "280px", overflow: "auto", height: "400px" }}>
+            <pre>{JSON.stringify(tax.response, null, 4)}</pre>
+          </div>
         </Card>
       </div>
     </div>
