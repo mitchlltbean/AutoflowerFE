@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
-import { Link, Route } from "react-router-dom";
+import { Link, Route, useHistory } from "react-router-dom";
 import { sideMenuItems } from "./sideMenuItems";
 import "./Menu.css";
+import * as IoIcons from "react-icons/io";
 
 function Menu() {
   const [sidebar, setSidebar] = useState(false);
-
+  const history = useHistory();
+  console.log("HISTORY", history);
   const showSidebar = () => setSidebar(!sidebar);
 
+  const handleLogout = () => {
+    window.localStorage.clear();
+    history.push("/");
+  };
   return (
     <>
       <div className="navbar">
@@ -34,6 +40,12 @@ function Menu() {
               </li>
             );
           })}
+          <li onClick={handleLogout} className="nav-text-login">
+            <Link>
+              <IoIcons.IoMdPeople />
+              <span>Logout</span>
+            </Link>
+          </li>
         </ul>
       </nav>
     </>
