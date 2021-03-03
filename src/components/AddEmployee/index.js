@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
-import AddCircle from "@material-ui/icons/AddCircle";
+// import AddCircle from "@material-ui/icons/AddCircle";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 import API from "../../utils/API";
+import { Tooltip } from "@material-ui/core";
+import { PersonAdd } from "@material-ui/icons";
+
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -29,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     border: "2px solid #000",
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
+    padding: theme.spacing(2, 3, 3),
   },
 
   savebutton: {
@@ -37,9 +40,13 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
   },
 
-  //   addform:{
+  addbutton: {
+    fontWeight: "bold",
+    float: "right",
+    fontSize:"60px",
+    color: "black",
+  }
 
-  //   }
 }));
 
 export default function SimpleModal() {
@@ -123,10 +130,10 @@ export default function SimpleModal() {
           id="standard-select-currency"
           name="manager"
           // select
-          label="Manager true or false"
+          label="Manager? (true or false)"
           value={employeeData.manager}
           onChange={HandleInputchange}
-          helperText="Please select employee or manager"
+          // helperText="Please select employee or manager"
         >
           <MenuItem>true</MenuItem>
 
@@ -146,12 +153,17 @@ export default function SimpleModal() {
 
   return (
     <div>
-      <AddCircle
+      <Tooltip title="Add Employee">
+      <PersonAdd
+        variant ="contained"
         type="button"
         onClick={handleOpen}
         aria-label="add"
         fontSize="large"
+        className ={classes.addbutton}
+        // startIcon={<AddCircleOutline />}
       />
+      </Tooltip>
 
       {/* <button type="button" onClick={handleOpen}>
         Open Modal

@@ -2,6 +2,7 @@ import React from "react";
 import Menu from "../components/Menu";
 import TransactionCard from "../components/TransactionCard";
 import sales from "../sales.json";
+import Footer from "../components/Footer";
 // Sale is Status boolean
 // need name of product, date purchased, order id as int, product id as int, quantity as int, unit price as int
 function Sales() {
@@ -9,10 +10,10 @@ function Sales() {
     <div id="salesPage">
       <Menu />
 
-      <h1>Sales</h1>
-      
-      <div id="salesWrapper">
+      <h1 class="pagetitle">Sales</h1>
 
+      <div id="salesWrapper">
+        
         {sales.map((sale) => (
           <TransactionCard
             name={sale.name}
@@ -25,6 +26,7 @@ function Sales() {
           />
         ))}
       </div>
+      <Footer />
     </div>
   );
 }

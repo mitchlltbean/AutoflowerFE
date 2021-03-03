@@ -12,22 +12,25 @@ import {
   //   CardMedia, meant for img's
   Collapse,
   IconButton,
+  Tooltip,
   Typography,
 } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import "./style.css";
+import { BorderLeft } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
       maxWidth: 345,
-      minWidth: 275,
+      minWidth: 250,
       width: "calc(100% / 4)",
-      margin: "1rem",
+      margin: ".75rem",
       position: "relative",
       justifyContent: "center",
-      backgroundColor: "#9FC680",
+      // EMPLOYEE CARD COLOR
+      backgroundColor: "whitesmoke",
       flexGrow: 1,
       textAlign: "center",
       display: "flex",
@@ -52,6 +55,11 @@ const useStyles = makeStyles((theme) =>
     avatar: {
       backgroundColor: red[500],
     },
+
+    title: {
+      fontWeight: "bold",
+      fontSize: "24px",
+    },
   })
 );
 
@@ -68,6 +76,7 @@ export default function EmpCard(props) {
   return (
     <div>
       <Card className={classes.root}>
+        {/* <p>Name and ID</p> */}
         <CardHeader
           avatar={
             <Avatar
@@ -81,7 +90,6 @@ export default function EmpCard(props) {
           title={props.name}
           subheader={props.emp_id}
         />
-
         {/* <CardMedia
         className={classes.media}
         image=""
@@ -89,36 +97,42 @@ export default function EmpCard(props) {
       /> */}
         <CardContent>
           <Typography
-            variant="body1"
+            variant="h5"
             className={classes.title}
             color="textSecondary"
-            component="h4"
             title={props.is_manager}
           >
-            Manager: {props.is_manager}
+            Manager {props.is_manager}
             <br />
-            Other employee details to come?
+            {/* Other employee details to come? */}
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
-          <IconButton onClick={() => props.handleDeleteEmployee(props.emp_id)}>
-            <DeleteIcon />
-          </IconButton>
-          <IconButton
-            className={clsx(classes.expand, {
-              [classes.expandOpen]: expanded,
-            })}
-            onClick={handleExpandClick}
-            aria-expanded={expanded}
-            aria-label="show more"
-          >
-            <ExpandMore />
-          </IconButton>
+          <Tooltip title="Delete Employee">
+            <IconButton
+              onClick={() => props.handleDeleteEmployee(props.emp_id)}
+            >
+              <DeleteIcon />
+            </IconButton>
+          </Tooltip>
+
+          <Tooltip title="Expand">
+            <IconButton
+              className={clsx(classes.expand, {
+                [classes.expandOpen]: expanded,
+              })}
+              onClick={handleExpandClick}
+              aria-expanded={expanded}
+              aria-label="show more"
+            >
+              <ExpandMore />
+            </IconButton>
+          </Tooltip>
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Typography paragraph className={classes.title} title={props.login}>
-              This is where the employee details will go, like their login code;{" "}
+            <Typography paragraph className={classes.title}>
+              This is where the employee details will go
               {props.login}
             </Typography>
           </CardContent>

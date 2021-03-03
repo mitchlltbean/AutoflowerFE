@@ -1,6 +1,6 @@
 const axios = require("axios");
-const URL_PREFIX = "http://localhost:8080";
-// const URL_PREFIX= ""
+// const URL_PREFIX = "http://localhost:8080";
+const URL_PREFIX = "https://autoflower.herokuapp.com";
 
 const API = {
   //employee
@@ -73,6 +73,14 @@ const API = {
 
   getAllcategories: (token) => {
     return axios.get(`${URL_PREFIX}/api/category/allcategories`, {
+      headers: {
+        authorization: `Bearer: ${token}`,
+      },
+    });
+  },
+
+  getTax: (token) => {
+    return axios.post(`${URL_PREFIX}/api/tax/tax`, token, {
       headers: {
         authorization: `Bearer: ${token}`,
       },

@@ -5,32 +5,30 @@ import Typography from "@material-ui/core/Typography";
 // import BottomNavigation from '@material-ui/core/BottomNavigation';
 
 const useStyles = makeStyles({
-    root: {
-      width: '100%',
-      height: '100px',
-      marginTop:'5em',
-      bottom: 0,
-      position:'fixed',
-      backgroundColor: 'black',
+  root: {
+    width: "100%",
+    height: "8%",
+    borderTop: "8px solid #c3d5ab",
+    bottom: 0,
+    position: "fixed",
+    backgroundColor: "#dee6c9",
     //   display: 'flex',
-      textAlign: 'center',
-    },
+    textAlign: "center",
+  },
 
-    title:{
-        color: 'white',
-    }
-
-    
-  });
+  title: {
+    color: "white",
+  },
+});
 
 export default function Footer() {
-    const classes = useStyles();
-    return (
-
-        <footer className={classes.root}>
-            <Typography variant="h4" className={classes.title}>Footer Placeholder</Typography>
-            <Typography variant="h6" className={classes.title}>Content Placeholder</Typography>
-            
-        </footer>
-        );
+  const classes = useStyles();
+  return (
+    <footer className={classes.root}>
+      <Typography variant="h4" className={classes.title}>
+        Autoflower
+      </Typography>
+      <Typography variant="h6" className={classes.title}></Typography>
+    </footer>
+  );
 }

@@ -10,9 +10,12 @@ import {
   TextField,
   Grid,
 } from "@material-ui/core";
+import Send from "@material-ui/icons/Send";
+import Clear from "@material-ui/icons/Clear";
 import { makeStyles } from "@material-ui/core/styles";
 // import useStyles from "./sideBarStyles";
 import "./style.css";
+import { Autorenew } from "@material-ui/icons";
 // import products from "../products.json";
 
 //perhaps card or Buttons interface ?
@@ -35,19 +38,29 @@ const useStyles = makeStyles({
   },
 
   summarypanel: {
-    minWidth: 275,
-    maxWidth: "25%",
-    width: "25%",
-    height: "80em",
-    margin: "auto",
-    position: "absolute",
-    left: "1%",
-    top: "11%",
-    justifyContent: "center",
-    backgroundColor: "#A9BCD0",
+    // minWidth: 300,
+    // maxWidth: "35%",
+    // width: "40%",
+    // height: "70em",
+   
+    // justifyContent: "center",
+    backgroundColor: "whitesmoke",
     flexGrow: 1,
-    textAlign: "center",
+    marginRight: "2px",
   },
+
+  root: {
+    margin: ".25em",
+    backgroundColor: "lightgray",
+    fontWeight: 'bold',
+    fontSize: "1.03rem",
+
+  },
+
+  buttoncontainer: {
+    margin: "10px",
+  }
+
 });
 
 // The meat and potatos
@@ -81,54 +94,88 @@ export default function InventoryPanel() {
       });
   };
 
+  const [tax, setTax] = useState([]);
+  // const [newTank,setNewTank]= useState("");
+  const token = localStorage.getItem("token");
+  useEffect(() => {
+    console.log(token, "tokentax");
+    API.getTax(token)
+      .then(({ data }) => {
+        console.log(data, "TAXXXXXX");
+        setTax(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <div>
-      {/* All components here into a grid for layout  */}
-      {/* Category Buttons. They need to render appropriate products. */}
+      <div className="one">
+        
+          {" "}
+          {categories.map((category) => {
+            return (
 
-      {categories.map((category) => {
-        return (
-          <Button
-            onClick={() => handleSelectcategory(category.id)}
-            className={classes.root}
-            container
-            spacing={1}
-          >
-            <Typography
-              variant="h2"
-              className={classes.title}
-              color="textSecondary"
-              gutterBottom
-            >
-              {category.group}
-            </Typography>
-          </Button>
-        );
-      })}
+              <Button variant="contained" 
+                onClick={() => handleSelectcategory(category.id)}
+                className={classes.root}
+                container
+                spacing={1}
+              >
+                <Typography
+                  variant="h2"
+                  className={classes.title}
+                  color="textSecondary"
+                  gutterBottom
+                >
+                  {category.group}
+                </Typography>
+              </Button>
 
-      {/* The Order Panel with the products buttons. These need formatting, autopopulate, on click events*/}
-      <div>
-        <div className={classes.buttoncontainer}>
-          <div className={classes.buttonrow}>
-            {allCategoryProducts.products &&
-              allCategoryProducts.products.map((product) => {
-                return (
-                  <Button
-                    className={classes.root}
-                    // onClick={}
-                  >
-                    {product.item}
-                  </Button>
-                );
-              })}
-
-            {/* <pre>{JSON.stringify(allCategoryProducts, null, 4)}</pre> */}
+            );
+          })}
+          {/* The Order Panel with the products buttons. These need formatting, autopopulate, on click events*/}
+          <div>
+            <div className={classes.buttoncontainer}>
+              <div className={classes.buttonrow}>
+                {allCategoryProducts.products &&
+                  allCategoryProducts.products.map((product) => {
+                    return (
+                      <buttoncontainer>
+                      <ul>
+                        <li>
+                          <Button
+                          variant="contained"
+                            className="button"
+                            className={classes.root}
+                            // onClick={}
+                          >
+                            {product.item}
+                          </Button>
+                        </li>
+                      </ul>
+                      </buttoncontainer>
+                    );
+                  })}
+                <div
+                  style={{ width: "400px", overflow: "auto", height: "500px" }}
+                > <h2>Product Information</h2>
+                  <pre>{JSON.stringify(allCategoryProducts, null, 4)}</pre>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+  
 
+
+
+  
+      <div>
         <Card className={classes.summarypanel}>
           <CardContent>
-            <Typography
+            <Typography 
               className={classes.title}
               color="textSecondary"
               gutterBottom
@@ -172,9 +219,14 @@ export default function InventoryPanel() {
           </CardContent>
 
           <CardActions>
-            <Button size="large">Send</Button>
-            <Button size="large">Clear</Button>
+            
+            <Button variant="contained" className={classes.root}size="large" startIcon={<Send />}>Send</Button>
+            <Button variant="contained" className={classes.root}size="large" startIcon={<Clear />}>Clear</Button>
+          
           </CardActions>
+          <div style={{ width: "100%", overflow: "auto", height: "500px", fontSize: "20px" }}>
+            <pre>{JSON.stringify(tax.response, null, 4)}</pre>
+          </div>
         </Card>
       </div>
     </div>
