@@ -254,7 +254,7 @@ export default function Truetable() {
       > */}
 
       {/* </Modal> */}
-      {/* <button type="button" onClick={handleOpen}>
+      <button type="button" onClick={handleOpen}>
         Open Modal
       </button>
       <Modal
@@ -264,7 +264,7 @@ export default function Truetable() {
         aria-describedby="simple-modal-description"
       >
         {body}
-      </Modal> */}
+      </Modal>
       {/* <button onClick={() => handleDeleteproduct(data.id)}>Delete</button> */}
     </div>
     // </div>
