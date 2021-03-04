@@ -2,94 +2,135 @@ import React from "react";
 import Footer from "../components/Footer";
 import Menu from "../components/Menu";
 import { makeStyles } from "@material-ui/core/styles";
+import Img from "./not_cantabis.png";
+import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+
+const theme = createMuiTheme({
+  h1: {
+    fontFamily: ["Chilanka", "cursive"].join(","),
+  },
+});
 
 const useStyles = makeStyles({
   page: {
     maxHeight: "100%",
     height: "100%",
-    backgroundColor: "#71b068",
+    // backgroundColor: "#99bd8fc5",
   },
+
   headerprimus: {
     position: "relative",
     left: "20%",
     width: "60%",
-    fontSize: "60px",
+    fontSize: "100px",
     textAlign: "center",
+    fontFamily: "Chilanka",
   },
-  headersecundus: {
-    marginLeft: 0,
-    position: "relative",
-    left: 0,
-    textAlign: "left",
-    width: "100%",
-  },
-  headertertius: {
-    marginRight: 0,
-    position: "relative",
-    right: 0,
-    textAlign: "right",
-    width: "100%",
-  },
-  textprimus: {
-    marginBottom: "5%",
-    fontSize: "18px",
-    textAlign: "center",
-  },
-  textsecundus: {
-    marginBottom: "5%",
-    fontSize: "18px",
-    textAlign: "left",
-  },
-  texttertius: {
-    marginBottom: "5%",
-    fontSize: "18px",
-    textAlign: "right",
-  },
+  // imageprimus: {
+  //   position: "absolute",
+  //   left: "23%",
+  //   top: "9%",
+  //   transform: "scaleX(-1)",
+  // },
+  // imagesecundus: {
+  //   position: "absolute",
+  //   right: "23%",
+  //   top: "9%",
+  // },
+  // textprimus: {
+  //   marginBottom: "2.5%",
+  //   fontSize: "18px",
+  //   textAlign: "center",
+  // },
+  // headersecundus: {
+  //   marginLeft: 0,
+  //   position: "relative",
+  //   left: 0,
+  //   textAlign: "left",
+  //   width: "100%",
+  //   fontSize: "30px",
+  // },
+  // textsecundus: {
+  //   marginBottom: "2.5%",
+  //   fontSize: "18px",
+  //   textAlign: "left",
+  // },
+  // headertertius: {
+  //   marginRight: 0,
+  //   position: "relative",
+  //   right: 0,
+  //   textAlign: "right",
+  //   width: "100%",
+  //   fontSize: "30px",
+  // },
+  // texttertius: {
+  //   marginBottom: "2.5%",
+  //   fontSize: "18px",
+  //   textAlign: "right",
+  // },
+  // leftdiv: {
+  //   position: "relative",
+  //   left: "5%",
+  // },
+  // rightdiv: {
+  //   position: "relative",
+  //   right: "5%",
+  // },
 });
 
 function Dashboard() {
   const classes = useStyles();
   return (
-    <div id="dashboardPage">
-      <Menu />
-      <div className={classes.page}>
-        <h1 className={classes.headerprimus}></h1>
+    <ThemeProvider theme={theme}>
+      <div id="dashboardPage">
+        <Menu />
+
+        <h1 className={classes.headerprimus}>Welcome to Autoflower!</h1>
+        {/* <img
+          src={Img}
+          alt="Giving Hand"
+          height={150}
+          width={150}
+          className={classes.imageprimus}
+        />
+        <img
+          src={Img}
+          alt="Giving Hand"
+          height={150}
+          width={150}
+          className={classes.imagesecundus}
+        /> */}
+        {/* <div className={classes.page}>
+        <h1 className={classes.headerprimus}>Initial Welcome Message!</h1>
         <p className={classes.textprimus}>
-          Lorem Ipsum is simply dummy text on the Internet and is therefore not
-          safe for mass assignment Lorem Ipsum to any person. Lorem Ipsum has
-          been around for a long time and it has never been
+          THE NAMES OF THOSE WHO HELPED TO MAKE THIS APP
+          <br />
+          (ALL CHANGES HERE ARE SUBJECT TO CHANGE)
         </p>
-        <h1 className={classes.headersecundus}>
-          We keep track of your weed so you do not have to! You can trust us!
-          Who wouldn't trust a pothead with weed?
-        </h1>
-        <p className={classes.textsecundus}>
-          Sorry, Data. You did exactly what you had to do. You considered all
-          your options, you tried every alternative and then you made the hard
-          choice. Mr. Crusher, ready a collision course with the Borg ship. In
-          all trust, there is the possibility for betrayal. This is not about
-          revenge. This is about justice. Yesterday I did not know how to eat
-          gagh. Sure. You'd be surprised how far a hug goes with Geordi, or
-          Worf. We know you're dealing in stolen ore. But I wanna talk about the
-          assassination attempt on Lieutenant Worf.
-        </p>
-        <h1 className={classes.headertertius}>
-          Here it is simple and easy to organise and run your dispensary without
-          the hassle and all the features!
-        </h1>
-        <p className={classes.texttertius}>
-          Sorry, Data. You did exactly what you had to do. You considered all
-          your options, you tried every alternative and then you made the hard
-          choice. Mr. Crusher, ready a collision course with the Borg ship. In
-          all trust, there is the possibility for betrayal. This is not about
-          revenge. This is about justice. Yesterday I did not know how to eat
-          gagh. Sure. You'd be surprised how far a hug goes with Geordi, or
-          Worf. We know you're dealing in stolen ore. But I wanna talk about the
-          assassination attempt on Lieutenant Worf.
-        </p>
+
+        <div className={classes.leftdiv}>
+          <h1 className={classes.headersecundus}>
+            A DESCRIPTION OF THE APP IN ITS FULL ONCE FINISHED
+          </h1>
+          <p className={classes.textsecundus}>AFOREMENTIONED DESCRIPTION</p>
+        </div>
+        <div className={classes.rightdiv}>
+          <h1 className={classes.headertertius}>
+            A DESCRIPTION OF THE APP WHERE IT IS NOW
+          </h1>
+          <p className={classes.texttertius}>AFOREMENTIONED DESCRIPTION</p>
+        </div>
+        <div className={classes.leftdiv}>
+          <h1 className={classes.headersecundus}>
+            A DESCRIPTION OF OUR IMMEDIATE STEPS MOVING FORWARD
+          </h1>
+          <p className={classes.textsecundus}>AFOREMENTIONED DESCRIPTION</p> */}
+        {/* //TODO add image to each div and play around with the positioning and maybe you can fenagle it into position */}
+        {/* </div> */}
+        {/* </div> */}
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </ThemeProvider>
   );
 }
 

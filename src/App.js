@@ -50,6 +50,7 @@ function App() {
       .catch((err) => {
         console.log(err);
         localStorage.removeItem("token");
+        window.alert("Enter correct info");
         console.log("ERRORRR");
       });
   };

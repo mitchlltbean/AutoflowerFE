@@ -25,12 +25,12 @@ const useStyles = makeStyles((theme) =>
     root: {
       maxWidth: 345,
       minWidth: 250,
-      width: "calc(100% / 4)",
-      margin: ".75rem",
-      position: "relative",
-      justifyContent: "center",
-      // EMPLOYEE CARD COLOR
-      backgroundColor: "whitesmoke",
+      width: 'calc(100% / 4)',
+      margin: '.75rem',
+      position:'relative',
+      justifyContent: 'center',
+      // EMPLOYEE CARD COLOR 
+      backgroundColor: '#93B08D',
       flexGrow: 1,
       textAlign: "center",
       display: "flex",
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) =>
       transform: "rotate(180deg)",
     },
     avatar: {
-      backgroundColor: red[500],
+      backgroundColor: "#766581",
     },
 
     title: {
