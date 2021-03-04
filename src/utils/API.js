@@ -1,6 +1,6 @@
 const axios = require("axios");
-const URL_PREFIX = "http://localhost:8080";
-// const URL_PREFIX = "https://autoflowersbe.herokuapp.com";
+// const URL_PREFIX = "http://localhost:8080";
+const URL_PREFIX = "https://autoflowersbe.herokuapp.com";
 
 const API = {
   //employee

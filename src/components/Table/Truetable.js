@@ -44,13 +44,12 @@ export default function Truetable() {
       padding: theme.spacing(2, 4, 3),
     },
     descriptioninput: {
-      width: 600, 
+      width: 600,
     },
-    tableheader:{
+    tableheader: {
       fontSize: "1.25rem",
     },
     // tableroot:{},
-
   }));
 
   const classes = useStyles();
@@ -151,53 +150,56 @@ export default function Truetable() {
       <p></p>
       <input type="hidden" name="id" value={data.id}></input>
 
-      <TextField 
-      name="item" 
-      helperText = "Item"
-      value={data.item} 
-      onChange={HandleInputchange}></TextField>
+      <TextField
+        name="item"
+        helperText="Item"
+        value={data.item}
+        onChange={HandleInputchange}
+      ></TextField>
 
       <TextField
         name="description"
         className={classes.descriptioninput}
-        multiline rowsMax={4}
-        helperText = "Description"
+        multiline
+        rowsMax={4}
+        helperText="Description"
         value={data.description}
         onChange={HandleInputchange}
       ></TextField>
       <TextField
         name="price"
-        helperText = "Price"
+        helperText="Price"
         value={data.price}
         onChange={HandleInputchange}
       ></TextField>
       <TextField
         name="instock"
-        helperText = "Stock"
+        helperText="Stock"
         value={data.instock}
         onChange={HandleInputchange}
       ></TextField>
 
-    <Tooltip title="Save Product">
-      <Button 
-      variant="contained" 
-      startIcon={<Save/>}
-      className={classes.savebutton} 
-      onClick={handleUpdate}>
-        Save
-      </Button>
+      <Tooltip title="Save Product">
+        <Button
+          variant="contained"
+          startIcon={<Save />}
+          className={classes.savebutton}
+          onClick={handleUpdate}
+        >
+          Save
+        </Button>
       </Tooltip>
 
-    <Tooltip title="Delete Product">
-      <Button 
-      variant="contained" 
-      startIcon ={<DeleteForever />}
-      className={classes.deletebutton} 
-      onClick={handleDeleteproduct}>
-        Delete
-      </Button>
-    </Tooltip>
-      
+      <Tooltip title="Delete Product">
+        <Button
+          variant="contained"
+          startIcon={<DeleteForever />}
+          className={classes.deletebutton}
+          onClick={handleDeleteproduct}
+        >
+          Delete
+        </Button>
+      </Tooltip>
     </div>
   );
   return (
@@ -222,22 +224,20 @@ export default function Truetable() {
                 <TableCell>
                   <div>
                     {" "}
-
-                  <Tooltip title="Edit Product">
-                    <EditIcon
-                      type="button"
-                      onClick={() =>
-                        handleOpen({
-                          id: row.id,
-                          item: row.item,
-                          description: row.description,
-                          price: row.price,
-                          instock: row.instock,
-                        })
-                      }
-                    />
-                  </Tooltip>
-
+                    <Tooltip title="Edit Product">
+                      <EditIcon
+                        type="button"
+                        onClick={() =>
+                          handleOpen({
+                            id: row.id,
+                            item: row.item,
+                            description: row.description,
+                            price: row.price,
+                            instock: row.instock,
+                          })
+                        }
+                      />
+                    </Tooltip>
                   </div>
                 </TableCell>
               </TableRow>
@@ -254,7 +254,7 @@ export default function Truetable() {
       > */}
 
       {/* </Modal> */}
-      <button type="button" onClick={handleOpen}>
+      {/* <button type="button" onClick={handleOpen}>
         Open Modal
       </button>
       <Modal
@@ -264,7 +264,7 @@ export default function Truetable() {
         aria-describedby="simple-modal-description"
       >
         {body}
-      </Modal>
+      </Modal> */}
       {/* <button onClick={() => handleDeleteproduct(data.id)}>Delete</button> */}
     </div>
     // </div>

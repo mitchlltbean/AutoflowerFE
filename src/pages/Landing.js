@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 import Buttons from "../components/Buttons";
+import Footer from "../components/Footer";
 
 function Landing(props) {
   console.log("Landing page props", props);
@@ -12,6 +13,8 @@ function Landing(props) {
         setLoginState={props.setLoginState}
         loginState={props.loginState}
       />
+
+      <Footer />
     </div>
   );
 }
